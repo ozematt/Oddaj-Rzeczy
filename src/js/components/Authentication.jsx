@@ -1,9 +1,15 @@
+import { Link } from "react-router-dom";
+
 const Authentication = () => {
-    return(
-        <div className="authentication">
-            <button >Zaloguj</button>
-            <button>Załóż konto</button>
-        </div>
-    )
-}
+  return (
+    <div className="authentication">
+      <Link to="Zaloguj">
+        <button>Zaloguj</button>
+      </Link>
+      <Link to="Załóżkonto">
+        <button>Załóż konto</button>
+      </Link>
+    </div>
+  );
+};
 export default Authentication;
