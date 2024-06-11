@@ -1,9 +1,9 @@
-
+import HomeHeader from "./HomeHeader.jsx";
 
 
 const Home = () => {
     return(
-            <h1>home</h1>
+            <HomeHeader/>
     )
 };
 

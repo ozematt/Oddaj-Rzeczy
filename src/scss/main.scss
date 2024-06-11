@@ -1,5 +1,10 @@
+//GENERIC
 @import "generic/normalize.scss";
 @import "generic/reset.scss";
 
 @import "settings/colors.scss";
 @import "settings/fonts.scss";
+
+//ELEMENTS
+@import "elements/base.scss";
+@import "elements/homeHeader.scss";
