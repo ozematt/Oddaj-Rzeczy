@@ -1,0 +1,35 @@
+@import "../settings/functions.scss";
+@import "../settings/colors.scss";
+
+main {
+  margin-top: 210px;
+  h1 {
+    font-size: rem(38px);
+    font-weight: normal;
+    line-height: 55px;
+    text-align: center;
+  }
+  .main-ornament {
+    width: 253px;
+    height: 33px;
+    background-image: url("/src/assets/Decoration.svg");
+    margin: 0 auto;
+  }
+  .main-btns {
+    font-size: rem(36px);
+    font-weight: lighter;
+    gap: 44px;
+    display: flex;
+    justify-content: center;
+    margin-top: 65px;
+    button {
+      line-height: 44px;
+      background-color: transparent;
+      cursor: pointer;
+      font: inherit;
+      width: 310px;
+      height: 120px;
+      border: 0.75px solid $primary-font-color;
+    }
+  }
+}

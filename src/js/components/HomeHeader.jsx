@@ -1,19 +1,23 @@
 import Authentication from "./Authentication.jsx";
 import Navbar from "./Navbar.jsx";
+import MainInfo from "./MainInfo.jsx";
+import { Element } from "react-scroll";
 
 const HomeHeader = () => {
   return (
     <>
-      <div className="wrapper">
-        <header className="header">
-          <div className="header-hero" />
-          <div>
-            <Authentication />
-            <br />
-            <Navbar />
-          </div>
-        </header>
-      </div>
+      <Element name="start">
+        <div className="wrapper">
+          <header className="header">
+            <div className="header-hero" />
+            <div>
+              <Authentication />
+              <Navbar />
+              <MainInfo />
+            </div>
+          </header>
+        </div>
+      </Element>
     </>
   );
 };
