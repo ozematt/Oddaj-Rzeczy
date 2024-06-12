@@ -1,7 +1,7 @@
 const HomeWhoWeHelp = () => {
   return (
     <>
-      <section>
+      <section className="who-we-help">
         <h3>Komu pomagamy?</h3>
         <div className="ornament" />
         <div>

@@ -4,10 +4,10 @@ const MainInfo = () => {
   const text = "ODDAJ\nRZECZY";
   return (
     <main>
-      <h1>
+      <h3>
         Zacznij Pomagać! <br />
         Oddaj niechciane rzeczy w zaufane ręce
-      </h1>
+      </h3>
       <div className="ornament" />
       <div className="main-btns">
         <BigBtn path="/logowanie" fill={text} />

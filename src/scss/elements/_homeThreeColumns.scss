@@ -11,17 +11,17 @@
     height: rem(252px);
     text-align: center;
     margin: 0 auto;
-
-    h3 {
+    h4 {
       font-size: rem(90px);
       font-weight: lighter;
       color: $number-color;
       margin: 0;
     }
-    h4 {
+    h5 {
       font-size: rem(18px);
       font-weight: normal;
       color: $primary-font-color;
+      margin-top: rem(15px);
     }
     p {
       font-size: rem(16px);

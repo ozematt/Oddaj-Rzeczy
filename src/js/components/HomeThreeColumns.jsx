@@ -2,24 +2,24 @@ const HomeThreeColumns = () => {
   return (
     <section className="three-columns wrapper">
       <div>
-        <h3>10</h3>
-        <h4>ODDANYCH WORKÓW</h4>
+        <h4>10</h4>
+        <h5>ODDANYCH WORKÓW</h5>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias beatae
           debitis enim eveniet fugiat.
         </p>
       </div>
       <div>
-        <h3>5</h3>
-        <h4>WSPARTYCH ORGANIZACJI</h4>
+        <h4>5</h4>
+        <h5>WSPARTYCH ORGANIZACJI</h5>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias beatae
           debitis enim eveniet fugiat.
         </p>
       </div>
       <div>
-        <h3>7</h3>
-        <h4>ZORGANIZOWANYCH ZBIÓREK</h4>
+        <h4>7</h4>
+        <h5>ZORGANIZOWANYCH ZBIÓREK</h5>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias beatae
           debitis enim eveniet fugiat.

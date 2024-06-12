@@ -5,7 +5,7 @@ const HomeSimpleSteps = () => {
   const text = "ODDAJ\nRZECZY";
   return (
     <Element name="info" className="wrapper simple-steps">
-      <h2>Wystraczą 4 proste kroki</h2>
+      <h3>Wystraczą 4 proste kroki</h3>
       <div className="ornament" />
       <div className="color-bgc">
         <div className="four-steps">

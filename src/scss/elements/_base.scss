@@ -1,5 +1,6 @@
 @import "../settings/_fonts.scss";
 @import "../settings/_functions.scss";
+@import "../settings/_colors.scss";
 
 body {
   font-family: $font-base;
@@ -16,4 +17,11 @@ body {
   height: rem(33px);
   background-image: url("/src/assets/Decoration.svg");
   margin: 0 auto;
+}
+h3 {
+  text-align: center;
+  font-size: rem(38px);
+  font-weight: normal;
+  color: $primary-font-color;
+  line-height: rem(55px);
 }
