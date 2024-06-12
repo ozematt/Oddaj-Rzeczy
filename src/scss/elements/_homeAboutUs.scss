@@ -1,0 +1,38 @@
+@import "../settings/functions.scss";
+@import "../settings/colors.scss";
+
+.about-us {
+  height: rem(935px);
+  display: flex;
+  .left-section {
+    width: rem(958px);
+    background-color: $four-steps-bgc;
+    &_box {
+      margin-top: rem(186px);
+      width: rem(657px);
+      //display: flex;
+    }
+    h3 {
+      font-size: rem(38px);
+      font-weight: normal;
+      text-align: center;
+      color: $primary-font-color;
+    }
+    p {
+      font-size: rem(30px);
+      font-weight: lighter;
+      text-align: center;
+      line-height: 54px;
+      margin-top: rem(55px);
+    }
+    .signature {
+      margin-top: rem(44px);
+      float: right;
+    }
+  }
+  .foto {
+    background-image: url("/src/assets/People.jpg");
+    width: rem(942px);
+    height: rem(935px);
+  }
+}
