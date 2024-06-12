@@ -3,18 +3,14 @@
 
 main {
   margin-top: rem(210px);
+  margin-left: rem(66px);
   h1 {
     font-size: rem(38px);
     font-weight: normal;
     line-height: rem(55px);
     text-align: center;
   }
-  .main-ornament {
-    width: rem(253px);
-    height: rem(33px);
-    background-image: url("/src/assets/Decoration.svg");
-    margin: 0 auto;
-  }
+
   .main-btns {
     font-size: rem(36px);
     font-weight: lighter;
@@ -22,14 +18,5 @@ main {
     display: flex;
     justify-content: center;
     margin-top: rem(65px);
-    button {
-      line-height: rem(44px);
-      background-color: transparent;
-      cursor: pointer;
-      font: inherit;
-      width: rem(310px);
-      height: rem(120px);
-      border: 0.75px solid $primary-font-color;
-    }
   }
 }

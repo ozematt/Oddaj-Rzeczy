@@ -1,0 +1,18 @@
+@import "../settings/functions.scss";
+@import "../settings/colors.scss";
+
+.big-btn {
+  line-height: rem(44px);
+  background-color: transparent;
+  font-size: rem(36px);
+  font-weight: lighter;
+  cursor: pointer;
+  width: rem(310px);
+  height: rem(120px);
+  border: 0.75px solid $primary-font-color;
+  white-space: pre-line;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+}

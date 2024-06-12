@@ -4,29 +4,29 @@
 .three-columns {
   display: flex;
   background-image: url("/src/assets/3 Columns Background.png");
-  height: 384px;
+  height: rem(384px);
   align-items: center;
   div {
-    width: 334px;
-    height: 252px;
+    width: rem(334px);
+    height: rem(252px);
     text-align: center;
     margin: 0 auto;
 
     h3 {
-      font-size: 90px;
+      font-size: rem(90px);
       font-weight: lighter;
       color: $number-color;
       margin: 0;
     }
     h4 {
-      font-size: 18px;
+      font-size: rem(18px);
       font-weight: normal;
       color: $primary-font-color;
     }
     p {
-      font-size: 16px;
+      font-size: rem(16px);
       font-weight: lighter;
-      line-height: 25px;
+      line-height: rem(25px);
     }
   }
 }
