@@ -1,8 +1,13 @@
 import HomeHeader from "./HomeHeader.jsx";
-import { Element } from "react-scroll";
+import HomeThreeColumns from "./HomeThreeColumns.jsx";
 
 const Home = () => {
-  return <HomeHeader />;
+  return (
+    <>
+      <HomeHeader />
+      <HomeThreeColumns />
+    </>
+  );
 };
 
 export default Home;

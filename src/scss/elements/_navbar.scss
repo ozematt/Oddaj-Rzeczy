@@ -2,8 +2,8 @@
 @import "../settings/colors.scss";
 
 .navbar {
-  font-size: 18px;
-  line-height: 24px;
+  font-size: rem(18px);
+  line-height: rem(24px);
   color: $primary-font-color;
   ul {
     list-style: none;
@@ -11,9 +11,9 @@
     margin: 0;
     display: flex;
     li {
-      margin-left: 15px;
+      margin-left: rem(15px);
       cursor: pointer;
-      padding: 9px 20px;
+      padding: rem(9px) rem(20px);
       border: 0.75px solid transparent;
     }
     li:hover {

@@ -4,10 +4,12 @@
 
 @import "settings/colors.scss";
 @import "settings/fonts.scss";
+@import "elements/base.scss";
 
 //ELEMENTS
-@import "elements/base.scss";
 @import "elements/homeHeader.scss";
 @import "elements/navbar.scss";
 @import "elements/authentication.scss";
 @import "elements/mainInfo.scss";
+
+@import "elements/homeThreeColumns.scss";

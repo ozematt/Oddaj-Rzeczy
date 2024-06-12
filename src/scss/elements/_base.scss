@@ -1,11 +1,12 @@
 @import "../settings/_fonts.scss";
+@import "../settings/_functions.scss";
 
 body {
   font-family: $font-base;
 }
 
 .wrapper {
-  max-width: 1900px;
+  max-width: rem(1900px);
   margin: 0 auto;
   padding: 0;
 }

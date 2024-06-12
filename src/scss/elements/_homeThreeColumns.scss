@@ -1,0 +1,32 @@
+@import "../settings/functions.scss";
+@import "../settings/colors.scss";
+
+.three-columns {
+  display: flex;
+  background-image: url("/src/assets/3 Columns Background.png");
+  height: 384px;
+  align-items: center;
+  div {
+    width: 334px;
+    height: 252px;
+    text-align: center;
+    margin: 0 auto;
+
+    h3 {
+      font-size: 90px;
+      font-weight: lighter;
+      color: $number-color;
+      margin: 0;
+    }
+    h4 {
+      font-size: 18px;
+      font-weight: normal;
+      color: $primary-font-color;
+    }
+    p {
+      font-size: 16px;
+      font-weight: lighter;
+      line-height: 25px;
+    }
+  }
+}
