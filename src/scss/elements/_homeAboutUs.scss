@@ -10,7 +10,6 @@
     &_box {
       margin-top: rem(186px);
       width: rem(657px);
-      //display: flex;
     }
     h3 {
       font-size: rem(38px);
@@ -22,7 +21,7 @@
       font-size: rem(30px);
       font-weight: lighter;
       text-align: center;
-      line-height: 54px;
+      line-height: rem(54px);
       margin-top: rem(55px);
     }
     .signature {
