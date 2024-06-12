@@ -1,2 +1,43 @@
 @import "../settings/functions.scss";
 @import "../settings/colors.scss";
+
+.simple-steps {
+  margin-top: rem(55px);
+  h2 {
+    text-align: center;
+    font-size: rem(38px);
+    font-weight: normal;
+    color: $primary-font-color;
+  }
+  .color-bgc {
+    background-color: $four-steps-bgc;
+  }
+  .four-steps {
+    margin: rem(34px) rem(414px) 0 rem(414px);
+    height: rem(325px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    color: $primary-font-color;
+    h4 {
+      font-size: rem(18px);
+      font-weight: normal;
+      margin-bottom: rem(17px);
+    }
+    h4::after {
+      content: "";
+      display: block;
+      width: rem(70px);
+      height: rem(1px);
+      background-color: black;
+      margin: 0 auto;
+      margin-top: rem(12px);
+    }
+  }
+  .four-steps-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: rem(35px);
+  }
+}
