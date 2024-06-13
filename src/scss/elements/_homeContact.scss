@@ -1,0 +1,56 @@
+@import "../settings/_fonts.scss";
+@import "../settings/_colors.scss";
+@import "../settings/_functions.scss";
+
+.contact {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url("/src/assets/Background-Contact-Form.jpg");
+  background-size: cover;
+  height: 1026px;
+  width: 100%;
+  margin-top: 80px;
+
+  .form-section {
+    width: 528px;
+    float: right;
+    margin-top: 130px;
+    margin-right: 142px;
+    form {
+      margin-top: 70px;
+      display: flex;
+      flex-direction: column;
+      //justify-content: center;
+      //align-items: flex-end;
+      .textarea-box {
+        display: flex;
+        flex-direction: column;
+
+        input[type="textarea"] {
+          height: 97px;
+          width: 100%;
+          //white-space: pre-line;
+        }
+      }
+      div {
+        display: flex;
+        //justify-content: space-between;
+      }
+
+      label {
+        //display: flex;
+        //flex-direction: column;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      input {
+        //width: 256px;
+        //flex-grow: 0;
+        border: none;
+        border-bottom: 1px solid #707070;
+      }
+    }
+  }
+}
