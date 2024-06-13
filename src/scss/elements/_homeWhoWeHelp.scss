@@ -3,6 +3,7 @@
 @import "../settings/_functions.scss";
 
 .who-we-help {
+  margin-top: rem(70px);
   height: rem(862px);
   max-width: rem(1344px);
   color: $primary-font-color;
@@ -10,23 +11,6 @@
     display: flex;
     justify-content: center;
     gap: rem(110px);
-
-    button {
-      font-size: rem(24px);
-      font-weight: normal;
-      background-color: transparent;
-      border: 0.75px solid transparent;
-      width: rem(208px);
-      height: rem(79px);
-      margin-top: rem(50px);
-      &.active-btn {
-        border: 0.75px solid $primary-font-color;
-      }
-      &:hover {
-        border: 0.75px solid $primary-font-color;
-        scale: 1.05;
-      }
-    }
   }
   .info-about-text {
     width: rem(640px);
@@ -37,53 +21,10 @@
     font-size: rem(22px);
     line-height: rem(30px);
   }
-  ul {
-    li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: rem(66px);
-      div {
-        .who-name {
-          font-size: rem(26px);
-          //line-height: 31px;
-          margin: 0;
-          margin-bottom: 6px;
-        }
-
-        .who-purpose {
-          font-size: rem(18px);
-          line-height: 22px;
-          margin: 0;
-        }
-      }
-      div {
-        .who-staff {
-          margin: 0;
-          font-size: rem(18px);
-        }
-      }
-    }
-  }
   .pages {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    li {
-      font-size: rem(18px);
-      border: 1px solid transparent;
-      cursor: pointer;
-      padding: 13px 15px;
-      line-height: 24px;
-      &:hover {
-        border: 1px solid #707070;
-      }
-      &.active {
-        border: 1px solid #707070;
-      }
-      &.hidden {
-        display: none;
-      }
-    }
+    gap: rem(40px);
+    margin-top: rem(63px);
   }
 }

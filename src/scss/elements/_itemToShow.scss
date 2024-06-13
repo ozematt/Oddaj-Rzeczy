@@ -1,0 +1,29 @@
+@import "../settings/_fonts.scss";
+@import "../settings/_colors.scss";
+@import "../settings/_functions.scss";
+
+.item-to-show {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: rem(66px);
+  div {
+    .who-name {
+      font-size: rem(26px);
+      margin: 0;
+      margin-bottom: 6px;
+    }
+
+    .who-purpose {
+      font-size: rem(18px);
+      line-height: rem(22px);
+      margin: 0;
+    }
+  }
+  div {
+    .who-staff {
+      margin: 0;
+      font-size: rem(18px);
+    }
+  }
+}

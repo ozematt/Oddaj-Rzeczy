@@ -1,7 +1,7 @@
 const ItemToShow = ({ item }) => {
   return (
     <>
-      <li key={item.id}>
+      <li className="item-to-show" key={item.id}>
         <div>
           <p className="who-name">{item.name}</p>
           <p className="who-purpose">{item.purpose}</p>

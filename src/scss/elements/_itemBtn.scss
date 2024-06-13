@@ -1,0 +1,20 @@
+@import "../settings/_fonts.scss";
+@import "../settings/_colors.scss";
+@import "../settings/_functions.scss";
+
+.item-btn {
+  font-size: rem(24px);
+  font-weight: normal;
+  background-color: transparent;
+  border: 0.75px solid transparent;
+  width: rem(208px);
+  height: rem(79px);
+  margin-top: rem(50px);
+  &.active-btn {
+    border: 0.75px solid $primary-font-color;
+  }
+  &:hover {
+    border: 0.75px solid $primary-font-color;
+    scale: 1.05;
+  }
+}

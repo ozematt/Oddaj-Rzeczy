@@ -3,7 +3,7 @@ const PageNumber = ({ item, currentPage, pages, handlePageChange }) => {
   return (
     <>
       <li
-        className={`${item === currentPage ? "active" : ""} ${pages.length === 1 ? "hidden" : ""}`}
+        className={`${item === currentPage ? "active" : ""} ${pages.length === 1 ? "hidden" : ""} page-number`}
         onClick={() => handlePageChange(item)}
       >
         {item}

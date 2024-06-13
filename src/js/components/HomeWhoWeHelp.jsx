@@ -3,6 +3,7 @@ import { useState } from "react";
 import PageNumber from "./PageNumber.jsx";
 import ItemToShow from "./ItemToShow.jsx";
 import ItemBtn from "./ItemBtn.jsx";
+import { Element } from "react-scroll";
 
 const HomeWhoWeHelp = () => {
   ////DATA
@@ -55,7 +56,7 @@ const HomeWhoWeHelp = () => {
   ////UI
   return (
     <>
-      <section className="who-we-help wrapper">
+      <Element name={"fundations"} className="who-we-help wrapper">
         <h3>Komu pomagamy?</h3>
         <div className="ornament" />
         <div className="btn-section">
@@ -85,7 +86,7 @@ const HomeWhoWeHelp = () => {
             />
           ))}
         </ul>
-      </section>
+      </Element>
     </>
   );
 };
