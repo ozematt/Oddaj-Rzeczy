@@ -2,6 +2,12 @@
 @import "../settings/_colors.scss";
 @import "../settings/_functions.scss";
 
+%placeholder {
+  font-size: 18px;
+  line-height: 24px;
+  color: $placeholder-font-color;
+}
+
 .contact {
   background: linear-gradient(
       rgba(255, 255, 255, 0.8),
@@ -20,36 +26,55 @@
     margin-right: 142px;
     form {
       margin-top: 70px;
-      display: flex;
-      flex-direction: column;
-      //justify-content: center;
-      //align-items: flex-end;
-      .textarea-box {
-        display: flex;
-        flex-direction: column;
-
-        input[type="textarea"] {
-          height: 97px;
-          width: 100%;
-          //white-space: pre-line;
-        }
-      }
-      div {
-        display: flex;
-        //justify-content: space-between;
-      }
-
       label {
-        //display: flex;
-        //flex-direction: column;
+        line-height: 32px;
         font-size: 16px;
         font-weight: 600;
+        display: flex;
+        flex-direction: column;
       }
-      input {
-        //width: 256px;
-        //flex-grow: 0;
-        border: none;
-        border-bottom: 1px solid #707070;
+      .textarea-box {
+        margin-top: 40px;
+        textarea {
+          resize: none;
+          outline: none;
+          height: 97px;
+          width: 526px;
+          border: 1px solid transparent;
+          border-bottom: 1px solid #707070;
+          &::placeholder {
+            @extend %placeholder;
+          }
+          &:focus {
+            border: 1px solid #707070;
+          }
+        }
+      }
+      .form-name-box {
+        display: flex;
+        justify-content: space-between;
+        input {
+          outline: none;
+          height: 35px;
+          width: 256px;
+          border: 1px solid transparent;
+          border-bottom: 1px solid #707070;
+          &::placeholder {
+            @extend %placeholder;
+          }
+          &:focus {
+            border: 1px solid #707070;
+          }
+        }
+      }
+      .submit-btn {
+        margin-top: 20px;
+        float: right;
+        padding: 13px 52px;
+        font-size: 18px;
+        font-weight: lighter;
+        background: transparent;
+        border: 0.75px solid $primary-font-color;
       }
     }
   }
