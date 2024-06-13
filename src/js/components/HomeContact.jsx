@@ -2,6 +2,7 @@ const HomeContact = () => {
   return (
     <>
       <section className="contact wrapper">
+        <div></div>
         <div className="form-section">
           <h3>Skontaktuj się z nami</h3>
           <div className="ornament" />
@@ -29,11 +30,12 @@ const HomeContact = () => {
             <input className="submit-btn" type="submit" value="Wyślij" />
           </form>
         </div>
-        {/*<footer>*/}
-        {/*  <p>Copyright by Coders Lab</p>*/}
-        {/*  <div></div>*/}
-        {/*  <div></div>*/}
-        {/*</footer>*/}
+        <footer>
+          <p>Copyright by Coders Lab</p>
+          <img src="/src/assets/Facebook.svg" alt="facebook icon" />
+          <img src="/src/assets/Instagram.svg" alt="instagram icon" />
+          <div></div>
+        </footer>
       </section>
     </>
   );
