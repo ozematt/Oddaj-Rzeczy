@@ -9,7 +9,7 @@ const HomeSimpleSteps = () => {
       <div className="ornament" />
       <div className="color-bgc">
         <div className="four-steps">
-          <div>
+          <div className="steps">
             <img
               src="/src/assets/Icon-1.svg"
               alt="t-shirt icon"
@@ -20,7 +20,7 @@ const HomeSimpleSteps = () => {
               ubrania, zabawki, <br /> sprzęt i inne
             </p>
           </div>
-          <div>
+          <div className="steps">
             <img src="/src/assets/Icon-2.svg" alt="bag icon" className="icon" />
             <h4>Spakuj je</h4>
             <p>
@@ -28,7 +28,7 @@ const HomeSimpleSteps = () => {
               worków na śmieci
             </p>
           </div>
-          <div>
+          <div className="steps">
             <img
               src="/src/assets/Icon-3.svg"
               alt="lupe icon"
@@ -42,7 +42,7 @@ const HomeSimpleSteps = () => {
               wybierz zaufane <br /> miejsce
             </p>
           </div>
-          <div>
+          <div className="steps">
             <img
               src="/src/assets/Icon-4.svg"
               alt="recycling icon"
