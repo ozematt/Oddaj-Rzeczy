@@ -7,6 +7,7 @@ const HomeWhoWeHelp = () => {
   // const local = DATA.local[2].elements.length;
 
   const [currentPage, setCurrentPage] = useState(1);
+  const [buttonClicked, setButtonClicked] = useState("");
 
   const totalPages = Math.ceil(DATA.foundations[0].elements.length / 3);
 
@@ -20,10 +21,14 @@ const HomeWhoWeHelp = () => {
     endIndex,
   );
 
+  const btns = ["Fundacjom", "Organizacjom pozarządowym", "Lokalnym zbiórkom"];
+
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
-
+  const handleButtonClick = (name) => {
+    setButtonClicked(name);
+  };
   console.log(pages);
 
   return (
@@ -32,9 +37,15 @@ const HomeWhoWeHelp = () => {
         <h3>Komu pomagamy?</h3>
         <div className="ornament" />
         <div className="btn-section">
-          <button className="active">Fundacjom</button>
-          <button> Organizacjom pozarządowym</button>
-          <button>Lokalnym zbiórkom</button>
+          {btns.map((name, i) => (
+            <button
+              key={i}
+              className={buttonClicked === name ? "active-btn" : undefined}
+              onClick={() => handleButtonClick(name)}
+            >
+              {name}
+            </button>
+          ))}
         </div>
         <p className="info-about-text">
           W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi
