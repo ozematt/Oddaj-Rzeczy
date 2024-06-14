@@ -37,7 +37,7 @@ const Login = () => {
 
   return (
     <>
-      <section className="login">
+      <section className="login wrapper">
         <h2>Zaloguj się</h2>
         <div className="ornament" />
         <form onSubmit={handleSubmit}>
