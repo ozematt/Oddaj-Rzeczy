@@ -1,12 +1,14 @@
 import { Element } from "react-scroll";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const HomeContact = () => {
   ////DATA
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [error, setError] = useState("");
+
+  const [responseClass, setResponseClass] = useState("");
+  const [errors, setErrors] = useState({});
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -28,18 +30,49 @@ const HomeContact = () => {
       },
     })
       .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to save contact"); ////////////
+        if (response.status === 200) {
+          setResponseClass("success");
+          setErrors("");
+          setName("");
+          setEmail("");
+          setMessage("");
         }
         return response.json();
       })
       .then((data) => {
+        setErrors(data.errors);
         console.log(data);
       })
       .catch((error) => {
         console.log(error);
       });
   };
+  console.log(responseClass);
+
+  useEffect(() => {
+    if (errors && errors.length > 0) {
+      const hasNameError = errors.some((error) => error.param === "name");
+      const hasEmailError = errors.some((error) => error.param === "email");
+      const hasMessageError = errors.some((error) => error.param === "message");
+
+      // handle multiple classes
+      let classNames = "";
+
+      if (hasNameError) {
+        classNames += "name ";
+      }
+      if (hasEmailError) {
+        classNames += "email ";
+      }
+      if (hasMessageError) {
+        classNames += "message ";
+      }
+      //remove any space at the end
+      classNames = classNames.trim();
+
+      setResponseClass(classNames);
+    }
+  }, [errors]);
 
   return (
     <>
@@ -48,9 +81,12 @@ const HomeContact = () => {
         <div className="form-section">
           <h3>Skontaktuj się z nami</h3>
           <div className="ornament" />
-          <p className="success">
-            Wiadomość została wysłana! <br /> Wkrótce się skontaktujemy.
-          </p>
+          {/*  success message */}
+          {responseClass.includes("success") ? (
+            <p className="success">
+              Wiadomość została wysłana! <br /> Wkrótce się skontaktujemy.
+            </p>
+          ) : null}
           <form onSubmit={handleSubmit}>
             <div className="form-name-box">
               <label className="placeholder-text">
@@ -62,7 +98,9 @@ const HomeContact = () => {
                   onChange={handleNameChange}
                   placeholder="Krzysztof"
                 />
-                <p className="error">Podane imię jest nieprawidłowe!</p>
+                {responseClass.includes("name") ? (
+                  <p className="error">Podane imię jest nieprawidłowe!</p>
+                ) : null}
               </label>
 
               <label className="placeholder-text">
@@ -74,7 +112,10 @@ const HomeContact = () => {
                   onChange={handleEmailChange}
                   placeholder="abc@xyz.pl"
                 />
-                <p className="error">Podany email jest nieprawidłowy!</p>
+                {/*  email error message*/}
+                {responseClass.includes("email") ? (
+                  <p className="error">Podany email jest nieprawidłowy!</p>
+                ) : null}
               </label>
             </div>
             <div className="textarea-box">
@@ -86,9 +127,12 @@ const HomeContact = () => {
                   onChange={handleMessageChange}
                   placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                 />
-                <p className="error textarea-error">
-                  Wiadomość musi mieć conajmniej 120 znaków!
-                </p>
+                {/*  meassage error message*/}
+                {responseClass.includes("message") ? (
+                  <p className="error textarea-error">
+                    Wiadomość musi mieć conajmniej 120 znaków!
+                  </p>
+                ) : null}
               </label>
             </div>
 
