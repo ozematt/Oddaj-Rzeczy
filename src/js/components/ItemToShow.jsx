@@ -1,13 +1,13 @@
-const ItemToShow = ({ item }) => {
+const ItemToShow = ({ element }) => {
   return (
     <>
-      <li className="item-to-show" key={item.id}>
+      <li className="item-to-show" key={element.id}>
         <div>
-          <p className="who-name">{item.name}</p>
-          <p className="who-purpose">{item.purpose}</p>
+          <p className="who-name">{element.name}</p>
+          <p className="who-purpose">{element.purpose}</p>
         </div>
         <div>
-          <p className="who-staff"> {item.collected}</p>
+          <p className="who-staff"> {element.collected}</p>
         </div>
       </li>
     </>

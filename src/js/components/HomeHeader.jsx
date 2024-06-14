@@ -1,7 +1,6 @@
-import Authentication from "./Authentication.jsx";
-import Navbar from "./Navbar.jsx";
 import MainInfo from "./MainInfo.jsx";
 import { Element } from "react-scroll";
+import Dashboard from "./Dashboard.jsx";
 
 const HomeHeader = () => {
   return (
@@ -11,8 +10,7 @@ const HomeHeader = () => {
           <header className="header">
             <div className="header-hero" />
             <div>
-              <Authentication />
-              <Navbar />
+              <Dashboard />
               <MainInfo />
             </div>
           </header>

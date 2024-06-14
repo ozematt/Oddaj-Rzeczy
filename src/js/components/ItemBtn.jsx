@@ -1,11 +1,11 @@
-const ItemBtn = ({ buttonClicked, name, handleButtonClick }) => {
+const ItemBtn = ({ buttonClicked, btn, handleButtonClick }) => {
   return (
     <>
       <button
-        className={`${buttonClicked === name ? "active-btn" : undefined} item-btn`}
-        onClick={() => handleButtonClick(name)}
+        className={`${buttonClicked === btn ? "active-btn" : undefined} item-btn`}
+        onClick={() => handleButtonClick(btn)}
       >
-        {name}
+        {btn}
       </button>
     </>
   );

@@ -60,26 +60,26 @@ const HomeWhoWeHelp = () => {
         <h3>Komu pomagamy?</h3>
         <div className="ornament" />
         <div className="btn-section">
-          {btns.map((name, index) => (
+          {btns.map((btn, index) => (
             <ItemBtn
               key={index}
               buttonClicked={buttonClicked}
-              name={name}
+              btn={btn}
               handleButtonClick={handleButtonClick}
             />
           ))}
         </div>
         <p className="info-about-text">{text}</p>
         <ul>
-          {elementsToShow.map((item) => (
-            <ItemToShow key={item.id} item={item} />
+          {elementsToShow.map((element) => (
+            <ItemToShow key={element.id} element={element} />
           ))}
         </ul>
         <ul className="pages">
-          {pages.map((item, index) => (
+          {pages.map((page, index) => (
             <PageNumber
               key={index}
-              item={item}
+              page={page}
               currentPage={currentPage}
               pages={pages}
               handlePageChange={handlePageChange}
