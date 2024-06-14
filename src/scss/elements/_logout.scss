@@ -1,0 +1,29 @@
+@import "../settings/_fonts.scss";
+@import "../settings/_colors.scss";
+@import "../settings/_functions.scss";
+
+.logout {
+  color: $primary-font-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    margin-top: rem(123px);
+    text-align: center;
+    font-size: rem(40px);
+    font-weight: normal;
+  }
+  button {
+    margin-top: rem(35px);
+    font-size: rem(18px);
+    font-weight: lighter;
+    padding: rem(13px) rem(17px);
+    background: none;
+    border: 0.75px solid $primary-font-color;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      scale: 1.1;
+    }
+  }
+}

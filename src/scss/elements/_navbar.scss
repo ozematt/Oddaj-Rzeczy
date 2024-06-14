@@ -16,6 +16,7 @@
       cursor: pointer;
       padding: rem(9px) rem(20px);
       border: 0.75px solid transparent;
+      transition: all 0.3s ease-in-out;
     }
     li:hover {
       border: 0.75px solid $primary-font-color;

@@ -3,7 +3,7 @@
 @import "../settings/_functions.scss";
 
 .login {
-  width: 504px;
+  width: rem(504px);
   margin: 0 auto;
   color: $primary-font-color;
 
@@ -53,6 +53,7 @@
       border: 1px solid transparent;
       border-bottom: 1px solid #707070;
       background-color: transparent;
+      transition: all 0.3s ease-in-out;
       &:focus {
         border: 1px solid #707070;
       }
@@ -84,12 +85,14 @@
 .login-btn {
   border: 0.75px solid transparent;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
   &:hover {
     border: 0.75px solid $primary-font-color;
   }
 }
 .log-btn {
   border: 0.75px solid $primary-font-color;
+  transition: all 0.3s ease-in-out;
   &:hover {
     scale: 1.1;
   }

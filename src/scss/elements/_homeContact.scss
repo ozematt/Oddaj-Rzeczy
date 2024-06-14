@@ -40,9 +40,9 @@
           resize: none;
           outline: none;
           height: 97px;
-          //width: 526px;
           border: 1px solid transparent;
           border-bottom: 1px solid #707070;
+          transition: all 0.3s ease-in-out;
           &::placeholder {
             @extend %placeholder;
           }
@@ -60,6 +60,7 @@
           width: 256px;
           border: 1px solid transparent;
           border-bottom: 1px solid #707070;
+          transition: all 0.3s ease-in-out;
           &::placeholder {
             @extend %placeholder;
           }
