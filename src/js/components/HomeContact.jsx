@@ -10,18 +10,11 @@ const HomeContact = () => {
   const [responseClass, setResponseClass] = useState("");
   const [errors, setErrors] = useState({});
 
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-  const handleMessageChange = (e) => {
-    setMessage(e.target.value);
-  };
+  ////LOGIC
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     fetch("https://fer-api.coderslab.pl/v1/portfolio/contact", {
       method: "POST",
       body: JSON.stringify({ name, email, message }),
@@ -47,8 +40,8 @@ const HomeContact = () => {
         console.log(error);
       });
   };
-  console.log(responseClass);
 
+  //error validation with class addition
   useEffect(() => {
     if (errors && errors.length > 0) {
       const hasNameError = errors.some((error) => error.param === "name");
@@ -74,6 +67,7 @@ const HomeContact = () => {
     }
   }, [errors]);
 
+  ////UI
   return (
     <>
       <Element name="contact" className="contact wrapper">
@@ -95,7 +89,7 @@ const HomeContact = () => {
                   type="text"
                   name="name"
                   value={name}
-                  onChange={handleNameChange}
+                  onChange={(e) => setName(e.target.value)}
                   placeholder="Krzysztof"
                 />
                 {responseClass.includes("name") ? (
@@ -109,7 +103,7 @@ const HomeContact = () => {
                   type="email"
                   name="email"
                   value={email}
-                  onChange={handleEmailChange}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="abc@xyz.pl"
                 />
                 {/*  email error message*/}
@@ -124,7 +118,7 @@ const HomeContact = () => {
                 <textarea
                   name="message"
                   value={message}
-                  onChange={handleMessageChange}
+                  onChange={(e) => setMessage(e.target.value)}
                   placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                 />
                 {/*  meassage error message*/}
