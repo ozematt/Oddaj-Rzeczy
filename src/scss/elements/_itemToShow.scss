@@ -7,6 +7,9 @@
   justify-content: space-between;
   align-items: center;
   margin-top: rem(66px);
+  font-family: $font-alt;
+  font-weight: 300;
+  color: $primary-font-color;
   div {
     .who-name {
       font-size: rem(26px);
@@ -16,6 +19,7 @@
 
     .who-purpose {
       font-size: rem(18px);
+      font-style: italic;
       line-height: rem(22px);
       margin: 0;
     }
