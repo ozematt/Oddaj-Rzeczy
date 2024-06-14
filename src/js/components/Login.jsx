@@ -17,10 +17,17 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    let classNames = "";
+
     if (!validateEmail(email)) {
-      setError("error-email");
-    } else if (password.length < 6) {
-      setError("error-password");
+      classNames += "error-email ";
+    }
+    if (password.length < 6) {
+      classNames += "error-password ";
+
+      classNames = classNames.trim();
+      setError(classNames);
     } else {
       setError("");
       setEmail("");
@@ -66,9 +73,11 @@ const Login = () => {
           </div>
           <div className="login-btns-box">
             <Link to="/rejestracja">
-              <button>Załóż konto</button>
+              <button className="login-btn">Załóż konto</button>
             </Link>
-            <button type="submit">Zaloguj się</button>
+            <button type="submit" className="login-btn log-btn">
+              Zaloguj się
+            </button>
           </div>
         </form>
       </section>
