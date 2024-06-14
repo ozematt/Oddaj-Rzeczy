@@ -80,11 +80,19 @@
   }
 }
 footer {
+  div {
+    margin-top: 330px;
+  }
+
   clear: right;
   text-align: center;
   display: flex;
-  justify-content: center;
-  img {
-    float: right;
+  justify-content: space-between;
+  align-items: flex-end;
+  .footer-icon {
+    margin-right: 142px;
+    img {
+      margin-left: 20px;
+    }
   }
 }

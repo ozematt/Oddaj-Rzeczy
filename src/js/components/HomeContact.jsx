@@ -31,10 +31,12 @@ const HomeContact = () => {
           </form>
         </div>
         <footer>
+          <div />
           <p>Copyright by Coders Lab</p>
-          <img src="/src/assets/Facebook.svg" alt="facebook icon" />
-          <img src="/src/assets/Instagram.svg" alt="instagram icon" />
-          <div></div>
+          <div className="footer-icon">
+            <img src="/src/assets/Facebook.svg" alt="facebook icon" />
+            <img src="/src/assets/Instagram.svg" alt="instagram icon" />
+          </div>
         </footer>
       </section>
     </>
