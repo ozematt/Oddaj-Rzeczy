@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
 import Dashboard from "./components/Dashboard.jsx";
+import Register from "./components/Register.jsx";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/" element={<Dashboard />}>
           <Route path="/logowanie" element={<Login />} />
+          <Route path="/rejestracja" element={<Register />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -82,6 +82,7 @@
 
 .login-btn {
   border: 0.75px solid transparent;
+  cursor: pointer;
   &:hover {
     border: 0.75px solid $primary-font-color;
   }

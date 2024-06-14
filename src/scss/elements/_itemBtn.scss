@@ -10,6 +10,7 @@
   width: rem(208px);
   height: rem(79px);
   margin-top: rem(50px);
+  cursor: pointer;
   &.active-btn {
     border: 0.75px solid $primary-font-color;
   }
