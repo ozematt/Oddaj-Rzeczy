@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -26,15 +26,26 @@ const Register = () => {
     }
     if (password.length < 6) {
       classNames += "error-password ";
+    }
+    if (password !== repeatPassword) {
+      classNames += "error-repeated-password ";
+    }
+    if (repeatPassword.includes(" ")) {
+      classNames += "error-repeated-password ";
+    }
 
-      classNames = classNames.trim();
+    classNames = classNames.trim();
+
+    if (classNames) {
       setError(classNames);
     } else {
       setError("");
       setEmail("");
       setPassword("");
+      setRepeatPassword("");
     }
   };
+  console.log(error);
   return (
     <>
       <section className="login wrapper">
@@ -77,9 +88,9 @@ const Register = () => {
                   type="password"
                   onChange={(e) => setRepeatPassword(e.target.value)}
                 />
-                {error.includes("error-password") ? (
-                  <p className="error-password">
-                    Podane hasło jest za krótkie!
+                {error.includes("error-repeated-password") ? (
+                  <p className="error-repeated-password">
+                    Podane hasło nie jest takie samo!
                   </p>
                 ) : null}
               </label>

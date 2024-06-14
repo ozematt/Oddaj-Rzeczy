@@ -29,18 +29,15 @@
     margin: 0 auto;
     margin-top: 60px;
     width: 384px;
-    //height: 235px;
     background-color: $primary;
 
     .login-box {
-      //margin-top: 50px;
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 40px;
       gap: 31px;
-      //justify-content: flex-end;
     }
   }
   label {
@@ -78,6 +75,10 @@
 .error-password {
   @extend .error-email;
   top: 195px;
+}
+.error-repeated-password {
+  @extend .error-email;
+  top: 288px;
 }
 
 .login-btn {
