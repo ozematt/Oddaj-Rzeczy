@@ -1,7 +1,9 @@
+import { Element } from "react-scroll";
+
 const HomeContact = () => {
   return (
     <>
-      <section className="contact wrapper">
+      <Element name="contact" className="contact wrapper">
         <div></div>
         <div className="form-section">
           <h3>Skontaktuj się z nami</h3>
@@ -38,7 +40,7 @@ const HomeContact = () => {
             <img src="/src/assets/Instagram.svg" alt="instagram icon" />
           </div>
         </footer>
-      </section>
+      </Element>
     </>
   );
 };
