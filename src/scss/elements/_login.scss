@@ -1,0 +1,65 @@
+@import "../settings/_fonts.scss";
+@import "../settings/_colors.scss";
+@import "../settings/_functions.scss";
+
+.login {
+  width: 504px;
+  margin: 0 auto;
+  color: $primary-font-color;
+
+  h2 {
+    margin-top: 123px;
+    font-weight: normal;
+    font-size: 40px;
+    text-align: center;
+  }
+  .login-btns-box {
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    button {
+      font-size: 18px;
+      padding: 13px 16px;
+      font-weight: lighter;
+      background: none;
+      border: 0.75px solid transparent;
+      &:hover {
+        border: 0.75px solid $primary-font-color;
+      }
+    }
+  }
+  .login-window {
+    margin: 0 auto;
+    margin-top: 60px;
+    width: 384px;
+    height: 235px;
+    background-color: $primary;
+    .login-box {
+      //margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+      gap: 31px;
+      //justify-content: flex-end;
+    }
+  }
+  label {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 500;
+    width: 250px;
+    input {
+      height: 40px;
+      outline: none;
+      border: 1px solid transparent;
+      border-bottom: 1px solid #707070;
+      background-color: transparent;
+      &:focus {
+        border: 1px solid #707070;
+      }
+    }
+  }
+}
