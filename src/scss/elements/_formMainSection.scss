@@ -1,0 +1,64 @@
+@import "../settings/_fonts.scss";
+@import "../settings/_colors.scss";
+@import "../settings/_functions.scss";
+
+.form-main {
+  height: 713px;
+  width: 100%;
+}
+
+.form-hero-img {
+  position: absolute;
+  top: 0;
+  height: 853px;
+  width: 1015px;
+  z-index: -1;
+}
+
+.form-main-section {
+  position: relative;
+  height: 455px;
+  width: 663px;
+  float: right;
+  color: $primary-font-color;
+  margin-right: 200px;
+  .form-header {
+    margin-top: 80px;
+    font-size: 38px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 55px;
+  }
+  .form-header-text {
+    font-size: 40px;
+    font-weight: lighter;
+    text-align: center;
+  }
+  .square-step {
+    height: 135px;
+    width: 135px;
+    border: 0.75px solid $primary-font-color;
+    text-align: center;
+    font-weight: lighter;
+    transform: rotate(45deg);
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+    p:first-child {
+      position: absolute;
+      top: 15px;
+      left: 23px;
+      transform: rotate(-45deg);
+      margin: 0;
+      font-size: 32px;
+    }
+    p:last-child {
+      top: 40px;
+      left: 10px;
+      position: absolute;
+      transform: rotate(-45deg);
+      margin: 0;
+      font-size: 22px;
+    }
+  }
+}

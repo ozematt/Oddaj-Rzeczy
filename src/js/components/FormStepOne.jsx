@@ -1,38 +1,52 @@
+import FromMainSection from "./FromMainSection.jsx";
+import HomeContact from "./HomeContact.jsx";
+
 const FormStepOne = () => {
   return (
     <>
-      <section className="form-step-one wrapper">
-        <img
-          src="/src/assets/Form-Hero-Image.jpg"
-          alt="sweater"
-          className="form-hero-img"
-        />
-        <div className="form-step-one_main-section">
-          <h2 className="form-header">
-            Oddaj rzeczy, których już nie chcesz POTRZEBUJĄCYM
-          </h2>
-          <div className="ornament" />
-          <h4 className="form-header-text">Wystarczą 4 proste kroki:</h4>
-          <div className="square-steps">
-            <div className="square-step">
-              <p>1</p>
-              <p>Wybierz rzeczy</p>
-            </div>
-            <div className="square-step">
-              <p>2</p>
-              <p>Spakuj je w worki</p>
-            </div>
-            <div className="square-step">
-              <p>3</p>
-              <p> Wybierz fundacje</p>
-            </div>
-            <div className="square-step">
-              <p>4</p>
-              <p>Zamów kuriera</p>
-            </div>
+      <FromMainSection />
+      <section className="wrapper">
+        <div className="form-bar">
+          <div className="form-box">
+            <p>Ważne!</p>
+            <p>
+              Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy
+              wiedzieć komu najlepiej je przekazać.
+            </p>
           </div>
         </div>
+
+        <form className="form-box form-step-one">
+          <div className="form-box">
+            <p>Krok 1/4</p>
+            <p>Zaznacz co chcesz oddać:</p>
+            <div className="form-radio">
+              <label>
+                <input type="radio" name="things" className="radio" />
+                ubrania, które nadają się do ponownego użycia
+              </label>
+              <label>
+                <input type="radio" name="things" className="radio" />
+                ubrania, do wyrzucenia
+              </label>
+              <label>
+                <input type="radio" name="things" className="radio" />
+                zabawki
+              </label>
+              <label>
+                <input type="radio" name="things" className="radio" />
+                książki
+              </label>
+              <label>
+                <input type="radio" name="things" className="radio" />
+                Inne
+              </label>
+            </div>
+            <button className="next-btn">Dalej</button>
+          </div>
+        </form>
       </section>
+      <HomeContact />
     </>
   );
 };

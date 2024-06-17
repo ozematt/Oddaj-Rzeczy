@@ -2,58 +2,73 @@
 @import "../settings/_colors.scss";
 @import "../settings/_functions.scss";
 
-.form-hero-img {
-  position: absolute;
-  top: 0;
-  height: 853px;
-  width: 1015px;
-  z-index: -1;
+.form-box {
+  width: 1616px;
+  margin: 0 auto;
 }
-
-.form-step-one_main-section {
-  position: relative;
-  height: 455px;
-  width: 663px;
-  float: right;
-  color: $primary-font-color;
-  .form-header {
-    margin-top: 134px;
-    font-size: 38px;
-    font-weight: normal;
-    text-align: center;
-    line-height: 55px;
+.form-bar {
+  background-color: #fad648;
+  height: 178px;
+  display: flex;
+  align-items: center;
+  p:first-child {
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0;
+    padding-bottom: 5px;
   }
-  .form-header-text {
-    font-size: 40px;
-    font-weight: lighter;
-    text-align: center;
+  p:last-child {
+    margin: 0;
+    font-size: 22px;
+    color: $primary-font-color;
   }
-  .square-step {
-    height: 135px;
-    width: 135px;
-    border: 0.75px solid $primary-font-color;
-    text-align: center;
+}
+.form-step-one {
+  background-image: url("/src/assets/Background-Form.jpg");
+  width: 100%;
+  height: 883px;
+  p:first-child {
+    font-size: 24px;
     font-weight: lighter;
-    transform: rotate(45deg);
+    color: $primary-font-color;
+    padding-top: 36px;
+    margin: 0;
+  }
+  p:nth-child(2) {
+    padding-top: 50px;
+    padding-bottom: 6px;
+    font-size: 36px;
+    font-weight: 600;
+  }
+}
+.form-radio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 42px;
+  font-size: 24px;
+  font-weight: lighter;
+  .radio {
+    appearance: none;
+    width: 40px;
+    height: 40px;
     display: inline-block;
-    position: relative;
-    margin: 10px;
-    p:first-child {
-      position: absolute;
-      top: 15px;
-      left: 23px;
-      transform: rotate(-45deg);
-      margin: 0;
-      font-size: 32px;
-      margin-bottom: 10px;
+    vertical-align: middle;
+    border: 0.75px solid $primary-font-color;
+    margin-right: 30px;
+    &:checked {
+      background: #fad648;
     }
-    p:last-child {
-      top: 40px;
-      left: 10px;
-      position: absolute;
-      transform: rotate(-45deg);
-      margin: 0;
-      font-size: 22px;
-    }
+  }
+}
+.next-btn {
+  font-size: 24px;
+  font-weight: lighter;
+  padding: 23px 63px;
+  background: transparent;
+  border: 0.75px solid $primary-font-color;
+  margin-top: 158px;
+  &:hover {
+    scale: 1.1;
   }
 }
