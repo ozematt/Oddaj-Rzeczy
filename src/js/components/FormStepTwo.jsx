@@ -35,7 +35,7 @@ const FormStepTwo = () => {
               Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:
             </p>
             <div className="form-bags-select">
-              <span>Liczba 60l worków:</span>
+              <span className="select-label">Liczba 60l worków:</span>
               <div className="select">
                 <p className="option-default" onClick={handleClassesToggle}>
                   wybierz
@@ -48,7 +48,9 @@ const FormStepTwo = () => {
                 />
                 <div
                   className={
-                    classesToggle ? "option-window" : "option-window hidden"
+                    classesToggle
+                      ? "option-window-s2"
+                      : "option-window-s2 hidden"
                   }
                 >
                   <span>1</span>
@@ -63,7 +65,9 @@ const FormStepTwo = () => {
               <Link to="/oddaj-rzeczy">
                 <button className="next-btn">Wstecz</button>
               </Link>
-              <button className="next-btn">Dalej</button>
+              <Link to="/oddaj-rzeczy/step-3">
+                <button className="next-btn">Dalej</button>
+              </Link>
             </div>
           </div>
         </form>

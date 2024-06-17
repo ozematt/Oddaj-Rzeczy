@@ -1,0 +1,67 @@
+@import "../settings/_fonts.scss";
+@import "../settings/_colors.scss";
+@import "../settings/_functions.scss";
+
+.form-location-select {
+  font-size: 24px;
+}
+
+.option-window-s3 {
+  width: 300px;
+  height: 185px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 0.75px solid $primary-font-color;
+  background-color: #e8e9e4;
+  position: absolute;
+  top: 64px;
+  right: 0;
+  span {
+    margin: 4px 18px;
+  }
+}
+.hidden {
+  display: none;
+}
+.form-help-groups {
+  margin-top: 50px;
+  max-width: 650px;
+  p {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .help-groups-checkbox {
+    font-size: 24px;
+    font-weight: lighter;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    div {
+      cursor: pointer;
+      padding: 11px 26px;
+      border: 0.75px solid $primary-font-color;
+    }
+  }
+}
+
+.active {
+  background-color: #fad648;
+}
+
+.localization-specific {
+  margin-top: 46px;
+  p {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .input-org {
+    width: 570px;
+    height: 40px;
+    background: transparent;
+    border: 0.75px solid $primary-font-color;
+    outline: none;
+    cursor: pointer;
+  }
+}
