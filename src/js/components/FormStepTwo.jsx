@@ -1,6 +1,22 @@
+import HomeContact from "./HomeContact.jsx";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import FromMainSection from "./FromMainSection.jsx";
+
 const FormStepTwo = () => {
+  const [classesToggle, setClassesToggle] = useState(false);
+
+  const handleClassesToggle = () => {
+    if (!classesToggle) {
+      setClassesToggle(true);
+    } else {
+      setClassesToggle(false);
+    }
+  };
+
   return (
     <>
+      <FromMainSection />
       <section className="wrapper">
         <div className="form-bar">
           <div className="form-box">
@@ -21,9 +37,20 @@ const FormStepTwo = () => {
             <div className="form-bags-select">
               <span>Liczba 60l worków:</span>
               <div className="select">
-                <p className="option-default">wybierz</p>
-                <div className="option-arrow_down" />
-                <div className="option-window">
+                <p className="option-default" onClick={handleClassesToggle}>
+                  wybierz
+                </p>
+                <div
+                  className={
+                    !classesToggle ? "option-arrow_down" : "option-arrow_up"
+                  }
+                  onClick={handleClassesToggle}
+                />
+                <div
+                  className={
+                    classesToggle ? "option-window" : "option-window hidden"
+                  }
+                >
                   <span>1</span>
                   <span>2</span>
                   <span>3</span>
@@ -33,12 +60,15 @@ const FormStepTwo = () => {
               </div>
             </div>
             <div className="btns-box">
-              <button className="next-btn">Wstecz</button>
+              <Link to="/oddaj-rzeczy">
+                <button className="next-btn">Wstecz</button>
+              </Link>
               <button className="next-btn">Dalej</button>
             </div>
           </div>
         </form>
       </section>
+      <HomeContact />
     </>
   );
 };

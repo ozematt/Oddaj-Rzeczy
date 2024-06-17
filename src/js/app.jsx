@@ -9,6 +9,8 @@ import Dashboard from "./components/Dashboard.jsx";
 import Register from "./components/Register.jsx";
 import Logout from "./components/Logout.jsx";
 import Form from "./components/Form.jsx";
+import FormStepOne from "./components/FormStepOne.jsx";
+import FormStepTwo from "./components/FormStepTwo.jsx";
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
           <Route path="/rejestracja" element={<Register />} />
           <Route path="/wylogowano" element={<Logout />} />
           <Route path="/oddaj-rzeczy" element={<Form />} />
+          <Route path="oddaj-rzeczy/step-1" element={<FormStepOne />} />
+          <Route path="oddaj-rzeczy/step-2" element={<FormStepTwo />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -1,11 +1,11 @@
+import FromMainSection from "./FromMainSection.jsx";
 import FormStepOne from "./FormStepOne.jsx";
-import FormStepTwo from "./FormStepTwo.jsx";
 
 const Form = () => {
   return (
     <>
+      <FromMainSection />
       <FormStepOne />
-      <FormStepTwo />
     </>
   );
 };

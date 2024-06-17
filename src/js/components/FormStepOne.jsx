@@ -1,10 +1,11 @@
 import FromMainSection from "./FromMainSection.jsx";
 import HomeContact from "./HomeContact.jsx";
+import { Link } from "react-router-dom";
 
 const FormStepOne = () => {
   return (
     <>
-      <FromMainSection />
+      {/*<FromMainSection />*/}
       <section className="wrapper">
         <div className="form-bar">
           <div className="form-box">
@@ -42,7 +43,9 @@ const FormStepOne = () => {
                 Inne
               </label>
             </div>
-            <button className="next-btn">Dalej</button>
+            <Link to="/oddaj-rzeczy/step-2">
+              <button className="next-btn">Dalej</button>
+            </Link>
           </div>
         </form>
       </section>
