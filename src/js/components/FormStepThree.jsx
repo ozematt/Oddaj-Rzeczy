@@ -15,48 +15,31 @@ const FormStepThree = () => {
 
   ////LOGIC
   const handleClassesToggle = () => {
-    if (!classesToggle) {
-      setClassesToggle(true);
-    } else {
-      setClassesToggle(false);
-    }
+    setClassesToggle(!classesToggle);
   };
 
   //checkbox
   const handleCheckChild = () => {
-    if (!checkChild) {
-      setCheckChild(true);
-    } else {
-      setCheckChild(false);
-    }
+    setCheckChild(!checkChild);
+    // sorter version of
+
+    // if (!checkChild) {
+    //   setCheckChild(!checkChild);
+    // } else {
+    //   setCheckChild(false);
+    // }
   };
   const handleCheckMothers = () => {
-    if (!checkMothers) {
-      setCheckMothers(true);
-    } else {
-      setCheckMothers(false);
-    }
+    setCheckMothers(!checkMothers);
   };
   const handleCheckHomeless = () => {
-    if (!checkHomeless) {
-      setCheckHomeless(true);
-    } else {
-      setCheckHomeless(false);
-    }
+    setCheckHomeless(!checkHomeless);
   };
   const handleCheckDisabled = () => {
-    if (!checkDisabled) {
-      setCheckDisabled(true);
-    } else {
-      setCheckDisabled(false);
-    }
+    setCheckDisabled(!checkDisabled);
   };
   const handleCheckElder = () => {
-    if (!checkElder) {
-      setCheckElder(true);
-    } else {
-      setCheckElder(false);
-    }
+    setCheckElder(!checkElder);
   };
 
   ////UI

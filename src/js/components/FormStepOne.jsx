@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const FormStepOne = () => {
   return (
     <>
-      {/*<FromMainSection />*/}
       <section className="wrapper">
         <div className="form-bar">
           <div className="form-box">

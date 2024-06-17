@@ -7,11 +7,7 @@ const FormStepTwo = () => {
   const [classesToggle, setClassesToggle] = useState(false);
 
   const handleClassesToggle = () => {
-    if (!classesToggle) {
-      setClassesToggle(true);
-    } else {
-      setClassesToggle(false);
-    }
+    setClassesToggle(!classesToggle);
   };
 
   return (
