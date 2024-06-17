@@ -8,6 +8,7 @@ import NotFound from "./components/NotFound";
 import Dashboard from "./components/Dashboard.jsx";
 import Register from "./components/Register.jsx";
 import Logout from "./components/Logout.jsx";
+import Form from "./components/Form.jsx";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/logowanie" element={<Login />} />
           <Route path="/rejestracja" element={<Register />} />
           <Route path="/wylogowano" element={<Logout />} />
+          <Route path="/oddaj-rzeczy" element={<Form />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
