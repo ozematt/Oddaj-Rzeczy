@@ -16,10 +16,10 @@ const FormStepOne = () => {
           </div>
         </div>
 
-        <form className="form-box form-step-one">
+        <form className="form-box form-steps">
           <div className="form-box">
-            <p>Krok 1/4</p>
-            <p>Zaznacz co chcesz oddać:</p>
+            <p className="steps-counter">Krok 1/4</p>
+            <p className="steps-header">Zaznacz co chcesz oddać:</p>
             <div className="form-radio">
               <label>
                 <input type="radio" name="things" className="radio" />
