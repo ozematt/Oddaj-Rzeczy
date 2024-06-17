@@ -147,7 +147,9 @@ const FormStepThree = () => {
               <Link to="/oddaj-rzeczy/step-2">
                 <button className="next-btn">Wstecz</button>
               </Link>
-              <button className="next-btn">Dalej</button>
+              <Link to="/oddaj-rzeczy/step-4">
+                <button className="next-btn">Dalej</button>
+              </Link>
             </div>
           </div>
         </form>

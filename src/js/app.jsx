@@ -9,9 +9,10 @@ import Dashboard from "./components/Dashboard.jsx";
 import Register from "./components/Register.jsx";
 import Logout from "./components/Logout.jsx";
 import Form from "./components/Form.jsx";
-import FormStepOne from "./components/FormStepOne.jsx";
+
 import FormStepTwo from "./components/FormStepTwo.jsx";
 import FormStepThree from "./components/FormStepThree.jsx";
+import FormStepFour from "./components/FormStepFour.jsx";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/oddaj-rzeczy" element={<Form />} />
           <Route path="oddaj-rzeczy/step-2" element={<FormStepTwo />} />
           <Route path="oddaj-rzeczy/step-3" element={<FormStepThree />} />
+          <Route path="oddaj-rzeczy/step-4" element={<FormStepFour />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -1,0 +1,40 @@
+@import "../settings/_fonts.scss";
+@import "../settings/_colors.scss";
+@import "../settings/_functions.scss";
+
+.form-data {
+  width: 392px;
+  color: $primary-font-color;
+  p {
+    font-weight: 600;
+    font-size: 24px;
+  }
+  label {
+    font-size: 24px;
+    font-weight: lighter;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  input[type="text"] {
+    background: none;
+    border: 0.75px solid $primary-font-color;
+    width: 256px;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+  }
+}
+.form-address-and-data {
+  display: flex;
+  gap: 152px;
+}
+.form-data-textarea {
+  height: 120px;
+  background: none;
+  border: 0.75px solid $primary-font-color;
+  width: 256px;
+  outline: none;
+  cursor: pointer;
+}

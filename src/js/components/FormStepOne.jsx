@@ -1,4 +1,3 @@
-import FromMainSection from "./FromMainSection.jsx";
 import HomeContact from "./HomeContact.jsx";
 import { Link } from "react-router-dom";
 
@@ -44,7 +43,9 @@ const FormStepOne = () => {
               </label>
             </div>
             <Link to="/oddaj-rzeczy/step-2">
-              <button className="next-btn">Dalej</button>
+              <div className="btns-box">
+                <button className="next-btn">Dalej</button>
+              </div>
             </Link>
           </div>
         </form>
