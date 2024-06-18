@@ -32,13 +32,14 @@ const storeModel = {
   },
 
   setStepOne: action((state, payload) => {
-    if (payload !== "") {
-      state.form.stepOne.toGive = payload;
-    }
+    state.form.stepOne.toGive = payload;
   }),
 
   setStepTwo: action((state, payload) => {
     state.form.stepTwo.numberOfBugs = payload;
+  }),
+  setStepThree: action((state, payload) => {
+    state.form.stepThree = payload;
   }),
 };
 

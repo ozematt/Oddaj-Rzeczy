@@ -2,18 +2,38 @@ import HomeContact from "./HomeContact.jsx";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import FromMainSection from "./FromMainSection.jsx";
-import { useStoreState } from "easy-peasy";
+import { useStoreState, useStoreActions } from "easy-peasy";
+import { useNavigate } from "react-router-dom";
 
 const FormStepTwo = () => {
+  ////DATA
   const [classesToggle, setClassesToggle] = useState(false);
+  const [numberOfBugs, setNumberOfBugs] = useState("");
 
-  const formData = useStoreState((state) => state.form);
-  console.log(formData);
+  const navigate = useNavigate();
 
+  ////LOGIC
+  //easy-peasy
+  const setBugsAmount = useStoreActions((actions) => actions.setStepTwo);
+  // const formData = useStoreState((state) => state.form.stepTwo.numberOfBugs);
+  // console.log(formData);
+
+  //window display
   const handleClassesToggle = () => {
     setClassesToggle(!classesToggle);
   };
 
+  const handleBugsAmount = (number) => {
+    setNumberOfBugs(number);
+  };
+
+  //data submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setBugsAmount(numberOfBugs);
+    navigate("/oddaj-rzeczy/step-3");
+  };
+  ////UI
   return (
     <>
       <FromMainSection />
@@ -28,7 +48,7 @@ const FormStepTwo = () => {
           </div>
         </div>
 
-        <form className="form-box form-steps">
+        <form onSubmit={handleSubmit} className="form-box form-steps">
           <div className="form-box">
             <p className="steps-counter">Krok 2/4</p>
             <p className="steps-header">
@@ -53,11 +73,21 @@ const FormStepTwo = () => {
                       : "option-window-s2 hidden"
                   }
                 >
-                  <span>1</span>
-                  <span>2</span>
-                  <span>3</span>
-                  <span>4</span>
-                  <span>5</span>
+                  <span onClick={() => handleBugsAmount("1")}>
+                    {numberOfBugs === "1" ? <strong>1</strong> : 1}
+                  </span>
+                  <span onClick={() => handleBugsAmount("2")}>
+                    {numberOfBugs === "2" ? <strong>2</strong> : 2}
+                  </span>
+                  <span onClick={() => handleBugsAmount("3")}>
+                    {numberOfBugs === "3" ? <strong>3</strong> : 3}
+                  </span>
+                  <span onClick={() => handleBugsAmount("4")}>
+                    {numberOfBugs === "4" ? <strong>4</strong> : 4}
+                  </span>
+                  <span onClick={() => handleBugsAmount("5")}>
+                    {numberOfBugs === "5" ? <strong>5</strong> : 5}
+                  </span>
                 </div>
               </div>
             </div>
@@ -65,9 +95,9 @@ const FormStepTwo = () => {
               <Link to="/oddaj-rzeczy">
                 <button className="next-btn">Wstecz</button>
               </Link>
-              <Link to="/oddaj-rzeczy/step-3">
-                <button className="next-btn">Dalej</button>
-              </Link>
+              <button type="submit" className="next-btn">
+                Dalej
+              </button>
             </div>
           </div>
         </form>

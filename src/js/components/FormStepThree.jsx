@@ -2,6 +2,7 @@ import FromMainSection from "./FromMainSection.jsx";
 import { Link } from "react-router-dom";
 import HomeContact from "./HomeContact.jsx";
 import { useState } from "react";
+import { useStoreState, useStoreActions } from "easy-peasy";
 
 const FormStepThree = () => {
   ///DATA
@@ -13,7 +14,14 @@ const FormStepThree = () => {
   const [checkDisabled, setCheckDisabled] = useState(false);
   const [checkElder, setCheckElder] = useState(false);
 
+  const formData = useStoreState((state) => state.form);
+  const setStepThree = useStoreActions((actions) => actions.setStepThree);
+
+  console.log(formData);
+
   ////LOGIC
+
+  //window display
   const handleClassesToggle = () => {
     setClassesToggle(!classesToggle);
   };
