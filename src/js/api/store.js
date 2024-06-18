@@ -42,6 +42,9 @@ const storeModel = {
   setStepThree: action((state, payload) => {
     state.form.stepThree = payload;
   }),
+  setStepFour: action((state, payload) => {
+    state.form.stepFour = payload;
+  }),
 };
 
 const store = createStore(storeModel);
