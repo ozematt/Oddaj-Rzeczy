@@ -21,10 +21,10 @@ const FormStepThree = () => {
   //checkbox
   const handleCheckChild = () => {
     setCheckChild(!checkChild);
-    // sorter version of
 
+    // sorter version of:
     // if (!checkChild) {
-    //   setCheckChild(!checkChild);
+    //   setCheckChild(true);
     // } else {
     //   setCheckChild(false);
     // }

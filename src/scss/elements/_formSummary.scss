@@ -1,0 +1,49 @@
+@import "../settings/_fonts.scss";
+@import "../settings/_colors.scss";
+@import "../settings/_functions.scss";
+
+.summary-header {
+  font-size: rem(36px);
+  font-weight: 600;
+  margin: 0;
+  padding-top: 70px;
+  padding-bottom: 45px;
+}
+.form-data-summary {
+  margin-bottom: 10px;
+}
+.summary-data {
+  font-size: 24px;
+  font-weight: normal;
+  img {
+    width: 50px;
+    height: 50px;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    p {
+      margin: 0;
+      padding-left: 19px;
+    }
+  }
+}
+
+.summary-table {
+  margin-top: 50px;
+  th {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+    padding-bottom: 10px;
+  }
+  td {
+    font-size: 24px;
+    font-weight: lighter;
+    padding: 15px 29px 15px 0;
+  }
+}
+.gap-table {
+  width: 405px;
+}
