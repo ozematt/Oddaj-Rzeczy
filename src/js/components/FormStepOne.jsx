@@ -1,7 +1,27 @@
 import HomeContact from "./HomeContact.jsx";
-import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import { useStoreActions } from "easy-peasy";
+import { useState } from "react";
 const FormStepOne = () => {
+  ////DATA
+  const [toGive, setToGive] = useState("");
+  const navigate = useNavigate();
+
+  const setStepOne = useStoreActions((actions) => actions.setStepOne);
+
+  ////LOGIC
+  const handleToGive = (value) => {
+    setToGive(value);
+  };
+
+  const handleStepOneSubmit = (e) => {
+    e.preventDefault();
+    setStepOne(toGive);
+
+    navigate("/oddaj-rzeczy/step-2");
+  };
+
+  ////UI
   return (
     <>
       <section className="wrapper">
@@ -15,37 +35,73 @@ const FormStepOne = () => {
           </div>
         </div>
 
-        <form className="form-box form-steps">
+        <form onSubmit={handleStepOneSubmit} className="form-box form-steps">
           <div className="form-box">
             <p className="steps-counter">Krok 1/4</p>
             <p className="steps-header">Zaznacz co chcesz oddać:</p>
             <div className="form-radio">
               <label>
-                <input type="radio" name="things" className="radio" />
+                <input
+                  checked={
+                    toGive === "ubrania, które nadają się do ponownego użycia"
+                  }
+                  onChange={() =>
+                    handleToGive(
+                      "ubrania, które nadają się do ponownego użycia",
+                    )
+                  }
+                  type="radio"
+                  name="things"
+                  className="radio"
+                />
                 ubrania, które nadają się do ponownego użycia
               </label>
               <label>
-                <input type="radio" name="things" className="radio" />
+                <input
+                  checked={toGive === "ubrania, do wyrzucenia"}
+                  onChange={() => handleToGive("ubrania, do wyrzucenia")}
+                  type="radio"
+                  name="things"
+                  className="radio"
+                />
                 ubrania, do wyrzucenia
               </label>
               <label>
-                <input type="radio" name="things" className="radio" />
+                <input
+                  checked={toGive === "zabawki"}
+                  onChange={() => handleToGive("zabawki")}
+                  type="radio"
+                  name="things"
+                  className="radio"
+                />
                 zabawki
               </label>
               <label>
-                <input type="radio" name="things" className="radio" />
+                <input
+                  checked={toGive === "książki"}
+                  onChange={() => handleToGive("książki")}
+                  type="radio"
+                  name="things"
+                  className="radio"
+                />
                 książki
               </label>
               <label>
-                <input type="radio" name="things" className="radio" />
+                <input
+                  checked={toGive === "Inne"}
+                  onChange={() => handleToGive("Inne")}
+                  type="radio"
+                  name="things"
+                  className="radio"
+                />
                 Inne
               </label>
             </div>
-            <Link to="/oddaj-rzeczy/step-2">
-              <div className="btns-box">
-                <button className="next-btn">Dalej</button>
-              </div>
-            </Link>
+            <div className="btns-box">
+              <button type="submit" className="next-btn">
+                Dalej
+              </button>
+            </div>
           </div>
         </form>
       </section>

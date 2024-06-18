@@ -1,5 +1,4 @@
 import FromMainSection from "./FromMainSection.jsx";
-import { Link } from "react-router-dom";
 import HomeContact from "./HomeContact.jsx";
 
 const FormThankYou = () => {

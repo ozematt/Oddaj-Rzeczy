@@ -2,9 +2,13 @@ import HomeContact from "./HomeContact.jsx";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import FromMainSection from "./FromMainSection.jsx";
+import { useStoreState } from "easy-peasy";
 
 const FormStepTwo = () => {
   const [classesToggle, setClassesToggle] = useState(false);
+
+  const formData = useStoreState((state) => state.form);
+  console.log(formData);
 
   const handleClassesToggle = () => {
     setClassesToggle(!classesToggle);

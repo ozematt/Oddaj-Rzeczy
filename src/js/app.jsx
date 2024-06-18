@@ -1,5 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
+import store from "./api/store.js";
 
 //Components
 import Home from "./components/Home";
@@ -14,6 +16,8 @@ import FormStepThree from "./components/FormStepThree.jsx";
 import FormStepFour from "./components/FormStepFour.jsx";
 import FormSummary from "./components/FormSummary.jsx";
 import FormThankYou from "./components/FormThankYou.jsx";
+
+import { StoreProvider } from "easy-peasy";
 
 const App = () => {
   return (
@@ -36,7 +40,14 @@ const App = () => {
     </BrowserRouter>
   );
 };
+export default App;
 
 const container = document.getElementById("app");
 const root = createRoot(container);
-root.render(<App />);
+root.render(
+  <React.StrictMode>
+    <StoreProvider store={store}>
+      <App />
+    </StoreProvider>
+  </React.StrictMode>,
+);
