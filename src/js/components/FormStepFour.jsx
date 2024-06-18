@@ -1,8 +1,11 @@
 import FromMainSection from "./FromMainSection.jsx";
 import { Link } from "react-router-dom";
 import HomeContact from "./HomeContact.jsx";
+import { useStoreState } from "easy-peasy";
 
 const FormStepFour = () => {
+  const formData = useStoreState((state) => state.form.stepThree);
+  console.log(formData);
   return (
     <>
       <FromMainSection />

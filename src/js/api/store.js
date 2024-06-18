@@ -12,7 +12,7 @@ const storeModel = {
 
     stepThree: {
       location: "",
-      whoWeHelp: "",
+      whoWeHelp: [],
       organizationName: "",
     },
 
@@ -38,6 +38,7 @@ const storeModel = {
   setStepTwo: action((state, payload) => {
     state.form.stepTwo.numberOfBugs = payload;
   }),
+
   setStepThree: action((state, payload) => {
     state.form.stepThree = payload;
   }),

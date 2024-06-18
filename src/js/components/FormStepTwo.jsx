@@ -13,10 +13,7 @@ const FormStepTwo = () => {
   const navigate = useNavigate();
 
   ////LOGIC
-  //easy-peasy
   const setBugsAmount = useStoreActions((actions) => actions.setStepTwo);
-  // const formData = useStoreState((state) => state.form.stepTwo.numberOfBugs);
-  // console.log(formData);
 
   //window display
   const handleClassesToggle = () => {

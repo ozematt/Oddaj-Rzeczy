@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import HomeContact from "./HomeContact.jsx";
 import { useState } from "react";
 import { useStoreState, useStoreActions } from "easy-peasy";
+import { useNavigate } from "react-router-dom";
 
 const FormStepThree = () => {
   ///DATA
@@ -14,10 +15,21 @@ const FormStepThree = () => {
   const [checkDisabled, setCheckDisabled] = useState(false);
   const [checkElder, setCheckElder] = useState(false);
 
-  const formData = useStoreState((state) => state.form);
+  const navigate = useNavigate();
+
+  //data send to store
+  const [dataToSend, setDataToSend] = useState({
+    location: "",
+    whoWeHelp: [],
+    organizationName: "",
+  });
+
+  const formData = useStoreState((state) => state.form.stepThree);
   const setStepThree = useStoreActions((actions) => actions.setStepThree);
 
   console.log(formData);
+
+  // console.log(dataToSend);
 
   ////LOGIC
 
@@ -26,30 +38,102 @@ const FormStepThree = () => {
     setClassesToggle(!classesToggle);
   };
 
-  //checkbox
-  const handleCheckChild = () => {
+  //   setCheckChild(!checkChild);
+  //   // sorter version of:
+  //   // if (!checkChild) {
+  //   //   setCheckChild(true);
+  //   // } else {
+  //   //   setCheckChild(false);
+  //   // }
+  //
+
+  //checkbox and data to send
+
+  const handleCheckChild = (value) => {
     setCheckChild(!checkChild);
 
-    // sorter version of:
-    // if (!checkChild) {
-    //   setCheckChild(true);
-    // } else {
-    //   setCheckChild(false);
-    // }
-  };
-  const handleCheckMothers = () => {
-    setCheckMothers(!checkMothers);
-  };
-  const handleCheckHomeless = () => {
-    setCheckHomeless(!checkHomeless);
-  };
-  const handleCheckDisabled = () => {
-    setCheckDisabled(!checkDisabled);
-  };
-  const handleCheckElder = () => {
-    setCheckElder(!checkElder);
+    // update whoWeHelp array
+    setDataToSend((prevState) => {
+      const newWhoWeHelp = checkChild
+        ? prevState.whoWeHelp.filter((item) => item !== value) //delete unchecked value
+        : [...prevState.whoWeHelp, value]; //add checked value
+
+      return {
+        ...prevState,
+        whoWeHelp: newWhoWeHelp,
+      };
+    });
   };
 
+  const handleCheckMothers = (value) => {
+    setCheckMothers(!checkMothers);
+
+    setDataToSend((prevState) => {
+      const newWhoWeHelp = checkMothers
+        ? prevState.whoWeHelp.filter((item) => item !== value)
+        : [...prevState.whoWeHelp, value];
+
+      return {
+        ...prevState,
+        whoWeHelp: newWhoWeHelp,
+      };
+    });
+  };
+
+  const handleCheckHomeless = (value) => {
+    setCheckHomeless(!checkHomeless);
+    setDataToSend((prevState) => {
+      const newWhoWeHelp = checkHomeless
+        ? prevState.whoWeHelp.filter((item) => item !== value)
+        : [...prevState.whoWeHelp, value];
+
+      return {
+        ...prevState,
+        whoWeHelp: newWhoWeHelp,
+      };
+    });
+  };
+
+  const handleCheckDisabled = (value) => {
+    setCheckDisabled(!checkDisabled);
+    setDataToSend((prevState) => {
+      const newWhoWeHelp = checkDisabled
+        ? prevState.whoWeHelp.filter((item) => item !== value)
+        : [...prevState.whoWeHelp, value];
+
+      return {
+        ...prevState,
+        whoWeHelp: newWhoWeHelp,
+      };
+    });
+  };
+
+  const handleCheckElder = (value) => {
+    setCheckElder(!checkElder);
+    setDataToSend((prevState) => {
+      const newWhoWeHelp = checkElder
+        ? prevState.whoWeHelp.filter((item) => item !== value)
+        : [...prevState.whoWeHelp, value];
+
+      return {
+        ...prevState,
+        whoWeHelp: newWhoWeHelp,
+      };
+    });
+  };
+
+  const handleLocation = (city) => {
+    setDataToSend((prevState) => ({
+      ...prevState,
+      location: city,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStepThree(dataToSend);
+    navigate("/oddaj-rzeczy/step-4");
+  };
   ////UI
   return (
     <>
@@ -65,7 +149,7 @@ const FormStepThree = () => {
             </p>
           </div>
         </div>
-        <form className="form-box form-steps">
+        <form onSubmit={handleSubmit} className="form-box form-steps">
           <div className="form-box">
             <p className="steps-counter">Krok 3/4</p>
             <p className="steps-header">Lokalizacja:</p>
@@ -87,11 +171,15 @@ const FormStepThree = () => {
                       : "option-window-s3 hidden"
                   }
                 >
-                  <span>Poznań</span>
-                  <span>Warszawa</span>
-                  <span>Kraków</span>
-                  <span>Wrocław</span>
-                  <span>Katowice</span>
+                  <span onClick={() => handleLocation("Poznań")}>Poznań</span>
+                  <span onClick={() => handleLocation("Warszawa")}>
+                    Warszawa
+                  </span>
+                  <span onClick={() => handleLocation("Kraków")}>Kraków</span>
+                  <span onClick={() => handleLocation("Wrocław")}>Wrocław</span>
+                  <span onClick={() => handleLocation("Katowice")}>
+                    Katowice
+                  </span>
                 </div>
               </div>
             </div>
@@ -99,31 +187,31 @@ const FormStepThree = () => {
               <p>Komu chcesz pomóc?</p>
               <div className="help-groups-checkbox">
                 <div
-                  onClick={handleCheckChild}
+                  onClick={() => handleCheckChild("dzieciom")}
                   className={checkChild ? "active" : undefined}
                 >
                   dzieciom
                 </div>
                 <div
-                  onClick={handleCheckMothers}
+                  onClick={() => handleCheckMothers("samotnym matkom")}
                   className={checkMothers ? "active" : undefined}
                 >
                   samotnym matkom
                 </div>
                 <div
-                  onClick={handleCheckHomeless}
+                  onClick={() => handleCheckHomeless("bezdomnym")}
                   className={checkHomeless ? "active" : undefined}
                 >
                   bezdomnym
                 </div>
                 <div
-                  onClick={handleCheckDisabled}
+                  onClick={() => handleCheckDisabled("niepełnosprawnym")}
                   className={checkDisabled ? "active" : undefined}
                 >
                   niepełnosprawnym
                 </div>
                 <div
-                  onClick={handleCheckElder}
+                  onClick={() => handleCheckElder("osobom starszym")}
                   className={checkElder ? "active" : undefined}
                 >
                   osobom starszym
@@ -132,15 +220,25 @@ const FormStepThree = () => {
             </div>
             <div className="localization-specific">
               <p>Wpisz nazwę konkretnej organizacji (opcjonalnie)</p>
-              <input type="text" className="input-org" />
+              <input
+                onChange={(e) =>
+                  setDataToSend((prevState) => ({
+                    ...prevState,
+                    organizationName: e.target.value,
+                  }))
+                }
+                type="text"
+                className="input-org"
+              />
             </div>
             <div className="btns-box">
               <Link to="/oddaj-rzeczy/step-2">
                 <button className="next-btn">Wstecz</button>
               </Link>
-              <Link to="/oddaj-rzeczy/step-4">
-                <button className="next-btn">Dalej</button>
-              </Link>
+
+              <button type="submit" className="next-btn">
+                Dalej
+              </button>
             </div>
           </div>
         </form>
