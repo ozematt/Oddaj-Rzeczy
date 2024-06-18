@@ -74,7 +74,7 @@ const FormSummary = () => {
               <Link to="/oddaj-rzeczy/step-4">
                 <button className="next-btn">Wstecz</button>
               </Link>
-              <Link to="/oddaj-rzeczy/step-4">
+              <Link to="/oddaj-rzeczy/thankyou">
                 <button className="next-btn">Potwierdzam</button>
               </Link>
             </div>

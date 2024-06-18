@@ -13,6 +13,7 @@ import FormStepTwo from "./components/FormStepTwo.jsx";
 import FormStepThree from "./components/FormStepThree.jsx";
 import FormStepFour from "./components/FormStepFour.jsx";
 import FormSummary from "./components/FormSummary.jsx";
+import FormThankYou from "./components/FormThankYou.jsx";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="oddaj-rzeczy/step-3" element={<FormStepThree />} />
           <Route path="oddaj-rzeczy/step-4" element={<FormStepFour />} />
           <Route path="oddaj-rzeczy/summary" element={<FormSummary />} />
+          <Route path="oddaj-rzeczy/thankyou" element={<FormThankYou />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
