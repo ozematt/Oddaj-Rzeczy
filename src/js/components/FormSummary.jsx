@@ -7,6 +7,19 @@ const FormSummary = () => {
   const formData = useStoreState((state) => state.form);
   console.log(formData);
 
+  //destructuring
+  const {
+    stepOne: { toGive },
+    stepTwo: { numberOfBugs },
+    stepThree: { location, whoWeHelp, organizationName },
+    stepFour: {
+      address: { streetName, city, postalCode, phoneNumber },
+      deadline: { date, hour, comments },
+    },
+  } = formData;
+
+  console.log(date);
+
   return (
     <>
       <FromMainSection />
@@ -20,14 +33,16 @@ const FormSummary = () => {
               <div className="summary-data">
                 <div>
                   <img src="/src/assets/Icon-shirt.png" alt="icon shirt" />
-                  <p>4 worki, ubrania w dobrym stanie, dzieciom</p>
+                  <p>
+                    {numberOfBugs} worki, {toGive}, {whoWeHelp}
+                  </p>
                 </div>
                 <div>
                   <img
                     src="/src/assets/Icon-recycling.png"
                     alt="icon recycling"
                   />
-                  <p>dla lokalizacji:</p>
+                  <p>dla lokalizacji:{location}</p>
                 </div>
               </div>
             </div>
@@ -43,32 +58,32 @@ const FormSummary = () => {
               <tbody>
                 <tr>
                   <td>Ulica</td>
-                  <td className="gap-table">Prosta</td>
+                  <td className="gap-table">{streetName}</td>
                   <td>Data</td>
-                  <td>17.02.2024</td>
+                  <td>{date}</td>
                 </tr>
                 <tr>
                   <td>Miasto</td>
-                  <td>Warszawa</td>
+                  <td>{location}</td>
                   <td>Godzina</td>
-                  <td>17:30</td>
+                  <td>{hour}</td>
                 </tr>
                 <tr>
                   <td>
                     Kod <br />
                     pocztowy
                   </td>
-                  <td>90-210</td>
+                  <td>{postalCode}</td>
                   <td>
                     Uwagi <br /> dla kuriera
                   </td>
-                  <td>Uwagi</td>
+                  <td>{comments}</td>
                 </tr>
                 <tr>
                   <td>
                     Numer <br /> telefonu
                   </td>
-                  <td>123 123 123</td>
+                  <td>{phoneNumber}</td>
                   <td> </td>
                   <td> </td>
                 </tr>
