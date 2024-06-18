@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const FormStepThree = () => {
   ///DATA
   const [classesToggle, setClassesToggle] = useState(false);
-
+  //checkbox
   const [checkChild, setCheckChild] = useState(false);
   const [checkMothers, setCheckMothers] = useState(false);
   const [checkHomeless, setCheckHomeless] = useState(false);
@@ -17,19 +17,14 @@ const FormStepThree = () => {
 
   const navigate = useNavigate();
 
-  //data send to store
+  //state send to store
   const [dataToSend, setDataToSend] = useState({
     location: "",
     whoWeHelp: [],
     organizationName: "",
   });
 
-  const formData = useStoreState((state) => state.form.stepThree);
   const setStepThree = useStoreActions((actions) => actions.setStepThree);
-
-  console.log(formData);
-
-  // console.log(dataToSend);
 
   ////LOGIC
 
@@ -47,8 +42,15 @@ const FormStepThree = () => {
   //   // }
   //
 
-  //checkbox and data to send
+  //location
+  const handleLocation = (city) => {
+    setDataToSend((prevState) => ({
+      ...prevState,
+      location: city,
+    }));
+  };
 
+  //checkbox and data to send
   const handleCheckChild = (value) => {
     setCheckChild(!checkChild);
 
@@ -122,18 +124,13 @@ const FormStepThree = () => {
     });
   };
 
-  const handleLocation = (city) => {
-    setDataToSend((prevState) => ({
-      ...prevState,
-      location: city,
-    }));
-  };
-
+  //submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
-    setStepThree(dataToSend);
-    navigate("/oddaj-rzeczy/step-4");
+    setStepThree(dataToSend); // data send to store
+    navigate("/oddaj-rzeczy/step-4"); //next page navigate
   };
+
   ////UI
   return (
     <>
