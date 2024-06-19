@@ -163,6 +163,13 @@ const FormStepFour = () => {
                     type="text"
                   />
                 </label>
+                {addressErrors
+                  ? addressErrors.map((error, index) => (
+                      <p className="error-form" key={index}>
+                        {error}
+                      </p>
+                    ))
+                  : null}
               </div>
               <div className="form-data">
                 <p className="form-section-title">Termin odbioru:</p>
@@ -194,6 +201,13 @@ const FormStepFour = () => {
                     className="form-data-textarea"
                   />
                 </label>
+                {deadlineErrors
+                  ? deadlineErrors.map((error, index) => (
+                      <p className="error-form" key={index}>
+                        {error}
+                      </p>
+                    ))
+                  : null}
               </div>
             </div>
             <div className="btns-box">
