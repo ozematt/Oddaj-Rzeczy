@@ -15,7 +15,8 @@ const FormStepThree = () => {
   const [checkDisabled, setCheckDisabled] = useState(false);
   const [checkElder, setCheckElder] = useState(false);
 
-  const navigate = useNavigate();
+  //errors
+  const [error, setError] = useState("");
 
   //state send to store
   const [dataToSend, setDataToSend] = useState({
@@ -24,10 +25,15 @@ const FormStepThree = () => {
     organizationName: "",
   });
 
+  //navigate
+  const navigate = useNavigate();
+
+  ////LOGIC
+
+  //store actions
   const setStepThree = useStoreActions((actions) => actions.setStepThree);
   const formData = useStoreState((state) => state.form.stepThree);
   console.log(formData);
-  ////LOGIC
 
   //window display
   const handleClassesToggle = () => {
@@ -55,7 +61,7 @@ const FormStepThree = () => {
   const handleCheckChild = (value) => {
     setCheckChild(!checkChild);
 
-    // update whoWeHelp array
+    // update whoWeHelp array in dataToSend state
     setDataToSend((prevState) => {
       const newWhoWeHelp = checkChild
         ? prevState.whoWeHelp.filter((item) => item !== value) //delete unchecked value
@@ -125,11 +131,30 @@ const FormStepThree = () => {
     });
   };
 
+  //checks revision
+  const validateFormChecks = () => {
+    return (
+      checkChild || checkMothers || checkHomeless || checkDisabled || checkElder
+    );
+  };
+
+  //location revision
+  const validateFormLocation = () => {
+    return dataToSend.location || dataToSend.organizationName;
+  };
+
   //submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
-    setStepThree(dataToSend); // data send to store
-    navigate("/oddaj-rzeczy/step-4"); //next page navigate
+    if (validateFormChecks() && validateFormLocation()) {
+      setStepThree(dataToSend); // data send to store
+      navigate("/oddaj-rzeczy/step-4"); //next page navigate
+      setError("");
+    } else if (!validateFormChecks()) {
+      setError("Musisz zaznaczyć przynajmniej jeden element!");
+    } else if (!validateFormLocation()) {
+      setError("Musisz wybrać lokalizacje lub konkretną organizacje!");
+    }
   };
 
   ////UI
@@ -220,6 +245,7 @@ const FormStepThree = () => {
                   osobom starszym
                 </div>
               </div>
+              {error ? <p className="error">{error}</p> : null}
             </div>
             <div className="localization-specific">
               <p>Wpisz nazwę konkretnej organizacji (opcjonalnie)</p>

@@ -59,6 +59,7 @@
 .option-default-edit {
   margin: 0;
   padding: 9px 109px;
+  font-weight: 600;
   &:before {
     @extend %pseudo-element;
     left: 48px;
@@ -81,6 +82,17 @@
   position: absolute;
   top: 64px;
   right: 0;
+  div {
+    text-align: center;
+    width: 100%;
+    border: 0.75px solid transparent;
+    &:hover {
+      scale: 1.1;
+      font-weight: 600;
+      border-left: 2px solid $primary-font-color;
+      border-right: 2px solid $primary-font-color;
+    }
+  }
 }
 
 .hidden {

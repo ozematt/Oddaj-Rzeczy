@@ -11,7 +11,7 @@ const FormStepTwo = () => {
   const [numberOfBugs, setNumberOfBugs] = useState("");
 
   const navigate = useNavigate();
-
+  console.log(numberOfBugs);
   ////LOGIC
   const setBugsAmount = useStoreActions((actions) => actions.setStepTwo);
   const formData = useStoreState((state) => state.form.stepTwo.numberOfBugs);
@@ -71,26 +71,16 @@ const FormStepTwo = () => {
                 />
                 <div
                   className={
-                    classesToggle
+                    classesToggle && !numberOfBugs.length > 0
                       ? "option-window-s2"
                       : "option-window-s2 hidden"
                   }
                 >
-                  <span onClick={() => handleBugsAmount("1")}>
-                    {numberOfBugs === "1" ? <strong>- 1 -</strong> : 1}
-                  </span>
-                  <span onClick={() => handleBugsAmount("2")}>
-                    {numberOfBugs === "2" ? <strong>- 2 -</strong> : 2}
-                  </span>
-                  <span onClick={() => handleBugsAmount("3")}>
-                    {numberOfBugs === "3" ? <strong>- 3 -</strong> : 3}
-                  </span>
-                  <span onClick={() => handleBugsAmount("4")}>
-                    {numberOfBugs === "4" ? <strong>- 4 -</strong> : 4}
-                  </span>
-                  <span onClick={() => handleBugsAmount("5")}>
-                    {numberOfBugs === "5" ? <strong>- 5 -</strong> : 5}
-                  </span>
+                  <div onClick={() => handleBugsAmount("1")}>1</div>
+                  <div onClick={() => handleBugsAmount("2")}>2</div>
+                  <div onClick={() => handleBugsAmount("3")}>3</div>
+                  <div onClick={() => handleBugsAmount("4")}>4</div>
+                  <div onClick={() => handleBugsAmount("5")}>5</div>
                 </div>
               </div>
             </div>
