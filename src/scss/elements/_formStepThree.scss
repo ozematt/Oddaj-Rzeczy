@@ -19,10 +19,16 @@
   top: 64px;
   right: 0;
   z-index: 1;
-  span {
-    margin: 4px 18px;
+  div {
+    width: calc(100% - 22px);
+    padding: 2px 0 2px 18px;
+    border: 2px solid transparent;
     &:hover {
-      font-weight: bold;
+      font-weight: 600;
+      //scale: 1.1;
+      border-left: 2px solid $primary-font-color;
+      border-right: 2px solid $primary-font-color;
+      z-index: 2;
     }
   }
 }

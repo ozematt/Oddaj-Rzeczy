@@ -199,15 +199,11 @@ const FormStepThree = () => {
                       : "option-window-s3 hidden"
                   }
                 >
-                  <span onClick={() => handleLocation("Poznań")}>Poznań</span>
-                  <span onClick={() => handleLocation("Warszawa")}>
-                    Warszawa
-                  </span>
-                  <span onClick={() => handleLocation("Kraków")}>Kraków</span>
-                  <span onClick={() => handleLocation("Wrocław")}>Wrocław</span>
-                  <span onClick={() => handleLocation("Katowice")}>
-                    Katowice
-                  </span>
+                  <div onClick={() => handleLocation("Poznań")}>Poznań</div>
+                  <div onClick={() => handleLocation("Warszawa")}>Warszawa</div>
+                  <div onClick={() => handleLocation("Kraków")}>Kraków</div>
+                  <div onClick={() => handleLocation("Wrocław")}>Wrocław</div>
+                  <div onClick={() => handleLocation("Katowice")}>Katowice</div>
                 </div>
               </div>
             </div>
