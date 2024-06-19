@@ -1,5 +1,5 @@
 import HomeContact from "./HomeContact.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import FromMainSection from "./FromMainSection.jsx";
 import { useStoreState, useStoreActions } from "easy-peasy";
@@ -11,11 +11,19 @@ const FormStepTwo = () => {
   const [numberOfBugs, setNumberOfBugs] = useState("");
 
   const navigate = useNavigate();
-  console.log(numberOfBugs);
+
   ////LOGIC
   const setBugsAmount = useStoreActions((actions) => actions.setStepTwo);
   const formData = useStoreState((state) => state.form.stepTwo.numberOfBugs);
   console.log(formData);
+  //checks the contents of the store, if it is not empty, assigns the content to the state
+  //helps with window display
+  useEffect(() => {
+    if (formData) {
+      setNumberOfBugs(formData);
+    }
+  }, [formData]);
+
   //window display
   const handleClassesToggle = () => {
     setClassesToggle(!classesToggle);
@@ -23,6 +31,7 @@ const FormStepTwo = () => {
 
   const handleBugsAmount = (number) => {
     setNumberOfBugs(number);
+    setClassesToggle(false);
   };
 
   //data submit
@@ -31,6 +40,7 @@ const FormStepTwo = () => {
     setBugsAmount(numberOfBugs);
     navigate("/oddaj-rzeczy/step-3");
   };
+  console.log(numberOfBugs);
   ////UI
   return (
     <>
@@ -57,11 +67,13 @@ const FormStepTwo = () => {
               <div className="select">
                 <p
                   className={
-                    !formData ? "option-default" : "option-default-edit"
+                    !formData && !numberOfBugs
+                      ? "option-default"
+                      : "option-default-edit"
                   }
                   onClick={handleClassesToggle}
                 >
-                  {formData ? `${formData}` : "wybierz"}
+                  {numberOfBugs || formData || "wybierz"}
                 </p>
                 <div
                   className={
@@ -71,7 +83,7 @@ const FormStepTwo = () => {
                 />
                 <div
                   className={
-                    classesToggle && !numberOfBugs.length > 0
+                    classesToggle && numberOfBugs
                       ? "option-window-s2"
                       : "option-window-s2 hidden"
                   }
