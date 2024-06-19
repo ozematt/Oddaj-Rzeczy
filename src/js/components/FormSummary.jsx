@@ -5,7 +5,6 @@ import { useStoreState } from "easy-peasy";
 
 const FormSummary = () => {
   const formData = useStoreState((state) => state.form);
-  console.log(formData);
 
   //destructuring
   const {
@@ -17,8 +16,6 @@ const FormSummary = () => {
       deadline: { date, hour, comments },
     },
   } = formData;
-
-  console.log(date);
 
   return (
     <>
@@ -42,7 +39,7 @@ const FormSummary = () => {
                     src="/src/assets/Icon-recycling.png"
                     alt="icon recycling"
                   />
-                  <p>dla lokalizacji:{location}</p>
+                  <p>dla lokalizacji: {location}</p>
                 </div>
               </div>
             </div>
@@ -64,7 +61,7 @@ const FormSummary = () => {
                 </tr>
                 <tr>
                   <td>Miasto</td>
-                  <td>{location}</td>
+                  <td>{city}</td>
                   <td>Godzina</td>
                   <td>{hour}</td>
                 </tr>

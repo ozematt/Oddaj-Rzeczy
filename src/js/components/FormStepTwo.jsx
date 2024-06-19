@@ -14,7 +14,8 @@ const FormStepTwo = () => {
 
   ////LOGIC
   const setBugsAmount = useStoreActions((actions) => actions.setStepTwo);
-
+  const formData = useStoreState((state) => state.form);
+  console.log(formData);
   //window display
   const handleClassesToggle = () => {
     setClassesToggle(!classesToggle);

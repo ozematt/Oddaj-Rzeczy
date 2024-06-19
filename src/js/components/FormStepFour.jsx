@@ -25,8 +25,7 @@ const FormStepFour = () => {
   console.log(dataToSend);
 
   const setStepFour = useStoreActions((actions) => actions.setStepFour);
-
-  const formData = useStoreState((state) => state.form.stepFour);
+  const formData = useStoreState((state) => state.form);
   console.log(formData);
 
   const handleInputChange = (e) => {

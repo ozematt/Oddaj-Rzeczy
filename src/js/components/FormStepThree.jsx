@@ -25,7 +25,8 @@ const FormStepThree = () => {
   });
 
   const setStepThree = useStoreActions((actions) => actions.setStepThree);
-
+  const formData = useStoreState((state) => state.form);
+  console.log(formData);
   ////LOGIC
 
   //window display

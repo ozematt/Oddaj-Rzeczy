@@ -1,13 +1,17 @@
 import HomeContact from "./HomeContact.jsx";
 import { useNavigate } from "react-router-dom";
-import { useStoreActions } from "easy-peasy";
+import { useStoreActions, useStoreState } from "easy-peasy";
 import { useState } from "react";
 const FormStepOne = () => {
   ////DATA
   const [toGive, setToGive] = useState("");
+
   const navigate = useNavigate();
 
   const setStepOne = useStoreActions((actions) => actions.setStepOne);
+
+  // const formData = useStoreState((state) => state.form.stepOne.toGive);
+  // console.log(formData);
 
   ////LOGIC
   const handleToGive = (value) => {

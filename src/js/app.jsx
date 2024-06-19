@@ -1,9 +1,8 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React from "react";
-import store from "./api/store.js";
 
-//Components
+//components
 import Home from "./components/Home";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
@@ -17,7 +16,9 @@ import FormStepFour from "./components/FormStepFour.jsx";
 import FormSummary from "./components/FormSummary.jsx";
 import FormThankYou from "./components/FormThankYou.jsx";
 
+//easy-peasy
 import { StoreProvider } from "easy-peasy";
+import store from "./api/store.js";
 
 const App = () => {
   return (
