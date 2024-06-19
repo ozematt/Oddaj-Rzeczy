@@ -79,16 +79,8 @@
 }
 .option-default-loc {
   margin: 0;
-  padding: 9px 70px;
+  padding: 10px 0 10px 18px;
   font-weight: bold;
-  &:before {
-    @extend %pseudo-element;
-    left: 38px;
-  }
-  &:after {
-    @extend %pseudo-element;
-    left: 173px;
-  }
 }
 .error {
   top: 330px;

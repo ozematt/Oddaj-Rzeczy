@@ -1,7 +1,7 @@
 import FromMainSection from "./FromMainSection.jsx";
 import { Link } from "react-router-dom";
 import HomeContact from "./HomeContact.jsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import { useNavigate } from "react-router-dom";
 
@@ -55,7 +55,29 @@ const FormStepThree = () => {
       ...prevState,
       location: city,
     }));
+    setClassesToggle(false);
   };
+
+  useEffect(() => {
+    if (formData.location) {
+      setDataToSend((prevState) => ({
+        ...prevState,
+        location: formData.location,
+      }));
+    }
+  }, [formData.location]);
+
+  // //support function
+  // const updateWhoWeHelp = (prevState, value, checkedItem) => {
+  //   const newWhoWeHelp = checkedItem
+  //     ? prevState.whoWeHelp.filter((item) => item !== value)
+  //     : [...prevState.whoWeHelp, value];
+  //
+  //   return {
+  //     ...prevState,
+  //     whoWeHelp: newWhoWeHelp,
+  //   };
+  // };
 
   //checkbox and data to send
   const handleCheckChild = (value) => {
@@ -149,7 +171,7 @@ const FormStepThree = () => {
     if (validateFormChecks() && validateFormLocation()) {
       setStepThree(dataToSend); // data send to store
       navigate("/oddaj-rzeczy/step-4"); //next page navigate
-      setError("");
+      setError(""); //error reset
     } else if (!validateFormChecks()) {
       setError("Musisz zaznaczyć przynajmniej jeden element!");
     } else if (!validateFormLocation()) {
@@ -180,11 +202,13 @@ const FormStepThree = () => {
               <div className="select">
                 <p
                   className={
-                    !formData.location ? "option-default" : "option-default-loc"
+                    !formData.location && !dataToSend.location
+                      ? "option-default"
+                      : "option-default-loc"
                   }
                   onClick={handleClassesToggle}
                 >
-                  {formData.location ? formData.location : "wybierz"}
+                  {dataToSend.location || formData.location || "wybierz"}
                 </p>
                 <div
                   className={
