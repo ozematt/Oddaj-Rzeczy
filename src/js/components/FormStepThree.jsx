@@ -173,9 +173,9 @@ const FormStepThree = () => {
       navigate("/oddaj-rzeczy/step-4"); //next page navigate
       setError(""); //error reset
     } else if (!validateFormChecks()) {
-      setError("Musisz zaznaczyć przynajmniej jeden element!");
+      setError("Musisz zaznaczyć przynajmniej jeden element!"); //checks error
     } else if (!validateFormLocation()) {
-      setError("Musisz wybrać lokalizacje lub konkretną organizacje!");
+      setError("Musisz wybrać lokalizacje lub konkretną organizacje!"); //location error
     }
   };
 

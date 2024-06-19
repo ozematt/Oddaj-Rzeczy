@@ -37,8 +37,8 @@ const FormStepTwo = () => {
   //data submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    setBugsAmount(numberOfBugs);
-    navigate("/oddaj-rzeczy/step-3");
+    setBugsAmount(numberOfBugs); //data send to store
+    navigate("/oddaj-rzeczy/step-3"); //next page navigate
   };
   console.log(numberOfBugs);
   ////UI

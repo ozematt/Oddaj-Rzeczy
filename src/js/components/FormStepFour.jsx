@@ -22,6 +22,9 @@ const FormStepFour = () => {
     },
   });
 
+  const [addressErrors, setAddressErrors] = useState([]);
+  const [deadlineErrors, setDeadlineErrors] = useState([]);
+
   console.log(dataToSend);
 
   const setStepFour = useStoreActions((actions) => actions.setStepFour);
@@ -32,7 +35,7 @@ const FormStepFour = () => {
     const { name, value } = e.target;
 
     setDataToSend((prevState) => {
-      // check if name is in  address
+      // check if input name is in address state
       if (prevState.address.hasOwnProperty(name)) {
         return {
           ...prevState,
@@ -43,7 +46,7 @@ const FormStepFour = () => {
         };
       }
 
-      // check if name is in deadline
+      // check if input name is in deadline state
       if (prevState.deadline.hasOwnProperty(name)) {
         return {
           ...prevState,
@@ -58,11 +61,59 @@ const FormStepFour = () => {
       return prevState;
     });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setStepFour(dataToSend);
-    navigate("/oddaj-rzeczy/summary");
+    // setStepFour(dataToSend); //data send to store
+    // navigate("/oddaj-rzeczy/summary");//next page navigate
+
+    //address and deadline validation
+    let newAddressErrors = [];
+    let newDeadlineErrors = [];
+    //street name
+    if (dataToSend.address.streetName.length < 2) {
+      newAddressErrors.push("Nazwa ulicy powinna mieć co najmniej 2 znaki.");
+    }
+    //city
+    if (dataToSend.address.city.length < 2) {
+      newAddressErrors.push("Nazwa miasta powinna mieć co najmniej 2 znaki.");
+    }
+    //postal code
+    const postalCodeRegex = /^\d{2}-\d{3}$/; // XX-XXX
+    if (!postalCodeRegex.test(dataToSend.address.postalCode)) {
+      newAddressErrors.push(
+        "Proszę wprowadzić poprawny kod pocztowy (XX-XXX).",
+      );
+    }
+    //phone number
+    const phoneNumberRegex = /^\d{9}$/; // nine numbers only
+    if (!phoneNumberRegex.test(dataToSend.address.phoneNumber)) {
+      newAddressErrors.push("Proszę wprowadzić poprawny numer telefonu.");
+    }
+    //date
+    const dateRegex = /^(\d{2})\.(\d{2})\.(\d{4})$/;
+    if (!dateRegex.test(dataToSend.deadline.date)) {
+      newDeadlineErrors.push("Data powinna być w formacie DD.MM.YYYY.");
+    }
+    //hour
+    const timePattern = /^(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])$/;
+    if (!timePattern.test(dataToSend.deadline.hour)) {
+      newDeadlineErrors.push(
+        "Nieprawidłowy format czasu (oczekiwany format: HH:MM)",
+      );
+    }
+    //errors add
+    setAddressErrors(newAddressErrors);
+    setDeadlineErrors(newDeadlineErrors);
+    //summary
+    if (newAddressErrors.length === 0 && newDeadlineErrors.length === 0) {
+      setStepFour(dataToSend); //data send to store
+      navigate("/oddaj-rzeczy/summary"); //next page navigate
+    }
   };
+
+  console.log(addressErrors);
+  console.log(deadlineErrors);
   return (
     <>
       <FromMainSection />
@@ -117,11 +168,21 @@ const FormStepFour = () => {
                 <p className="form-section-title">Termin odbioru:</p>
                 <label>
                   Data
-                  <input onChange={handleInputChange} name="date" type="text" />
+                  <input
+                    onChange={handleInputChange}
+                    name="date"
+                    type="text"
+                    placeholder=" DD.MM.YYYY"
+                  />
                 </label>
                 <label>
                   Godzina
-                  <input onChange={handleInputChange} name="hour" type="text" />
+                  <input
+                    onChange={handleInputChange}
+                    name="hour"
+                    type="text"
+                    placeholder=" HH:MM"
+                  />
                 </label>
                 <label>
                   Uwagi <br />

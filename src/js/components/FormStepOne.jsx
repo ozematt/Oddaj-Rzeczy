@@ -20,9 +20,9 @@ const FormStepOne = () => {
 
   const handleStepOneSubmit = (e) => {
     e.preventDefault();
-    setStepOne(toGive);
 
-    navigate("/oddaj-rzeczy/step-2");
+    setStepOne(toGive); //data send to store
+    navigate("/oddaj-rzeczy/step-2"); //next page navigate
   };
 
   ////UI
