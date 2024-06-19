@@ -14,7 +14,7 @@ const FormStepTwo = () => {
 
   ////LOGIC
   const setBugsAmount = useStoreActions((actions) => actions.setStepTwo);
-  const formData = useStoreState((state) => state.form);
+  const formData = useStoreState((state) => state.form.stepTwo.numberOfBugs);
   console.log(formData);
   //window display
   const handleClassesToggle = () => {
@@ -55,8 +55,13 @@ const FormStepTwo = () => {
             <div className="form-bags-select">
               <span className="select-label">Liczba 60l worków:</span>
               <div className="select">
-                <p className="option-default" onClick={handleClassesToggle}>
-                  wybierz
+                <p
+                  className={
+                    !formData ? "option-default" : "option-default-edit"
+                  }
+                  onClick={handleClassesToggle}
+                >
+                  {formData ? `${formData}` : "wybierz"}
                 </p>
                 <div
                   className={
@@ -72,19 +77,19 @@ const FormStepTwo = () => {
                   }
                 >
                   <span onClick={() => handleBugsAmount("1")}>
-                    {numberOfBugs === "1" ? <strong>1</strong> : 1}
+                    {numberOfBugs === "1" ? <strong>- 1 -</strong> : 1}
                   </span>
                   <span onClick={() => handleBugsAmount("2")}>
-                    {numberOfBugs === "2" ? <strong>2</strong> : 2}
+                    {numberOfBugs === "2" ? <strong>- 2 -</strong> : 2}
                   </span>
                   <span onClick={() => handleBugsAmount("3")}>
-                    {numberOfBugs === "3" ? <strong>3</strong> : 3}
+                    {numberOfBugs === "3" ? <strong>- 3 -</strong> : 3}
                   </span>
                   <span onClick={() => handleBugsAmount("4")}>
-                    {numberOfBugs === "4" ? <strong>4</strong> : 4}
+                    {numberOfBugs === "4" ? <strong>- 4 -</strong> : 4}
                   </span>
                   <span onClick={() => handleBugsAmount("5")}>
-                    {numberOfBugs === "5" ? <strong>5</strong> : 5}
+                    {numberOfBugs === "5" ? <strong>- 5 -</strong> : 5}
                   </span>
                 </div>
               </div>

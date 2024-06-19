@@ -56,6 +56,19 @@
     background-image: url("/src/assets/Icon-Arrow-Up.svg");
   }
 }
+.option-default-edit {
+  margin: 0;
+  padding: 9px 109px;
+  &:before {
+    @extend %pseudo-element;
+    left: 48px;
+  }
+  &:after {
+    @extend %pseudo-element;
+    left: 168px;
+  }
+}
+
 .option-window-s2 {
   display: flex;
   flex-direction: column;
