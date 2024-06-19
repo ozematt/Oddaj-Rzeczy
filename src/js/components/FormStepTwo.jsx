@@ -83,7 +83,7 @@ const FormStepTwo = () => {
                 />
                 <div
                   className={
-                    classesToggle && numberOfBugs
+                    classesToggle
                       ? "option-window-s2"
                       : "option-window-s2 hidden"
                   }
