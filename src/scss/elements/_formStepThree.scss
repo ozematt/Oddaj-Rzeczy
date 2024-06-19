@@ -1,6 +1,7 @@
 @import "../settings/_fonts.scss";
 @import "../settings/_colors.scss";
 @import "../settings/_functions.scss";
+@import "formStepTwo.scss";
 
 .form-location-select {
   font-size: 24px;
@@ -63,5 +64,18 @@
     border: 0.75px solid $primary-font-color;
     outline: none;
     cursor: pointer;
+  }
+}
+.option-default-loc {
+  margin: 0;
+  padding: 9px 70px;
+  font-weight: bold;
+  &:before {
+    @extend %pseudo-element;
+    left: 38px;
+  }
+  &:after {
+    @extend %pseudo-element;
+    left: 173px;
   }
 }

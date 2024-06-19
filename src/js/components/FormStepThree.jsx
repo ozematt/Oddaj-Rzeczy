@@ -25,7 +25,7 @@ const FormStepThree = () => {
   });
 
   const setStepThree = useStoreActions((actions) => actions.setStepThree);
-  const formData = useStoreState((state) => state.form);
+  const formData = useStoreState((state) => state.form.stepThree);
   console.log(formData);
   ////LOGIC
 
@@ -153,8 +153,13 @@ const FormStepThree = () => {
             <p className="steps-header">Lokalizacja:</p>
             <div className="form-location-select">
               <div className="select">
-                <p className="option-default" onClick={handleClassesToggle}>
-                  wybierz
+                <p
+                  className={
+                    !formData.location ? "option-default" : "option-default-loc"
+                  }
+                  onClick={handleClassesToggle}
+                >
+                  {formData.location ? formData.location : "wybierz"}
                 </p>
                 <div
                   className={
