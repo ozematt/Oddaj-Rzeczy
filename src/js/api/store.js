@@ -46,7 +46,6 @@ const storeModel = {
     state.form.stepFour = payload;
   }),
 };
-
 const store = createStore(storeModel);
 
 export default store;

@@ -25,12 +25,9 @@ const FormStepFour = () => {
   const [addressErrors, setAddressErrors] = useState([]);
   const [deadlineErrors, setDeadlineErrors] = useState([]);
 
-  console.log(dataToSend);
-
   const setStepFour = useStoreActions((actions) => actions.setStepFour);
   const formData = useStoreState((state) => state.form);
   console.log(formData);
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
@@ -64,8 +61,6 @@ const FormStepFour = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setStepFour(dataToSend); //data send to store
-    // navigate("/oddaj-rzeczy/summary");//next page navigate
 
     //address and deadline validation
     let newAddressErrors = [];
@@ -112,8 +107,6 @@ const FormStepFour = () => {
     }
   };
 
-  console.log(addressErrors);
-  console.log(deadlineErrors);
   return (
     <>
       <FromMainSection />

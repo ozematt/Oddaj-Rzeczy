@@ -13,6 +13,10 @@ const FormStepOne = () => {
   // const formData = useStoreState((state) => state.form.stepOne.toGive);
   // console.log(formData);
 
+  //log
+  const formDataAll = useStoreState((state) => state.form);
+  console.log(formDataAll);
+
   ////LOGIC
   const handleToGive = (value) => {
     setToGive(value);

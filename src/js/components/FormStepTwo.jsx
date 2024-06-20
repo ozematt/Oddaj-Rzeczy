@@ -15,7 +15,11 @@ const FormStepTwo = () => {
   ////LOGIC
   const setBugsAmount = useStoreActions((actions) => actions.setStepTwo);
   const formData = useStoreState((state) => state.form.stepTwo.numberOfBugs);
-  console.log(formData);
+
+  //log
+  const formDataAll = useStoreState((state) => state.form);
+  console.log(formDataAll);
+
   //checks the contents of the store, if it is not empty, assigns the content to the state
   //helps with window display
   useEffect(() => {
@@ -40,7 +44,7 @@ const FormStepTwo = () => {
     setBugsAmount(numberOfBugs); //data send to store
     navigate("/oddaj-rzeczy/step-3"); //next page navigate
   };
-  console.log(numberOfBugs);
+
   ////UI
   return (
     <>
