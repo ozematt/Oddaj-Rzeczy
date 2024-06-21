@@ -1,14 +1,43 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { supabase } from "../../services/supabase.js";
 
 const Authentication = () => {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
+  // useEffect(() => {
+  //   const session = supabase.auth.session();
+  //   console.log(session);
+  // }, [email]);
+
+  const Loggin = () => {
+    return (
+      <>
+        <p>Cześć, {email}</p>
+        <Link to="/oddaj-rzeczy">
+          <button>Oddaj rzeczy</button>
+        </Link>
+        <button>Wyloguj</button>
+      </>
+    );
+  };
+
   return (
     <div className="authentication">
-      <Link to="/logowanie">
-        <button>Zaloguj</button>
-      </Link>
-      <Link to="/rejestracja">
-        <button>Załóż konto</button>
-      </Link>
+      {email ? (
+        Loggin()
+      ) : (
+        <Link to="/logowanie">
+          <button>Zaloguj</button>
+        </Link>
+      )}
+      {email ? null : (
+        <Link to="/rejestracja">
+          <button>Załóż konto</button>
+        </Link>
+      )}
     </div>
   );
 };

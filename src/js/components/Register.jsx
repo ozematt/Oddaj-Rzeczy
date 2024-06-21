@@ -1,12 +1,22 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { supabase } from "../../services/supabase.js";
+import { useNavigate } from "react-router-dom";
+import { useStoreState, useStoreActions } from "easy-peasy";
 
 const Register = () => {
+  ////DATA
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
   const [error, setError] = useState("");
+  // const navigate = useNavigate();
+  const [login, setLogin] = useState(false);
+  // ////LOGIC
+  // const userData = useStoreState((state) => state.user);
+  // const setUser = useStoreActions((state) => state.setUser);
+  // console.log(userData);
 
   const validateEmail = (email) => {
     return String(email)
@@ -16,7 +26,7 @@ const Register = () => {
       );
   };
 
-  const handleSubmit = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
 
     let classNames = "";
@@ -39,19 +49,29 @@ const Register = () => {
     if (classNames) {
       setError(classNames);
     } else {
+      //create user
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+      });
+      console.log(error);
+      console.log(data);
+
       setError("");
       setEmail("");
       setPassword("");
       setRepeatPassword("");
+      setLogin(true);
+      // navigate("/");
     }
   };
-  console.log(error);
+
   return (
     <>
       <section className="login wrapper">
         <h2>Załóż konto</h2>
         <div className="ornament" />
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleRegister}>
           <div className="login-window">
             <div className="login-box">
               <label>
