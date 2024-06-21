@@ -8,7 +8,6 @@ import { useStoreState } from "easy-peasy";
 
 const Home = () => {
   const userLogIn = useStoreState((state) => state.userLogIn);
-  console.log(userLogIn);
 
   return (
     <>

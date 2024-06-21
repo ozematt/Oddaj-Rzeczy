@@ -1,4 +1,5 @@
 import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -6,7 +7,9 @@ const Navbar = () => {
       <ul>
         <li>
           <ScrollLink to="start" smooth={true} duration={500}>
-            Start
+            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+              Start
+            </Link>
           </ScrollLink>
         </li>
         <li>

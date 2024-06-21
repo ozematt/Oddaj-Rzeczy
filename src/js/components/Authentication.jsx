@@ -20,19 +20,20 @@ const Authentication = () => {
     const {
       data: { user },
     } = await supabase.auth.getUser();
-    console.log(user);
-    setUser(user.email);
+    if (user) {
+      setUser(user.email);
+    }
   };
 
   //log out
   const handleLogOut = async () => {
     const { error } = await supabase.auth.signOut();
-    console.log(error);
     navigate("/wylogowano");
     setUser("");
     setUserLogIn(false);
   };
 
+  //supporting functions
   const LogIn = () => {
     setUserLogIn(true);
     return (
