@@ -1,6 +1,6 @@
 import BigBtn from "./BigBtn.jsx";
 
-const MainInfo = () => {
+const MainInfo = ({ userLogIn }) => {
   const text = "ODDAJ\nRZECZY";
   return (
     <main>
@@ -10,7 +10,7 @@ const MainInfo = () => {
       </h3>
       <div className="ornament" />
       <div className="main-btns">
-        <BigBtn path="/logowanie" fill={text} />
+        <BigBtn path={userLogIn ? "/oddaj-rzeczy" : "/logowanie"} fill={text} />
         <BigBtn path="/logowanie" fill="ZORGANIZUJ ZBIÓRKE" />
       </div>
     </main>

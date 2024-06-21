@@ -2,7 +2,7 @@ import MainInfo from "./MainInfo.jsx";
 import { Element } from "react-scroll";
 import Dashboard from "./Dashboard.jsx";
 
-const HomeHeader = () => {
+const HomeHeader = ({ userLogIn }) => {
   return (
     <>
       <Element name="start">
@@ -11,7 +11,7 @@ const HomeHeader = () => {
             <div className="header-hero" />
             <div>
               <Dashboard />
-              <MainInfo />
+              <MainInfo userLogIn={userLogIn} />
             </div>
           </header>
         </div>

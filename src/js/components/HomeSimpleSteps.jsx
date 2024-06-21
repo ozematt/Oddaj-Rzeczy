@@ -1,7 +1,7 @@
 import BigBtn from "./BigBtn.jsx";
 import { Element } from "react-scroll";
 
-const HomeSimpleSteps = () => {
+const HomeSimpleSteps = ({ userLogIn }) => {
   const text = "ODDAJ\nRZECZY";
   return (
     <Element name="info" className="wrapper simple-steps">
@@ -56,7 +56,7 @@ const HomeSimpleSteps = () => {
         </div>
       </div>
       <div className="four-steps-btn">
-        <BigBtn path="/logowanie" fill={text} />
+        <BigBtn path={userLogIn ? "/oddaj-rzeczy" : "/logowanie"} fill={text} />
       </div>
     </Element>
   );

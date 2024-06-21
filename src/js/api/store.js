@@ -1,6 +1,7 @@
 import { createStore, action } from "easy-peasy";
 
 const storeModel = {
+  userLogIn: false,
   form: {
     stepOne: {
       toGive: "",
@@ -44,6 +45,9 @@ const storeModel = {
   }),
   setStepFour: action((state, payload) => {
     state.form.stepFour = payload;
+  }),
+  setUserLogIn: action((state, payload) => {
+    state.userLogIn = payload;
   }),
 };
 const store = createStore(storeModel);

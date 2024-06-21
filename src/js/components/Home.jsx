@@ -4,13 +4,17 @@ import HomeSimpleSteps from "./HomeSimpleSteps.jsx";
 import HomeAboutUs from "./HomeAboutUs.jsx";
 import HomeWhoWeHelp from "./HomeWhoWeHelp.jsx";
 import HomeContact from "./HomeContact.jsx";
+import { useStoreState } from "easy-peasy";
 
 const Home = () => {
+  const userLogIn = useStoreState((state) => state.userLogIn);
+  console.log(userLogIn);
+
   return (
     <>
-      <HomeHeader />
+      <HomeHeader userLogIn={userLogIn} />
       <HomeThreeColumns />
-      <HomeSimpleSteps />
+      <HomeSimpleSteps userLogIn={userLogIn} />
       <HomeAboutUs />
       <HomeWhoWeHelp />
       <HomeContact />
