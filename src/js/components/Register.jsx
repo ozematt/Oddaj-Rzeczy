@@ -15,9 +15,9 @@ const Register = () => {
   // const [login, setLogin] = useState(false);
 
   // ////LOGIC
-  const userData = useStoreState((state) => state.user.data);
+  // const userData = useStoreState((state) => state.user.data);
   // const setUser = useStoreActions((actions) => actions.user.setUser);
-  console.log(userData);
+  // console.log(userData);
 
   const validateEmail = (email) => {
     return String(email)
@@ -57,7 +57,7 @@ const Register = () => {
       });
       navigate("/"); //navigate to homepage
       // setUser({ email });
-
+      alert("Potwierdzenie zostało wysłane na twojego emaila ");
       console.log(error);
       console.log(data);
 

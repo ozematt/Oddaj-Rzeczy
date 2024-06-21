@@ -1,68 +1,59 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { supabase } from "../../services/supabase.js";
-import { useStoreState } from "easy-peasy";
 
 const Authentication = () => {
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(true);
-
-  const userLog = useStoreState((state) => state.user.data);
-  // setEmail(userLog);
+  ///DATA
+  const [user, setUser] = useState("");
   const navigate = useNavigate();
 
+  ///LOGIC
   useEffect(() => {
-    findUserByEmail(userLog);
+    findUser();
   }, []);
 
-  const findUserByEmail = async (email) => {
-    try {
-      const { data: users, error } = await supabase.auth.users();
-
-      if (error) {
-        throw error;
-      }
-      // Szukamy użytkownika o podanym adresie e-mail
-      const foundUser = users.find((user) => user.email === email);
-
-      if (foundUser) {
-        console.log("Znaleziono użytkownika:", foundUser);
-        // Tutaj możesz przetworzyć znalezionego użytkownika
-      } else {
-        console.log("Nie znaleziono użytkownika o adresie e-mail:", email);
-      }
-    } catch (error) {
-      console.error("Błąd podczas wyszukiwania użytkownika:", error.message);
-    }
+  // find current user
+  const findUser = async () => {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    console.log(user);
+    setUser(user.email);
   };
 
-  const Loggin = () => {
+  //log out
+  const handleLogOut = async () => {
+    const { error } = await supabase.auth.signOut();
+    console.log(error);
+    navigate("/");
+  };
+
+  const LogIn = () => {
     return (
       <>
-        <p>Cześć, {email}</p>
+        <p>Cześć, {user}</p>
         <Link to="/oddaj-rzeczy">
           <button>Oddaj rzeczy</button>
         </Link>
-        <button>Wyloguj</button>
+        <button onClick={handleLogOut}>Wyloguj</button>
       </>
     );
   };
 
-  return (
-    <div className="authentication">
-      {email ? (
-        Loggin()
-      ) : (
+  const withOutUser = () => {
+    return (
+      <>
         <Link to="/logowanie">
           <button>Zaloguj</button>
         </Link>
-      )}
-      {email ? null : (
         <Link to="/rejestracja">
           <button>Załóż konto</button>
         </Link>
-      )}
-    </div>
-  );
+      </>
+    );
+  };
+
+  ///UI
+  return <div className="authentication">{user ? LogIn() : withOutUser()}</div>;
 };
 export default Authentication;
