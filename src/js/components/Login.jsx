@@ -18,7 +18,7 @@ const Login = () => {
       );
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let classNames = "";
@@ -32,6 +32,10 @@ const Login = () => {
       classNames = classNames.trim();
       setError(classNames);
     } else {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
       setError("");
       setEmail("");
       setPassword("");
