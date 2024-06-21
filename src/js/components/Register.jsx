@@ -12,10 +12,10 @@ const Register = () => {
 
   const [error, setError] = useState("");
   // const navigate = useNavigate();
-  const [login, setLogin] = useState(false);
+  // const [login, setLogin] = useState(false);
   // ////LOGIC
   // const userData = useStoreState((state) => state.user);
-  // const setUser = useStoreActions((state) => state.setUser);
+  const setUser = useStoreActions((actions) => actions.user.setUser);
   // console.log(userData);
 
   const validateEmail = (email) => {
@@ -54,6 +54,8 @@ const Register = () => {
         email,
         password,
       });
+      setUser({ email });
+
       console.log(error);
       console.log(data);
 

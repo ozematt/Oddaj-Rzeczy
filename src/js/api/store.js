@@ -1,6 +1,12 @@
 import { createStore, action } from "easy-peasy";
 
 const storeModel = {
+  user: {
+    data: null,
+    setUser: action((state, payload) => {
+      state.data = payload;
+    }),
+  },
   form: {
     stepOne: {
       toGive: "",

@@ -7,10 +7,6 @@ const Authentication = () => {
   const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
-  // useEffect(() => {
-  //   const session = supabase.auth.session();
-  //   console.log(session);
-  // }, [email]);
 
   const Loggin = () => {
     return (
