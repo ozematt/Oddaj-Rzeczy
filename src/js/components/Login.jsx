@@ -32,10 +32,14 @@ const Login = () => {
       classNames = classNames.trim();
       setError(classNames);
     } else {
+      //signIn
       const { data, error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
+        email: email,
+        password: password,
       });
+
+      navigate("/"); //navigate to homepage
+      //state reset
       setError("");
       setEmail("");
       setPassword("");

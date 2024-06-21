@@ -11,12 +11,13 @@ const Register = () => {
   const [repeatPassword, setRepeatPassword] = useState("");
 
   const [error, setError] = useState("");
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   // const [login, setLogin] = useState(false);
+
   // ////LOGIC
-  // const userData = useStoreState((state) => state.user);
-  const setUser = useStoreActions((actions) => actions.user.setUser);
-  // console.log(userData);
+  const userData = useStoreState((state) => state.user.data);
+  // const setUser = useStoreActions((actions) => actions.user.setUser);
+  console.log(userData);
 
   const validateEmail = (email) => {
     return String(email)
@@ -51,10 +52,11 @@ const Register = () => {
     } else {
       //create user
       const { data, error } = await supabase.auth.signUp({
-        email,
-        password,
+        email: email,
+        password: password,
       });
-      setUser({ email });
+      navigate("/"); //navigate to homepage
+      // setUser({ email });
 
       console.log(error);
       console.log(data);
@@ -63,8 +65,6 @@ const Register = () => {
       setEmail("");
       setPassword("");
       setRepeatPassword("");
-      setLogin(true);
-      // navigate("/");
     }
   };
 
