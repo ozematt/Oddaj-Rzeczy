@@ -1,7 +1,6 @@
 import { createStore, action } from "easy-peasy";
 
 const storeModel = {
-  token: false,
   form: {
     stepOne: {
       toGive: "",

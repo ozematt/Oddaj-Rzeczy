@@ -70,18 +70,6 @@ const FormStepThree = () => {
     }
   }, [formData.location]);
 
-  // //support function
-  // const updateWhoWeHelp = (prevState, value, checkedItem) => {
-  //   const newWhoWeHelp = checkedItem
-  //     ? prevState.whoWeHelp.filter((item) => item !== value)
-  //     : [...prevState.whoWeHelp, value];
-  //
-  //   return {
-  //     ...prevState,
-  //     whoWeHelp: newWhoWeHelp,
-  //   };
-  // };
-
   //checkbox and data to send
   const handleCheckChild = (value) => {
     setCheckChild(!checkChild);
@@ -239,31 +227,31 @@ const FormStepThree = () => {
               <div className="help-groups-checkbox">
                 <div
                   onClick={() => handleCheckChild("dzieciom")}
-                  className={checkChild ? "active" : undefined}
+                  className={checkChild ? "active-item" : undefined}
                 >
                   dzieciom
                 </div>
                 <div
                   onClick={() => handleCheckMothers("samotnym matkom")}
-                  className={checkMothers ? "active" : undefined}
+                  className={checkMothers ? "active-item" : undefined}
                 >
                   samotnym matkom
                 </div>
                 <div
                   onClick={() => handleCheckHomeless("bezdomnym")}
-                  className={checkHomeless ? "active" : undefined}
+                  className={checkHomeless ? "active-item" : undefined}
                 >
                   bezdomnym
                 </div>
                 <div
                   onClick={() => handleCheckDisabled("niepełnosprawnym")}
-                  className={checkDisabled ? "active" : undefined}
+                  className={checkDisabled ? "active-item" : undefined}
                 >
                   niepełnosprawnym
                 </div>
                 <div
                   onClick={() => handleCheckElder("osobom starszym")}
-                  className={checkElder ? "active" : undefined}
+                  className={checkElder ? "active-item" : undefined}
                 >
                   osobom starszym
                 </div>

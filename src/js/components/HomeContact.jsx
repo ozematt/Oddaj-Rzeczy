@@ -93,7 +93,9 @@ const HomeContact = () => {
                   placeholder="Krzysztof"
                 />
                 {responseClass.includes("name") ? (
-                  <p className="error">Podane imię jest nieprawidłowe!</p>
+                  <p className="contact-error">
+                    Podane imię jest nieprawidłowe!
+                  </p>
                 ) : null}
               </label>
 
@@ -108,7 +110,9 @@ const HomeContact = () => {
                 />
                 {/*  email error message*/}
                 {responseClass.includes("email") ? (
-                  <p className="error">Podany email jest nieprawidłowy!</p>
+                  <p className="contact-error">
+                    Podany email jest nieprawidłowy!
+                  </p>
                 ) : null}
               </label>
             </div>
@@ -123,7 +127,7 @@ const HomeContact = () => {
                 />
                 {/*  meassage error message*/}
                 {responseClass.includes("message") ? (
-                  <p className="error textarea-error">
+                  <p className="contact-error textarea-error">
                     Wiadomość musi mieć conajmniej 120 znaków!
                   </p>
                 ) : null}

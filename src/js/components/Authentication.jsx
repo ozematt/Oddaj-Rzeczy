@@ -10,7 +10,7 @@ const Authentication = () => {
   ///LOGIC
   useEffect(() => {
     findUser();
-  }, []);
+  }, [user]);
 
   // find current user
   const findUser = async () => {
@@ -26,6 +26,7 @@ const Authentication = () => {
     const { error } = await supabase.auth.signOut();
     console.log(error);
     navigate("/");
+    setUser("");
   };
 
   const LogIn = () => {
