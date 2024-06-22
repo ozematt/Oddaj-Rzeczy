@@ -31,6 +31,9 @@ const Authentication = () => {
     navigate("/wylogowano");
     setUser("");
     setUserLogIn(false);
+    if (error) {
+      alert(error.message);
+    }
   };
 
   //supporting functions
