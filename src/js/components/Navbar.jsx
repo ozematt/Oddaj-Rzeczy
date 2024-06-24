@@ -17,8 +17,8 @@ const Navbar = () => {
         <div
           className={classToggle ? "hamburger-menu" : "hamburger-menu hidden"}
         >
-          <ul>
-            <li>
+          <ul className="hamburger-ul">
+            <li className="hamburger-menu-item">
               <ScrollLink to="start" smooth={true} duration={500}>
                 <Link
                   to="/"
@@ -28,22 +28,22 @@ const Navbar = () => {
                 </Link>
               </ScrollLink>
             </li>
-            <li>
+            <li className="hamburger-menu-item">
               <ScrollLink to="info" smooth={true} duration={500}>
                 O co chodzi?
               </ScrollLink>
             </li>
-            <li>
+            <li className="hamburger-menu-item">
               <ScrollLink to="aboutUs" smooth={true} duration={500}>
                 O nas
               </ScrollLink>
             </li>
-            <li>
+            <li className="hamburger-menu-item">
               <ScrollLink to="fundations" smooth={true} duration={500}>
                 Fundacja i organizacje
               </ScrollLink>
             </li>
-            <li>
+            <li className="hamburger-menu-item">
               <ScrollLink to="contact" smooth={true} duration={500}>
                 Kontakt
               </ScrollLink>

@@ -18,7 +18,7 @@
 .form-main-section {
   position: relative;
   height: 455px;
-  width: 663px;
+  max-width: 663px;
   float: right;
   color: $primary-font-color;
   margin-right: 200px;
@@ -61,4 +61,16 @@
       font-size: 22px;
     }
   }
+}
+@media screen and (max-width: 1600px) {
+  .form-hero-img {
+    display: none;
+  }
+  .form-main-section {
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 760px) {
 }

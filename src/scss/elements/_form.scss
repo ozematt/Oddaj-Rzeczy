@@ -60,3 +60,23 @@
     scale: 1.1;
   }
 }
+@media screen and (max-width: 1500px) {
+  .form-box {
+    padding: 0 20px;
+  }
+  .form-steps {
+    padding: 0 10px;
+    background-image: none;
+    background-color: #e8e9e4;
+  }
+}
+@media screen and (max-width: 1020px) {
+  .steps-header {
+    width: 700px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .steps-header {
+    width: 450px;
+  }
+}

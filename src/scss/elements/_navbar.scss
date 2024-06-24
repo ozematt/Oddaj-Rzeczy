@@ -2,7 +2,6 @@
 @import "../settings/colors.scss";
 
 .navbar {
-  width: 800px;
   font-size: rem(18px);
   line-height: rem(24px);
   color: $primary-font-color;
@@ -43,18 +42,17 @@
   border: 0.75px solid $primary-font-color;
   top: 60px;
   background-color: white;
-  ul {
+  .hamburger-ul {
     padding: 0;
     margin: 0;
-
-    li {
+    .hamburger-menu-item {
       cursor: pointer;
       padding: rem(9px) rem(20px);
       border: 0.75px solid transparent;
       transition: all 0.3s ease-in-out;
-    }
-    li:hover {
-      border: 0.75px solid $primary-font-color;
+      &:hover {
+        border: 0.75px solid $primary-font-color;
+      }
     }
   }
 }
