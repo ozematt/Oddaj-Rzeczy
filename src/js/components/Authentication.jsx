@@ -36,15 +36,16 @@ const Authentication = () => {
     }
   };
 
+  const handleForm = () => {
+    navigate("/oddaj-rzeczy");
+  };
   //supporting functions
   const LogIn = () => {
     setUserLogIn(true);
     return (
       <>
         <p>Cześć, {user}</p>
-        <Link to="/oddaj-rzeczy">
-          <button>Oddaj rzeczy</button>
-        </Link>
+        <button onClick={handleForm}>Oddaj rzeczy</button>
         <button onClick={handleLogOut}>Wyloguj</button>
       </>
     );
