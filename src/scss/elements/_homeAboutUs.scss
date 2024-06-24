@@ -10,7 +10,7 @@
     &_box {
       margin: 0 auto;
       margin-top: rem(186px);
-      width: rem(657px);
+      max-width: rem(657px);
     }
     h3 {
       font-size: rem(38px);
@@ -19,6 +19,7 @@
       color: $primary-font-color;
     }
     p {
+      width: 100%;
       font-size: rem(30px);
       font-weight: lighter;
       text-align: center;
@@ -34,5 +35,28 @@
     background-image: url("/src/assets/People.jpg");
     width: rem(942px);
     height: rem(935px);
+  }
+}
+@media screen and (max-width: 1143px) {
+  .foto {
+    display: none;
+  }
+  .left-section {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 762px) {
+  .about-us {
+  }
+  .left-section_box {
+    //margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    padding: 0 5px;
+    p {
+      //margin: 0 15px;
+      width: 100%;
+    }
   }
 }
