@@ -3,19 +3,19 @@
 
 .simple-steps {
   margin-top: rem(55px);
-  .color-bgc {
-    background-color: $four-steps-bgc;
-    margin-top: 34px;
-  }
+
   .four-steps {
-    margin: 0 30px 0 30px;
-    height: rem(325px);
+    margin-top: 30px;
+    background-color: $four-steps-bgc;
+    //height: rem(325px);
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     text-align: center;
     color: $primary-font-color;
     .steps {
+      padding: 30px;
     }
     h4 {
       font-size: rem(18px);
@@ -37,5 +37,17 @@
     justify-content: center;
     margin-top: rem(35px);
     margin-bottom: rem(80px);
+  }
+}
+
+@media screen and (max-width: 798px) {
+  .four-steps {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: rem(30px);
+    .steps {
+      padding: 45px;
+    }
   }
 }

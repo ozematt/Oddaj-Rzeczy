@@ -23,3 +23,8 @@
     }
   }
 }
+@media (max-width: 576px) {
+  .navbar {
+    display: none;
+  }
+}
