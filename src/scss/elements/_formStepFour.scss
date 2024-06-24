@@ -43,3 +43,11 @@
 .error-form {
   color: red;
 }
+
+@media screen and (max-width: 1015px) {
+  .form-address-and-data {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+}
