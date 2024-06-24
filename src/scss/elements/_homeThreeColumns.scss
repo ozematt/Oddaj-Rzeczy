@@ -5,6 +5,7 @@
   display: flex;
   background-image: url("/src/assets/3 Columns Background.png");
   height: rem(384px);
+
   align-items: center;
   div {
     width: rem(334px);
@@ -27,6 +28,17 @@
       font-size: rem(16px);
       font-weight: lighter;
       line-height: rem(25px);
+    }
+  }
+}
+
+@media screen and (max-width: 927px) {
+  .three-columns {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    div {
+      margin: 30px;
     }
   }
 }

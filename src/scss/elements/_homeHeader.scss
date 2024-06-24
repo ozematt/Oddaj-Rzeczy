@@ -2,7 +2,8 @@
 @import "../settings/colors.scss";
 
 .header-hero {
-  width: rem(885px);
+  max-width: rem(885px);
+  width: 100%;
   height: rem(963px);
   background-image: url("/src/assets/Home-Hero-Image.jpg");
   background-position: right;
@@ -10,5 +11,14 @@
 
 .header {
   display: flex;
-  margin-top: rem(37px);
+}
+
+@media (max-width: 1023px) {
+  .header {
+    display: flex;
+    justify-content: center;
+  }
+  .header-hero {
+    display: none;
+  }
 }

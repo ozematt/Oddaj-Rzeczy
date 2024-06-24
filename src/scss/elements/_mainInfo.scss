@@ -13,3 +13,15 @@ main {
     margin-top: rem(65px);
   }
 }
+
+@media screen and (min-width: 567px) and (max-width: 1023px) {
+  .main-btns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  main {
+    margin-top: rem(100px);
+    margin-left: 0;
+    margin-bottom: 50px;
+  }
+}
