@@ -38,10 +38,9 @@
 }
 @media screen and (max-width: 855px) {
   .btn-section {
-    gap: 1px;
+    gap: 30px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
   }
   .info-about-text {
   }
