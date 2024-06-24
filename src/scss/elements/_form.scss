@@ -5,6 +5,7 @@
 .form-box {
   width: 1616px;
   margin: 0 auto;
+  height: 100%;
 }
 .form-bar {
   background-color: #fad648;
@@ -78,5 +79,8 @@
 @media screen and (max-width: 650px) {
   .steps-header {
     width: 450px;
+  }
+  .btns-box {
+    bottom: 30px;
   }
 }
