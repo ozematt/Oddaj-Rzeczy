@@ -5,7 +5,8 @@
   height: rem(935px);
   display: flex;
   .left-section {
-    width: rem(958px);
+    max-width: rem(958px);
+    width: 100%;
     background-color: $four-steps-bgc;
     &_box {
       margin: 0 auto;

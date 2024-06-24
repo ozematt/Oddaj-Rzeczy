@@ -32,3 +32,16 @@
     }
   }
 }
+
+@media screen and (max-width: 1069px) {
+  .item-to-show {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    div {
+      .who-staff {
+        padding-top: 20px;
+      }
+    }
+  }
+}

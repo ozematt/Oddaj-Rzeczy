@@ -6,14 +6,16 @@
   margin-top: rem(70px);
   height: rem(862px);
   max-width: rem(1344px);
+  width: 100%;
   color: $primary-font-color;
   .btn-section {
     display: flex;
-    justify-content: center;
-    gap: rem(110px);
+    justify-content: space-evenly;
+    //gap: rem(110px);
   }
   .info-about-text {
-    width: rem(640px);
+    max-width: rem(640px);
+    width: 100%;
     height: rem(94px);
     margin: 0 auto;
     margin-top: rem(70px);
@@ -26,5 +28,21 @@
     justify-content: center;
     gap: rem(40px);
     margin-top: rem(63px);
+  }
+}
+
+@media screen and (max-width: 1069px) {
+  .who-we-help {
+    height: 100%;
+  }
+}
+@media screen and (max-width: 855px) {
+  .btn-section {
+    gap: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-about-text {
   }
 }
