@@ -1,36 +1,43 @@
+# Oddaj Rzeczy
+
 ## Wprowadzenie
-Witamy w projekcie Oddaj Rzeczy, stworzonym w ramach modułu Portfoliolab. Celem tego projektu jest umożliwienie użytkownikom oddania niepotrzebnych rzeczy zaufanym instytucjom charytatywnym. Strona internetowa oferuje prosty formularz, który znacząco ułatwia proces przekazywania rzeczy.
+
+Witamy w projekcie **Oddaj Rzeczy**, stworzonym w ramach modułu **Portfoliolab**. Celem tego projektu jest umożliwienie użytkownikom oddania niepotrzebnych rzeczy zaufanym instytucjom charytatywnym. Strona internetowa oferuje prosty formularz, który znacząco ułatwia proces przekazywania rzeczy.
 
 ## Opis Projektu
-Oddaj Rzeczy to aplikacja webowa zaprojektowana, aby wspierać ludzi w oddawaniu niepotrzebnych przedmiotów. Dzięki naszej stronie każdy może szybko i łatwo znaleźć instytucje, które potrzebują darowizn, oraz zorganizować przekazanie rzeczy.
+
+**Oddaj Rzeczy** to aplikacja webowa zaprojektowana, aby wspierać ludzi w oddawaniu niepotrzebnych przedmiotów. Dzięki naszej stronie każdy może szybko i łatwo znaleźć instytucje, które potrzebują darowizn, oraz zorganizować przekazanie rzeczy.
 
 ## Funkcjonalności
-Tworzenie nowego użytkownika: Użytkownicy mogą założyć nowe konto, aby korzystać z funkcjonalności strony.
-Logowanie: Zarejestrowani użytkownicy mogą się zalogować na swoje konto.
-Wylogowanie: Użytkownicy mogą się wylogować ze swojego konta.
-Oddawanie rzeczy: Formularz umożliwiający użytkownikom oddanie rzeczy zaufanym instytucjom.
-Wybór rzeczy do oddania: Użytkownicy mogą wybrać, jakie rzeczy chcą oddać.
-Wybór instytucji: Użytkownicy mogą wybrać, komu chcą przekazać swoje rzeczy.
-Formularz kontaktowy: Umożliwia użytkownikom kontakt z zespołem wsparcia.
-Paginacja: Ułatwia nawigację po stronie, dzieląc treści na mniejsze części.
-Widok mobilny: Responsywna strona dostosowana do urządzeń mobilnych.
-Technologie
 
-### Projekt został zbudowany z wykorzystaniem następujących technologii:
+- **Tworzenie nowego użytkownika**: Użytkownicy mogą założyć nowe konto, aby korzystać z funkcjonalności strony.
+- **Logowanie**: Zarejestrowani użytkownicy mogą się zalogować na swoje konto.
+- **Wylogowanie**: Użytkownicy mogą się wylogować ze swojego konta.
+- **Oddawanie rzeczy**: Formularz umożliwiający użytkownikom oddanie rzeczy zaufanym instytucjom.
+  - **Wybór rzeczy do oddania**: Użytkownicy mogą wybrać, jakie rzeczy chcą oddać.
+  - **Wybór instytucji**: Użytkownicy mogą wybrać, komu chcą przekazać swoje rzeczy.
+- **Formularz kontaktowy**: Umożliwia użytkownikom kontakt z zespołem wsparcia.
+- **Paginacja**: Ułatwia nawigację po stronie, dzieląc treści na mniejsze części.
+- **Widok mobilny**: Responsywna strona dostosowana do urządzeń mobilnych.
 
-React: Biblioteka do budowy interfejsów użytkownika.
-React Router: Narzędzie do zarządzania routingiem w aplikacji React.
-React Scroll: Biblioteka umożliwiająca płynne przewijanie w aplikacjach React.
-Sass: Preprocesor CSS, który pozwala na bardziej zorganizowane i efektywne pisanie stylów.
-easy-peasy: Biblioteka do zarządzania stanem w aplikacjach React.
-supabase: Backend-as-a-Service (BaaS), który zapewnia funkcjonalności baz danych, uwierzytelniania i innych usług backendowych.
-Jak zacząć
-Klonowanie repozytorium:
+## Technologie
 
-sh
-Skopiuj kod
-git clone https://github.com/twoj-repozytorium/oddaj-rzeczy.git
-cd oddaj-rzeczy
+Projekt został zbudowany z wykorzystaniem następujących technologii:
+
+- **React**: Biblioteka do budowy interfejsów użytkownika.
+- **React Router**: Narzędzie do zarządzania routingiem w aplikacji React.
+- **React Scroll**: Biblioteka umożliwiająca płynne przewijanie w aplikacjach React.
+- **Sass**: Preprocesor CSS, który pozwala na bardziej zorganizowane i efektywne pisanie stylów.
+- **easy-peasy**: Biblioteka do zarządzania stanem w aplikacjach React.
+- **supabase**: Backend-as-a-Service (BaaS), który zapewnia funkcjonalności baz danych, uwierzytelniania i innych usług backendowych.
+
+## Jak zacząć
+
+1. **Klonowanie repozytorium**:
+   ```sh
+   git clone https://github.com/twoj-repozytorium/oddaj-rzeczy.git
+   cd oddaj-rzeczy
+
 Instalacja zależności:
 
 sh
