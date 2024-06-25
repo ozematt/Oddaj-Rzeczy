@@ -37,18 +37,21 @@ Projekt został zbudowany z wykorzystaniem następujących technologii:
    ```sh
    git clone https://github.com/twoj-repozytorium/oddaj-rzeczy.git
    cd oddaj-rzeczy
+   ```
 
-Instalacja zależności:
+2. **Instalacja zależności**:
 
-sh
+```sh
 Skopiuj kod
 npm install
 Uruchomienie aplikacji:
+```
 
-sh
+```sh
 Skopiuj kod
 npm start
 Aplikacja będzie dostępna pod adresem http://localhost:3000.
+```
 
 ## Podsumowanie
 Oddaj Rzeczy to intuicyjna i przyjazna użytkownikowi aplikacja webowa, która ułatwia proces oddawania niepotrzebnych rzeczy potrzebującym instytucjom. Dzięki zastosowanym technologiom i prostemu formularzowi, każdy użytkownik może szybko i efektywnie wesprzeć osoby potrzebujące. Strona jest w pełni responsywna, zawiera paginację oraz formularz kontaktowy, aby jeszcze bardziej ułatwić użytkowanie. Dziękujemy za zainteresowanie naszym projektem i zachęcamy do korzystania z aplikacji!
