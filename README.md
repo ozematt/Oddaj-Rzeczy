@@ -31,28 +31,36 @@ Projekt został zbudowany z wykorzystaniem następujących technologii:
 - **easy-peasy**: Biblioteka do zarządzania stanem w aplikacjach React.
 - **supabase**: Backend-as-a-Service (BaaS), który zapewnia funkcjonalności baz danych, uwierzytelniania i innych usług backendowych.
 
-## Jak zacząć
+### Instalacja
 
-1. **Klonowanie repozytorium**:
-   ```sh
-   git clone https://github.com/twoj-repozytorium/oddaj-rzeczy.git
-   cd oddaj-rzeczy
-   ```
+Aby zainstalować projekt, wykonaj poniższe kroki:
 
-2. **Instalacja zależności**:
+1. **Sklonuj repozytorium:**
+    ```sh
+    git clone https://github.com/twoja-nazwa-użytkownika/moj-projekt.git
+    ```
+2. **Przejdź do katalogu projektu:**
+    ```sh
+    cd moj-projekt
+    ```
+3. **Zainstaluj zależności:**
+   Upewnij się, że masz zainstalowany Node.js i npm. Następnie uruchom poniższą komendę, aby zainstalować wszystkie zależności projektu.
+    ```sh
+    npm install
+    ```
+4. **Konfiguracja Supabase:**
+   - Utwórz konto i projekt na Supabase.
+   - Skopiuj klucze API i URL projektu z dashboardu Supabase.
+   - Utwórz plik services/supabase.js w głównym katalogu projektu i dodaj następujące zmienne środowiskowe (zawartość pliku):
+    ```sh
+    import { createClient } from "@supabase/supabase-js";
 
+    const supabaseUrl = "YOUR_SUPABASE_URL";
+    const supabaseAnonKey = "YOUR_SUPABASE_ANON_KEY";
 
+    export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-```sh
-npm install
-```
-Uruchomienie aplikacji:
-
-
-```sh
-npm start
-```
-Aplikacja będzie dostępna pod adresem http://localhost:3000.
+    ```
 
 
 ## Podsumowanie
