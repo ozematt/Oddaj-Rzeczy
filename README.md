@@ -6,7 +6,7 @@ Witam w moim projekcie **Oddaj Rzeczy**, stworzonym w ramach modułu **Portfolio
 
 ## Opis Projektu
 
-**Oddaj Rzeczy** to aplikacja webowa zaprojektowana, aby wspierać ludzi w oddawaniu niepotrzebnych przedmiotów. Dzięki naszej stronie każdy może szybko i łatwo znaleźć instytucje, które potrzebują darowizn, oraz zorganizować przekazanie rzeczy.
+**Oddaj Rzeczy** to aplikacja webowa zaprojektowana, aby wspierać ludzi w oddawaniu niepotrzebnych przedmiotów. Dzięki stronie każdy może szybko i łatwo znaleźć instytucje, które potrzebują darowizn, oraz zorganizować przekazanie rzeczy.
 
 ## Funkcjonalności
 
