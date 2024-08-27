@@ -1,5 +1,6 @@
 # Oddaj Rzeczy
 
+
 ## Wprowadzenie
 
 Witam w moim projekcie **Oddaj Rzeczy**, stworzonym w ramach modułu **Portfoliolab**. Celem tego projektu jest umożliwienie użytkownikom oddania niepotrzebnych rzeczy zaufanym instytucjom charytatywnym. Strona internetowa oferuje prosty formularz, który znacząco ułatwia proces przekazywania rzeczy.
