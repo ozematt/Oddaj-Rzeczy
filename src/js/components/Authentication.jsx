@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { supabase } from "../../services/supabase.js";
+// import { supabase } from "../../services/supabase.js";
 import { useStoreActions } from "easy-peasy";
 
 const Authentication = () => {
@@ -12,18 +12,18 @@ const Authentication = () => {
 
   ///LOGIC
   useEffect(() => {
-    findUser();
+    // findUser();
   }, [user]);
 
   // find current user
-  const findUser = async () => {
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (user) {
-      setUser(user.email);
-    }
-  };
+  // const findUser = async () => {
+  //   const {
+  //     data: { user },
+  //   } = await supabase.auth.getUser();
+  //   if (user) {
+  //     setUser(user.email);
+  //   }
+  // };
 
   //log out
   const handleLogOut = async () => {
@@ -39,6 +39,7 @@ const Authentication = () => {
   const handleForm = () => {
     navigate("/oddaj-rzeczy");
   };
+
   //supporting functions
   const LogIn = () => {
     setUserLogIn(true);
