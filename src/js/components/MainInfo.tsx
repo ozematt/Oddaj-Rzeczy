@@ -1,4 +1,4 @@
-import BigBtn from "./BigBtn.jsx";
+import BigBtn from "./BigBtn";
 
 const MainInfo = ({ userLogIn }) => {
   const text = "ODDAJ\nRZECZY";

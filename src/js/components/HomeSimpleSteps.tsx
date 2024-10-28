@@ -1,4 +1,4 @@
-import BigBtn from "./BigBtn.jsx";
+import BigBtn from "./BigBtn";
 import { Element } from "react-scroll";
 
 const HomeSimpleSteps = ({ userLogIn }) => {

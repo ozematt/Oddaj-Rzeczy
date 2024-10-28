@@ -1,6 +1,6 @@
 import MainInfo from "./MainInfo.js";
 import { Element } from "react-scroll";
-import Dashboard from "./Dashboard.jsx";
+import Dashboard from "./Dashboard";
 
 const HomeHeader = ({ userLogIn }) => {
   return (

@@ -1,4 +1,4 @@
-import Authentication from "./Authentication.jsx";
+import Authentication from "./Authentication";
 import Navbar from "./Navbar.js";
 import { Outlet } from "react-router-dom";
 

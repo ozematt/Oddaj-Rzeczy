@@ -27,13 +27,13 @@ const Authentication = () => {
 
   //log out
   const handleLogOut = async () => {
-    const { error } = await supabase.auth.signOut();
+    // const { error } = await supabase.auth.signOut();
     navigate("/wylogowano");
     setUser("");
     setUserLogIn(false);
-    if (error) {
-      alert(error.message);
-    }
+    // if (error) {
+    //   alert(error.message);
+    // }
   };
 
   const handleForm = () => {
