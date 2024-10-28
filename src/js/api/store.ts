@@ -1,6 +1,48 @@
-import { createStore, action } from "easy-peasy";
+import { createStore, action, Action } from "easy-peasy";
 
-const storeModel = {
+interface StepThree {
+  location: string;
+  whoWeHelp: string[];
+  organizationName: string;
+}
+
+interface StepFour {
+  address: {
+    streetName: string;
+    city: string;
+    postalCode: string;
+    phoneNumber: string;
+  };
+  deadline: {
+    date: string;
+    hour: string;
+    comments: string;
+  };
+}
+
+interface Form {
+  stepOne: {
+    toGive: string;
+  };
+
+  stepTwo: {
+    numberOfBugs: string;
+  };
+  stepThree: StepThree;
+  stepFour: StepFour;
+}
+
+interface StoreModel {
+  userLogIn: boolean;
+  form: Form;
+  setStepOne: Action<StoreModel, string>;
+  setStepTwo: Action<StoreModel, string>;
+  setStepThree: Action<StoreModel, StepThree>;
+  setStepFour: Action<StoreModel, StepFour>;
+  setUserLogIn: Action<StoreModel, boolean>;
+}
+
+const storeModel: StoreModel = {
   userLogIn: false,
   form: {
     stepOne: {
@@ -50,6 +92,7 @@ const storeModel = {
     state.userLogIn = payload;
   }),
 };
+
 const store = createStore(storeModel);
 
 export default store;
