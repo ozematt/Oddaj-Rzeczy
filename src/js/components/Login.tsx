@@ -2,24 +2,15 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 // import { supabase } from "../../services/supabase.js";
 import { useNavigate } from "react-router-dom";
-import { useStoreState, useStoreActions } from "easy-peasy";
 
-const Register = () => {
-  ////DATA
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [repeatPassword, setRepeatPassword] = useState("");
-
   const [error, setError] = useState("");
+
   const navigate = useNavigate();
-  // const [login, setLogin] = useState(false);
 
-  // ////LOGIC
-  // const userData = useStoreState((state) => state.user.data);
-  // const setUser = useStoreActions((actions) => actions.user.setUser);
-  // console.log(userData);
-
-  const validateEmail = (email) => {
+  const validateEmail = (email: string) => {
     return String(email)
       .toLowerCase()
       .match(
@@ -27,7 +18,7 @@ const Register = () => {
       );
   };
 
-  const handleRegister = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let classNames = "";
@@ -37,43 +28,30 @@ const Register = () => {
     }
     if (password.length < 6) {
       classNames += "error-password ";
-    }
-    if (password !== repeatPassword) {
-      classNames += "error-repeated-password ";
-    }
-    if (repeatPassword.includes(" ")) {
-      classNames += "error-repeated-password ";
-    }
 
-    classNames = classNames.trim();
-
-    if (classNames) {
+      classNames = classNames.trim();
       setError(classNames);
     } else {
-      //create user
-      const { data, error } = await supabase.auth.signUp({
-        email: email,
-        password: password,
-      });
-      navigate("/"); //navigate to homepage
-      // setUser({ email });
-      alert("Potwierdzenie zostało wysłane na twojego emaila ");
-      console.log(error);
-      console.log(data);
+      //signIn
+      // const { data, error } = await supabase.auth.signInWithPassword({
+      //   email: email,
+      //   password: password,
+      // });
 
+      navigate("/"); //navigate to homepage
+      //state reset
       setError("");
       setEmail("");
       setPassword("");
-      setRepeatPassword("");
     }
   };
 
   return (
     <>
       <section className="login wrapper">
-        <h2>Załóż konto</h2>
+        <h2>Zaloguj się</h2>
         <div className="ornament" />
-        <form onSubmit={handleRegister}>
+        <form onSubmit={handleSubmit}>
           <div className="login-window">
             <div className="login-box">
               <label>
@@ -102,28 +80,14 @@ const Register = () => {
                   </p>
                 ) : null}
               </label>
-              <label>
-                Powtórz hasło
-                <input
-                  value={repeatPassword}
-                  name={repeatPassword}
-                  type="password"
-                  onChange={(e) => setRepeatPassword(e.target.value)}
-                />
-                {error.includes("error-repeated-password") ? (
-                  <p className="error-repeated-password">
-                    Podane hasło nie jest takie samo!
-                  </p>
-                ) : null}
-              </label>
             </div>
           </div>
           <div className="login-btns-box">
-            <Link to="/logowanie">
-              <button className="login-btn">Zaloguj się</button>
+            <Link to="/rejestracja">
+              <button className="login-btn">Załóż konto</button>
             </Link>
             <button type="submit" className="login-btn log-btn">
-              Załóż konto
+              Zaloguj się
             </button>
           </div>
         </form>
@@ -131,4 +95,4 @@ const Register = () => {
     </>
   );
 };
-export default Register;
+export default Login;

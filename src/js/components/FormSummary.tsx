@@ -1,6 +1,6 @@
-import FromMainSection from "./FromMainSection.jsx";
+import FromMainSection from "./FromMainSection.js";
 import { Link } from "react-router-dom";
-import HomeContact from "./HomeContact.jsx";
+import HomeContact from "./HomeContact.js";
 import { useStoreState } from "easy-peasy";
 
 const FormSummary = () => {

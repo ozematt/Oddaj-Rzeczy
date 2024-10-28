@@ -1,5 +1,5 @@
-import FromMainSection from "./FromMainSection.jsx";
-import FormStepOne from "./FormStepOne.jsx";
+import FromMainSection from "./FromMainSection.js";
+import FormStepOne from "./FormStepOne.js";
 
 const Form = () => {
   return (

@@ -1,4 +1,4 @@
-import MainInfo from "./MainInfo.jsx";
+import MainInfo from "./MainInfo.js";
 import { Element } from "react-scroll";
 import Dashboard from "./Dashboard.jsx";
 

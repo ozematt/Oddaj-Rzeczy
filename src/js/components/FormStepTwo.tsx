@@ -1,7 +1,7 @@
-import HomeContact from "./HomeContact.jsx";
+import HomeContact from "./HomeContact.js";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import FromMainSection from "./FromMainSection.jsx";
+import FromMainSection from "./FromMainSection.js";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import { useNavigate } from "react-router-dom";
 

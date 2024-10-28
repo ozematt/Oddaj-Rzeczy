@@ -1,9 +1,9 @@
-import HomeHeader from "./HomeHeader.jsx";
-import HomeThreeColumns from "./HomeThreeColumns.jsx";
-import HomeSimpleSteps from "./HomeSimpleSteps.jsx";
-import HomeAboutUs from "./HomeAboutUs.jsx";
-import HomeWhoWeHelp from "./HomeWhoWeHelp.jsx";
-import HomeContact from "./HomeContact.jsx";
+import HomeHeader from "./HomeHeader";
+import HomeThreeColumns from "./HomeThreeColumns";
+import HomeSimpleSteps from "./HomeSimpleSteps";
+import HomeAboutUs from "./HomeAboutUs";
+import HomeWhoWeHelp from "./HomeWhoWeHelp";
+import HomeContact from "./HomeContact";
 import { useStoreState } from "easy-peasy";
 
 const Home = () => {

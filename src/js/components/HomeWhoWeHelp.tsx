@@ -1,8 +1,8 @@
 import { DATA } from "../data/data.js";
 import { useState } from "react";
-import PageNumber from "./PageNumber.jsx";
-import ItemToShow from "./ItemToShow.jsx";
-import ItemBtn from "./ItemBtn.jsx";
+import PageNumber from "./PageNumber.js";
+import ItemToShow from "./ItemToShow.js";
+import ItemBtn from "./ItemBtn.js";
 import { Element } from "react-scroll";
 
 const HomeWhoWeHelp = () => {

@@ -1,4 +1,4 @@
-import HomeContact from "./HomeContact.jsx";
+import HomeContact from "./HomeContact.js";
 import { useNavigate } from "react-router-dom";
 import { useStoreActions } from "easy-peasy";
 import { useState } from "react";
@@ -47,7 +47,7 @@ const FormStepOne = () => {
                   }
                   onChange={() =>
                     handleToGive(
-                      "ubrania, które nadają się do ponownego użycia",
+                      "ubrania, które nadają się do ponownego użycia"
                     )
                   }
                   type="radio"

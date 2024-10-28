@@ -1,5 +1,5 @@
-import FromMainSection from "./FromMainSection.jsx";
-import HomeContact from "./HomeContact.jsx";
+import FromMainSection from "./FromMainSection.js";
+import HomeContact from "./HomeContact.js";
 
 const FormThankYou = () => {
   return (

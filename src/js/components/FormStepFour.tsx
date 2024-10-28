@@ -1,6 +1,6 @@
-import FromMainSection from "./FromMainSection.jsx";
+import FromMainSection from "./FromMainSection.js";
 import { Link } from "react-router-dom";
-import HomeContact from "./HomeContact.jsx";
+import HomeContact from "./HomeContact.js";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -77,7 +77,7 @@ const FormStepFour = () => {
     const postalCodeRegex = /^\d{2}-\d{3}$/; // XX-XXX
     if (!postalCodeRegex.test(dataToSend.address.postalCode)) {
       newAddressErrors.push(
-        "Proszę wprowadzić poprawny kod pocztowy (XX-XXX).",
+        "Proszę wprowadzić poprawny kod pocztowy (XX-XXX)."
       );
     }
     //phone number
@@ -94,7 +94,7 @@ const FormStepFour = () => {
     const timePattern = /^(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])$/;
     if (!timePattern.test(dataToSend.deadline.hour)) {
       newDeadlineErrors.push(
-        "Nieprawidłowy format czasu (oczekiwany format: HH:MM)",
+        "Nieprawidłowy format czasu (oczekiwany format: HH:MM)"
       );
     }
     //errors add

@@ -1,5 +1,5 @@
 import Authentication from "./Authentication.jsx";
-import Navbar from "./Navbar.jsx";
+import Navbar from "./Navbar.js";
 import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
