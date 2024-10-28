@@ -1,9 +1,9 @@
-import HomeContact from "./HomeContact.jsx";
+import HomeContact from "./HomeContact";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import FromMainSection from "./FromMainSection.jsx";
-import { useStoreState, useStoreActions } from "easy-peasy";
+import FromMainSection from "./FromMainSection";
 import { useNavigate } from "react-router-dom";
+import { useStoreActions, useStoreState } from "../api/store";
 
 const FormStepTwo = () => {
   ////DATA
@@ -33,13 +33,13 @@ const FormStepTwo = () => {
     setClassesToggle(!classesToggle);
   };
 
-  const handleBugsAmount = (number) => {
+  const handleBugsAmount = (number: string) => {
     setNumberOfBugs(number);
     setClassesToggle(false);
   };
 
   //data submit
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     setBugsAmount(numberOfBugs); //data send to store
     navigate("/oddaj-rzeczy/step-3"); //next page navigate

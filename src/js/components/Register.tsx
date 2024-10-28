@@ -19,7 +19,7 @@ const Register = () => {
   // const setUser = useStoreActions((actions) => actions.user.setUser);
   // console.log(userData);
 
-  const validateEmail = (email) => {
+  const validateEmail = (email: string) => {
     return String(email)
       .toLowerCase()
       .match(
@@ -27,8 +27,8 @@ const Register = () => {
       );
   };
 
-  const handleRegister = async (e) => {
-    e.preventDefault();
+  const handleRegister = async (event: React.SyntheticEvent) => {
+    event.preventDefault();
 
     let classNames = "";
 
@@ -51,15 +51,15 @@ const Register = () => {
       setError(classNames);
     } else {
       //create user
-      const { data, error } = await supabase.auth.signUp({
-        email: email,
-        password: password,
-      });
+      // const { data, error } = await supabase.auth.signUp({
+      //   email: email,
+      //   password: password,
+      // });
       navigate("/"); //navigate to homepage
       // setUser({ email });
       alert("Potwierdzenie zostało wysłane na twojego emaila ");
       console.log(error);
-      console.log(data);
+      // console.log(data);
 
       setError("");
       setEmail("");

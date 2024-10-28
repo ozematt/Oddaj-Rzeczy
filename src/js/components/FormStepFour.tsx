@@ -1,14 +1,14 @@
-import FromMainSection from "./FromMainSection.jsx";
+import FromMainSection from "./FromMainSection";
 import { Link } from "react-router-dom";
-import HomeContact from "./HomeContact.jsx";
-import { useStoreState, useStoreActions } from "easy-peasy";
+import HomeContact from "./HomeContact";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { StepFour, useStoreActions } from "../api/store";
 
 const FormStepFour = () => {
   const navigate = useNavigate();
 
-  const [dataToSend, setDataToSend] = useState({
+  const [dataToSend, setDataToSend] = useState<StepFour>({
     address: {
       streetName: "",
       city: "",
@@ -22,13 +22,14 @@ const FormStepFour = () => {
     },
   });
 
-  const [addressErrors, setAddressErrors] = useState([]);
-  const [deadlineErrors, setDeadlineErrors] = useState([]);
+  const [addressErrors, setAddressErrors] = useState<string[]>([]);
+  const [deadlineErrors, setDeadlineErrors] = useState<string[]>([]);
 
   const setStepFour = useStoreActions((actions) => actions.setStepFour);
-  const formData = useStoreState((state) => state.form);
-  console.log(formData);
-  const handleInputChange = (e) => {
+  // const formData = useStoreState((state) => state.form);
+  // console.log(formData);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
     setDataToSend((prevState) => {
@@ -59,7 +60,7 @@ const FormStepFour = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
 
     //address and deadline validation
@@ -77,7 +78,7 @@ const FormStepFour = () => {
     const postalCodeRegex = /^\d{2}-\d{3}$/; // XX-XXX
     if (!postalCodeRegex.test(dataToSend.address.postalCode)) {
       newAddressErrors.push(
-        "Proszę wprowadzić poprawny kod pocztowy (XX-XXX).",
+        "Proszę wprowadzić poprawny kod pocztowy (XX-XXX)."
       );
     }
     //phone number
@@ -94,7 +95,7 @@ const FormStepFour = () => {
     const timePattern = /^(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])$/;
     if (!timePattern.test(dataToSend.deadline.hour)) {
       newDeadlineErrors.push(
-        "Nieprawidłowy format czasu (oczekiwany format: HH:MM)",
+        "Nieprawidłowy format czasu (oczekiwany format: HH:MM)"
       );
     }
     //errors add

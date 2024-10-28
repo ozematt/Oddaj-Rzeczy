@@ -1,6 +1,13 @@
 import { Element } from "react-scroll";
 import { useEffect, useState } from "react";
 
+interface Error {
+  location: string;
+  msg: string;
+  param: string;
+  value: string;
+}
+
 const HomeContact = () => {
   ////DATA
   const [name, setName] = useState("");
@@ -8,11 +15,12 @@ const HomeContact = () => {
   const [message, setMessage] = useState("");
 
   const [responseClass, setResponseClass] = useState("");
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<Error[] | null>(null);
+  console.log(errors);
 
   ////LOGIC
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
 
     fetch("https://fer-api.coderslab.pl/v1/portfolio/contact", {
@@ -25,7 +33,7 @@ const HomeContact = () => {
       .then((response) => {
         if (response.status === 200) {
           setResponseClass("success");
-          setErrors("");
+          setErrors(null);
           setName("");
           setEmail("");
           setMessage("");
@@ -34,7 +42,7 @@ const HomeContact = () => {
       })
       .then((data) => {
         setErrors(data.errors);
-        console.log(data);
+        // console.log(data);
       })
       .catch((error) => {
         console.log(error);
@@ -43,7 +51,7 @@ const HomeContact = () => {
 
   //error validation with class addition
   useEffect(() => {
-    if (errors && errors.length > 0) {
+    if (errors) {
       const hasNameError = errors.some((error) => error.param === "name");
       const hasEmailError = errors.some((error) => error.param === "email");
       const hasMessageError = errors.some((error) => error.param === "message");

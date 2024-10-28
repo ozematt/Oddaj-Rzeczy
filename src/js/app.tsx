@@ -6,19 +6,19 @@ import React from "react";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
-import Dashboard from "./components/Dashboard.jsx";
-import Register from "./components/Register.jsx";
-import Logout from "./components/Logout.jsx";
-import Form from "./components/Form.jsx";
-import FormStepTwo from "./components/FormStepTwo.jsx";
-import FormStepThree from "./components/FormStepThree.jsx";
-import FormStepFour from "./components/FormStepFour.jsx";
-import FormSummary from "./components/FormSummary.jsx";
-import FormThankYou from "./components/FormThankYou.jsx";
+import Dashboard from "./components/Dashboard";
+import Register from "./components/Register";
+import Logout from "./components/Logout";
+import Form from "./components/Form";
+import FormStepTwo from "./components/FormStepTwo";
+import FormStepThree from "./components/FormStepThree";
+import FormStepFour from "./components/FormStepFour";
+import FormSummary from "./components/FormSummary";
+import FormThankYou from "./components/FormThankYou";
 
 //easy-peasy
 import { StoreProvider } from "easy-peasy";
-import store from "./api/store.js";
+import store from "./api/store";
 
 const App = () => {
   return (
@@ -43,12 +43,12 @@ const App = () => {
 };
 export default App;
 
-const container = document.getElementById("app");
+const container = document.getElementById("app") as HTMLElement;
 const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <StoreProvider store={store}>
       <App />
     </StoreProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );

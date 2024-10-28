@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const BigBtn = ({ path, fill }) => {
+const BigBtn = ({ path, fill }: { path: string; fill: string }) => {
   return (
     <>
       <Link to={path}>

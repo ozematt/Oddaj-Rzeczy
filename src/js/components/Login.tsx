@@ -10,7 +10,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const validateEmail = (email) => {
+  const validateEmail = (email: string) => {
     return String(email)
       .toLowerCase()
       .match(
@@ -18,7 +18,7 @@ const Login = () => {
       );
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
     let classNames = "";
@@ -33,10 +33,10 @@ const Login = () => {
       setError(classNames);
     } else {
       //signIn
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: email,
-        password: password,
-      });
+      // const { data, error } = await supabase.auth.signInWithPassword({
+      //   email: email,
+      //   password: password,
+      // });
 
       navigate("/"); //navigate to homepage
       //state reset

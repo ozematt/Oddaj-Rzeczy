@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useStoreActions } from "../api/store";
 // import { supabase } from "../../services/supabase.js";
-import { useStoreActions } from "easy-peasy";
 
 const Authentication = () => {
   ///DATA
@@ -27,13 +27,13 @@ const Authentication = () => {
 
   //log out
   const handleLogOut = async () => {
-    const { error } = await supabase.auth.signOut();
+    // const { error } = await supabase.auth.signOut();
     navigate("/wylogowano");
     setUser("");
     setUserLogIn(false);
-    if (error) {
-      alert(error.message);
-    }
+    // if (error) {
+    //   alert(error.message);
+    // }
   };
 
   const handleForm = () => {

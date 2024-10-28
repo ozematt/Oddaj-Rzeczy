@@ -1,4 +1,6 @@
-const ItemToShow = ({ element }) => {
+import { Item } from "./HomeWhoWeHelp";
+
+const ItemToShow = ({ element }: { element: Item }) => {
   return (
     <>
       <li className="item-to-show" key={element.id}>

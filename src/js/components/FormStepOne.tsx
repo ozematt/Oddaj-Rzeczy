@@ -1,7 +1,7 @@
-import HomeContact from "./HomeContact.jsx";
+import HomeContact from "./HomeContact";
 import { useNavigate } from "react-router-dom";
-import { useStoreActions } from "easy-peasy";
 import { useState } from "react";
+import { useStoreActions } from "../api/store";
 
 const FormStepOne = () => {
   ////DATA
@@ -10,11 +10,11 @@ const FormStepOne = () => {
   const setStepOne = useStoreActions((actions) => actions.setStepOne);
 
   ////LOGIC
-  const handleToGive = (value) => {
+  const handleToGive = (value: string) => {
     setToGive(value);
   };
 
-  const handleStepOneSubmit = (e) => {
+  const handleStepOneSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
 
     setStepOne(toGive); //data send to store
@@ -47,7 +47,7 @@ const FormStepOne = () => {
                   }
                   onChange={() =>
                     handleToGive(
-                      "ubrania, które nadają się do ponownego użycia",
+                      "ubrania, które nadają się do ponownego użycia"
                     )
                   }
                   type="radio"
