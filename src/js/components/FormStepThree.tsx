@@ -4,6 +4,7 @@ import HomeContact from "./HomeContact";
 import { useEffect, useState } from "react";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import { useNavigate } from "react-router-dom";
+import { StepThree, StoreModel } from "../api/store";
 
 const FormStepThree = () => {
   ///DATA
@@ -19,7 +20,7 @@ const FormStepThree = () => {
   const [error, setError] = useState("");
 
   //state send to store
-  const [dataToSend, setDataToSend] = useState({
+  const [dataToSend, setDataToSend] = useState<StepThree>({
     location: "",
     whoWeHelp: [],
     organizationName: "",
@@ -31,11 +32,14 @@ const FormStepThree = () => {
   ////LOGIC
 
   //store actions
-  const setStepThree = useStoreActions((actions) => actions.setStepThree);
-  const formData = useStoreState((state) => state.form.stepThree);
+  const setStepThree = useStoreActions(
+    (actions: StoreModel) => actions.setStepThree
+  );
+  //store state
+  const formData = useStoreState((state: StoreModel) => state.form.stepThree);
 
   //log
-  const formDataAll = useStoreState((state) => state.form);
+  const formDataAll = useStoreState((state: StoreModel) => state.form);
   console.log(formDataAll);
 
   //window display
@@ -53,7 +57,7 @@ const FormStepThree = () => {
   //
 
   //location
-  const handleLocation = (city) => {
+  const handleLocation = (city: string) => {
     setDataToSend((prevState) => ({
       ...prevState,
       location: city,
@@ -71,7 +75,7 @@ const FormStepThree = () => {
   }, [formData.location]);
 
   //checkbox and data to send
-  const handleCheckChild = (value) => {
+  const handleCheckChild = (value: string) => {
     setCheckChild(!checkChild);
 
     // update whoWeHelp array in dataToSend state
@@ -87,7 +91,7 @@ const FormStepThree = () => {
     });
   };
 
-  const handleCheckMothers = (value) => {
+  const handleCheckMothers = (value: string) => {
     setCheckMothers(!checkMothers);
 
     setDataToSend((prevState) => {
@@ -102,7 +106,7 @@ const FormStepThree = () => {
     });
   };
 
-  const handleCheckHomeless = (value) => {
+  const handleCheckHomeless = (value: string) => {
     setCheckHomeless(!checkHomeless);
     setDataToSend((prevState) => {
       const newWhoWeHelp = checkHomeless
@@ -116,7 +120,7 @@ const FormStepThree = () => {
     });
   };
 
-  const handleCheckDisabled = (value) => {
+  const handleCheckDisabled = (value: string) => {
     setCheckDisabled(!checkDisabled);
     setDataToSend((prevState) => {
       const newWhoWeHelp = checkDisabled
@@ -130,7 +134,7 @@ const FormStepThree = () => {
     });
   };
 
-  const handleCheckElder = (value) => {
+  const handleCheckElder = (value: string) => {
     setCheckElder(!checkElder);
     setDataToSend((prevState) => {
       const newWhoWeHelp = checkElder
@@ -157,10 +161,10 @@ const FormStepThree = () => {
   };
 
   //submit handler
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     if (validateFormChecks() && validateFormLocation()) {
-      setStepThree(dataToSend); // data send to store
+      // setStepThree(dataToSend); // data send to store
       navigate("/oddaj-rzeczy/step-4"); //next page navigate
       setError(""); //error reset
     } else if (!validateFormChecks()) {

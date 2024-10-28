@@ -1,12 +1,12 @@
 import { createStore, action, Action } from "easy-peasy";
 
-interface StepThree {
+export interface StepThree {
   location: string;
   whoWeHelp: string[];
   organizationName: string;
 }
 
-interface StepFour {
+export interface StepFour {
   address: {
     streetName: string;
     city: string;
@@ -20,7 +20,7 @@ interface StepFour {
   };
 }
 
-interface Form {
+export interface Form {
   stepOne: {
     toGive: string;
   };
@@ -32,7 +32,7 @@ interface Form {
   stepFour: StepFour;
 }
 
-interface StoreModel {
+export interface StoreModel {
   userLogIn: boolean;
   form: Form;
   setStepOne: Action<StoreModel, string>;
