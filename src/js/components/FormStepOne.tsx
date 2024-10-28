@@ -1,4 +1,4 @@
-import HomeContact from "./HomeContact.js";
+import HomeContact from "./HomeContact";
 import { useNavigate } from "react-router-dom";
 import { useStoreActions } from "easy-peasy";
 import { useState } from "react";

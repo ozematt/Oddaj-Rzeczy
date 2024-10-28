@@ -1,4 +1,3 @@
-// eslint-disable-next-line react/prop-types
 const PageNumber = ({ page, currentPage, pages, handlePageChange }) => {
   return (
     <>
