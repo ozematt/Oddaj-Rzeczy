@@ -35,6 +35,7 @@ const FormStepThree = () => {
   const setStepThree = useStoreActions(
     (actions: StoreModel) => actions.setStepThree
   );
+
   //store state
   const formData = useStoreState((state: StoreModel) => state.form.stepThree);
 
@@ -164,7 +165,7 @@ const FormStepThree = () => {
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     if (validateFormChecks() && validateFormLocation()) {
-      // setStepThree(dataToSend); // data send to store
+      setStepThree(dataToSend); // data send to store
       navigate("/oddaj-rzeczy/step-4"); //next page navigate
       setError(""); //error reset
     } else if (!validateFormChecks()) {
