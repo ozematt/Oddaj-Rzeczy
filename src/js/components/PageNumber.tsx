@@ -1,4 +1,14 @@
-const PageNumber = ({ page, currentPage, pages, handlePageChange }) => {
+const PageNumber = ({
+  page,
+  currentPage,
+  pages,
+  handlePageChange,
+}: {
+  page: number;
+  currentPage: number;
+  pages: number[];
+  handlePageChange: (page: number) => void;
+}) => {
   return (
     <>
       <li

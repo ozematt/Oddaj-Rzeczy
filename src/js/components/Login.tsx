@@ -18,7 +18,7 @@ const Login = () => {
       );
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
     let classNames = "";

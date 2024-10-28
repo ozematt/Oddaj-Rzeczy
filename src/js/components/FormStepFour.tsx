@@ -1,10 +1,9 @@
 import FromMainSection from "./FromMainSection";
 import { Link } from "react-router-dom";
 import HomeContact from "./HomeContact";
-import { useStoreState, useStoreActions } from "easy-peasy";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { StepFour, StoreModel } from "../api/store";
+import { StepFour, useStoreActions } from "../api/store";
 
 const FormStepFour = () => {
   const navigate = useNavigate();
@@ -26,13 +25,11 @@ const FormStepFour = () => {
   const [addressErrors, setAddressErrors] = useState<string[]>([]);
   const [deadlineErrors, setDeadlineErrors] = useState<string[]>([]);
 
-  const setStepFour = useStoreActions(
-    (actions: StoreModel) => actions.setStepFour
-  );
-  const formData = useStoreState((state: StoreModel) => state.form);
-  console.log(formData);
+  const setStepFour = useStoreActions((actions) => actions.setStepFour);
+  // const formData = useStoreState((state) => state.form);
+  // console.log(formData);
 
-  const handleInputChange = (e: React.SyntheticEvent) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
     setDataToSend((prevState) => {

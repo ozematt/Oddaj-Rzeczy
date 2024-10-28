@@ -1,9 +1,21 @@
-import { DATA } from "../data/data.js";
+import { DATA } from "../data/data";
 import { useState } from "react";
-import PageNumber from "./PageNumber.js";
-import ItemToShow from "./ItemToShow.js";
-import ItemBtn from "./ItemBtn.js";
+import PageNumber from "./PageNumber";
+import ItemToShow from "./ItemToShow";
+import ItemBtn from "./ItemBtn";
 import { Element } from "react-scroll";
+
+export interface Item {
+  id: string;
+  name: string;
+  purpose: string;
+  collected: string;
+}
+
+interface Foundation {
+  text: string;
+  elements: Item[];
+}
 
 const HomeWhoWeHelp = () => {
   ////DATA
@@ -15,7 +27,8 @@ const HomeWhoWeHelp = () => {
 
   ////LOGIC
   //element change
-  let dataElements = DATA.foundations[0];
+  let dataElements: Foundation = DATA.foundations[0];
+
   let text =
     "W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi\n" +
     "          współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i\n" +
@@ -44,11 +57,11 @@ const HomeWhoWeHelp = () => {
   const elementsToShow = dataElements.elements.slice(startIndex, endIndex);
 
   //handlers
-  const handlePageChange = (page) => {
+  const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
 
-  const handleButtonClick = (name) => {
+  const handleButtonClick = (name: string) => {
     setButtonClicked(name);
     setCurrentPage(1);
   };

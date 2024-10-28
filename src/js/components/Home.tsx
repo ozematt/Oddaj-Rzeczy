@@ -4,7 +4,8 @@ import HomeSimpleSteps from "./HomeSimpleSteps";
 import HomeAboutUs from "./HomeAboutUs";
 import HomeWhoWeHelp from "./HomeWhoWeHelp";
 import HomeContact from "./HomeContact";
-import { useStoreState } from "easy-peasy";
+import { useStoreState } from "../api/store";
+// import { useStoreState } from "easy-peasy";
 
 const Home = () => {
   const userLogIn = useStoreState((state) => state.userLogIn);

@@ -1,8 +1,8 @@
-import MainInfo from "./MainInfo.js";
+import MainInfo from "./MainInfo";
 import { Element } from "react-scroll";
 import Dashboard from "./Dashboard";
 
-const HomeHeader = ({ userLogIn }) => {
+const HomeHeader = ({ userLogIn }: { userLogIn: boolean }) => {
   return (
     <>
       <Element name="start">

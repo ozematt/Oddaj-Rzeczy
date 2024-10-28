@@ -1,4 +1,12 @@
-const ItemBtn = ({ buttonClicked, btn, handleButtonClick }) => {
+const ItemBtn = ({
+  buttonClicked,
+  btn,
+  handleButtonClick,
+}: {
+  buttonClicked: string;
+  btn: string;
+  handleButtonClick: (btn: string) => void;
+}) => {
   return (
     <>
       <button

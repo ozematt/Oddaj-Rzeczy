@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useStoreActions } from "../api/store";
 // import { supabase } from "../../services/supabase.js";
-import { useStoreActions } from "easy-peasy";
 
 const Authentication = () => {
   ///DATA

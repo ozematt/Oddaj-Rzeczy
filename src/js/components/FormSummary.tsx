@@ -1,7 +1,7 @@
 import FromMainSection from "./FromMainSection";
 import { Link } from "react-router-dom";
 import HomeContact from "./HomeContact";
-import { useStoreState } from "easy-peasy";
+import { useStoreState } from "../api/store";
 
 const FormSummary = () => {
   const formData = useStoreState((state) => state.form);
@@ -48,8 +48,8 @@ const FormSummary = () => {
             <table className="summary-table">
               <thead>
                 <tr>
-                  <th colSpan="2">Adres odbioru:</th>
-                  <th colSpan="2">Termin odbioru:</th>
+                  <th colSpan={2}>Adres odbioru:</th>
+                  <th colSpan={2}>Termin odbioru:</th>
                 </tr>
               </thead>
               <tbody>

@@ -27,7 +27,7 @@ const Register = () => {
       );
   };
 
-  const handleRegister = async (event) => {
+  const handleRegister = async (event: React.SyntheticEvent) => {
     event.preventDefault();
 
     let classNames = "";

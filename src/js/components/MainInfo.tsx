@@ -1,6 +1,6 @@
 import BigBtn from "./BigBtn";
 
-const MainInfo = ({ userLogIn }) => {
+const MainInfo = ({ userLogIn }: { userLogIn: boolean }) => {
   const text = "ODDAJ\nRZECZY";
   return (
     <main>
