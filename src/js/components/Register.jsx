@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { supabase } from "../../services/supabase.js";
+// import { supabase } from "../../services/supabase.js";
 import { useNavigate } from "react-router-dom";
 import { useStoreState, useStoreActions } from "easy-peasy";
 
