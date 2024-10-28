@@ -2,9 +2,8 @@ import FromMainSection from "./FromMainSection";
 import { Link } from "react-router-dom";
 import HomeContact from "./HomeContact";
 import { useEffect, useState } from "react";
-import { useStoreState, useStoreActions } from "easy-peasy";
 import { useNavigate } from "react-router-dom";
-import { StepThree, StoreModel } from "../api/store";
+import { StepThree, useStoreActions, useStoreState } from "../api/store";
 
 const FormStepThree = () => {
   ///DATA
@@ -32,17 +31,11 @@ const FormStepThree = () => {
   ////LOGIC
 
   //store actions
-  const setStepThree = useStoreActions(
-    (actions: StoreModel) => actions.setStepThree
-  );
+  const setStepThree = useStoreActions((actions) => actions.setStepThree);
   console.log(setStepThree);
 
   //store state
-  const formData = useStoreState((state: StoreModel) => state.form.stepThree);
-
-  //log
-  // const formDataAll = useStoreState((state: StoreModel) => state.form);
-  // console.log(formDataAll);
+  const formData = useStoreState((state) => state.form.stepThree);
 
   //window display
   const handleClassesToggle = () => {

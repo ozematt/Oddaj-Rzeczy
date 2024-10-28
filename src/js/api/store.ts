@@ -1,5 +1,7 @@
 import { createStore, action, Action } from "easy-peasy";
 
+import { createTypedHooks } from "easy-peasy";
+
 export interface StepThree {
   location: string;
   whoWeHelp: string[];
@@ -94,6 +96,13 @@ const storeModel: StoreModel = {
   }),
 };
 
-const store = createStore(storeModel);
+const store = createStore<StoreModel>(storeModel);
 
 export default store;
+
+//typing the hooks
+const typedHooks = createTypedHooks<StoreModel>();
+
+export const useStoreActions = typedHooks.useStoreActions;
+export const useStoreDispatch = typedHooks.useStoreDispatch;
+export const useStoreState = typedHooks.useStoreState;
