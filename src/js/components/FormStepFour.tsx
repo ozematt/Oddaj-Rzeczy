@@ -4,11 +4,12 @@ import HomeContact from "./HomeContact";
 import { useStoreState, useStoreActions } from "easy-peasy";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { StepFour, StoreModel } from "../api/store";
 
 const FormStepFour = () => {
   const navigate = useNavigate();
 
-  const [dataToSend, setDataToSend] = useState({
+  const [dataToSend, setDataToSend] = useState<StepFour>({
     address: {
       streetName: "",
       city: "",
@@ -22,13 +23,16 @@ const FormStepFour = () => {
     },
   });
 
-  const [addressErrors, setAddressErrors] = useState([]);
-  const [deadlineErrors, setDeadlineErrors] = useState([]);
+  const [addressErrors, setAddressErrors] = useState<string[]>([]);
+  const [deadlineErrors, setDeadlineErrors] = useState<string[]>([]);
 
-  const setStepFour = useStoreActions((actions) => actions.setStepFour);
-  const formData = useStoreState((state) => state.form);
+  const setStepFour = useStoreActions(
+    (actions: StoreModel) => actions.setStepFour
+  );
+  const formData = useStoreState((state: StoreModel) => state.form);
   console.log(formData);
-  const handleInputChange = (e) => {
+
+  const handleInputChange = (e: React.SyntheticEvent) => {
     const { name, value } = e.target;
 
     setDataToSend((prevState) => {
@@ -59,7 +63,7 @@ const FormStepFour = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
 
     //address and deadline validation

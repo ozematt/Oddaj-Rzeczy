@@ -29,6 +29,7 @@ export interface Form {
     numberOfBugs: string;
   };
   stepThree: StepThree;
+
   stepFour: StepFour;
 }
 

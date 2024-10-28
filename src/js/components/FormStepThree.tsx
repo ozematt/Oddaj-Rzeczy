@@ -35,13 +35,14 @@ const FormStepThree = () => {
   const setStepThree = useStoreActions(
     (actions: StoreModel) => actions.setStepThree
   );
+  console.log(setStepThree);
 
   //store state
   const formData = useStoreState((state: StoreModel) => state.form.stepThree);
 
   //log
-  const formDataAll = useStoreState((state: StoreModel) => state.form);
-  console.log(formDataAll);
+  // const formDataAll = useStoreState((state: StoreModel) => state.form);
+  // console.log(formDataAll);
 
   //window display
   const handleClassesToggle = () => {
