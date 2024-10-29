@@ -18,10 +18,10 @@ const Register = () => {
   ////LOGIC
 
   //helper validation function, set errors
-  const validationFields = (): boolean => {
+  const registerValidation = (): boolean => {
     let validationErrors = "";
     if (!validateEmail(email)) {
-      validationErrors += "error-email ";
+      validationErrors += "error-email "; // += added string to existing one
     }
     if (password.length < 6) {
       validationErrors += "error-password ";
@@ -42,7 +42,7 @@ const Register = () => {
     event.preventDefault();
 
     //validation call
-    const isValid = validationFields();
+    const isValid = registerValidation();
     if (!isValid) return;
 
     //create new user
