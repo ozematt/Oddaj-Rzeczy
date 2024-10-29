@@ -1,39 +1,45 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useStoreActions } from "../api/store";
-// import { supabase } from "../../services/supabase.js";
+import supabase from "../../services/supabase";
+import { User } from "@supabase/supabase-js";
 
 const Authentication = () => {
   ///DATA
   const [user, setUser] = useState("");
+
   const navigate = useNavigate();
 
   const setUserLogIn = useStoreActions((actions) => actions.setUserLogIn);
 
   ///LOGIC
   useEffect(() => {
-    // findUser();
+    findUser();
   }, [user]);
 
   // find current user
-  // const findUser = async () => {
-  //   const {
-  //     data: { user },
-  //   } = await supabase.auth.getUser();
-  //   if (user) {
-  //     setUser(user.email);
-  //   }
-  // };
+  const findUser = async (): Promise<void> => {
+    const {
+      data: { user },
+    }: { data: { user: User | null } } = await supabase.auth.getUser();
+
+    //if user exist
+    if (user && user.email) {
+      setUser(user.email);
+    } else {
+      setUser("");
+    }
+  };
 
   //log out
   const handleLogOut = async () => {
-    // const { error } = await supabase.auth.signOut();
+    const { error } = await supabase.auth.signOut();
     navigate("/wylogowano");
     setUser("");
     setUserLogIn(false);
-    // if (error) {
-    //   alert(error.message);
-    // }
+    if (error) {
+      alert(error.message);
+    }
   };
 
   const handleForm = () => {
@@ -43,6 +49,7 @@ const Authentication = () => {
   //supporting functions
   const LogIn = () => {
     setUserLogIn(true);
+
     return (
       <>
         <p>Cześć, {user}</p>

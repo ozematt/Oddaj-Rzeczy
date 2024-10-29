@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-// import { supabase } from "../../services/supabase.js";
+import supabase from "../../services/supabase";
 import { useNavigate } from "react-router-dom";
-import { useStoreState, useStoreActions } from "easy-peasy";
+import { useStoreActions } from "../api/store";
+// import { useStoreState, useStoreActions } from "easy-peasy";
 
 const Register = () => {
   ////DATA
@@ -33,33 +34,33 @@ const Register = () => {
     let classNames = "";
 
     if (!validateEmail(email)) {
-      classNames += "error-email ";
+      classNames += "error-email";
     }
     if (password.length < 6) {
-      classNames += "error-password ";
+      classNames += "error-password";
     }
     if (password !== repeatPassword) {
-      classNames += "error-repeated-password ";
+      classNames += "error-repeated-password";
     }
     if (repeatPassword.includes(" ")) {
-      classNames += "error-repeated-password ";
+      classNames += "error-repeated-password";
     }
 
-    classNames = classNames.trim();
+    // classNames = classNames.trim();
 
     if (classNames) {
       setError(classNames);
     } else {
-      //create user
-      // const { data, error } = await supabase.auth.signUp({
-      //   email: email,
-      //   password: password,
-      // });
+      //create new user
+      const { data, error } = await supabase.auth.signUp({
+        email: email,
+        password: password,
+      });
       navigate("/"); //navigate to homepage
       // setUser({ email });
       alert("Potwierdzenie zostało wysłane na twojego emaila ");
       console.log(error);
-      // console.log(data);
+      console.log(data);
 
       setError("");
       setEmail("");
