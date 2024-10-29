@@ -37,16 +37,19 @@ export interface Form {
 
 export interface StoreModel {
   userLogIn: boolean;
+  username: string | null;
   form: Form;
   setStepOne: Action<StoreModel, string>;
   setStepTwo: Action<StoreModel, string>;
   setStepThree: Action<StoreModel, StepThree>;
   setStepFour: Action<StoreModel, StepFour>;
   setUserLogIn: Action<StoreModel, boolean>;
+  setUsername: Action<StoreModel, string | null>;
 }
 
 const storeModel: StoreModel = {
   userLogIn: false,
+  username: null,
   form: {
     stepOne: {
       toGive: "",
@@ -93,6 +96,9 @@ const storeModel: StoreModel = {
   }),
   setUserLogIn: action((state, payload) => {
     state.userLogIn = payload;
+  }),
+  setUsername: action((state, payload) => {
+    state.username = payload;
   }),
 };
 

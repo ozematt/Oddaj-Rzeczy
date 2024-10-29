@@ -1,7 +1,7 @@
 import FromMainSection from "./FromMainSection";
 import { Link } from "react-router-dom";
 import HomeContact from "./HomeContact";
-import { useStoreState } from "../api/store";
+import { useStoreState } from "../store/store";
 
 const FormSummary = () => {
   const formData = useStoreState((state) => state.form);

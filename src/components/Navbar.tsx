@@ -20,12 +20,7 @@ const Navbar = () => {
           <ul className="hamburger-ul">
             <li className="hamburger-menu-item">
               <ScrollLink to="start" smooth={true} duration={500}>
-                <Link
-                  to="/"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  Start
-                </Link>
+                Start
               </ScrollLink>
             </li>
             <li className="hamburger-menu-item">
@@ -55,9 +50,7 @@ const Navbar = () => {
         <ul>
           <li>
             <ScrollLink to="start" smooth={true} duration={500}>
-              <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-                Start
-              </Link>
+              Start
             </ScrollLink>
           </li>
           <li>

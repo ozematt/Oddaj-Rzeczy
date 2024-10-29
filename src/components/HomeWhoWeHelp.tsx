@@ -1,9 +1,9 @@
-import { DATA } from "../data/data";
 import { useState } from "react";
 import PageNumber from "./PageNumber";
 import ItemToShow from "./ItemToShow";
 import ItemBtn from "./ItemBtn";
 import { Element } from "react-scroll";
+import { DATA } from "../data/records";
 
 export interface Item {
   id: string;

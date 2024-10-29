@@ -1,35 +1,36 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import supabase from "../../services/supabase";
+import supabase from "../services/supabase";
 import { useNavigate } from "react-router-dom";
+import { useStoreActions, useStoreState } from "../store/store";
+import { validateEmail } from "../lib/validators";
 
 const Login = () => {
+  //
+  //DATA
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
 
+  //global state action
+  const setUsername = useStoreActions((actions) => actions.setUsername);
+
   const navigate = useNavigate();
 
-  const validateEmail = (email: string) => {
-    return String(email)
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
-  };
+  ////LOGIC
+  //email validation helper function
 
+  // handle user log in
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    let classNames = "";
+    let classNames = ""; // class name, errors handler
 
     if (!validateEmail(email)) {
       classNames += "error-email "; // += added string to existing one
     }
     if (password.length < 6) {
       classNames += "error-password ";
-
-      // classNames = classNames.trim();
       setErrors(classNames);
     } else {
       //sign in user
@@ -37,18 +38,20 @@ const Login = () => {
         email: email,
         password: password,
       });
-      console.log(data);
-      console.log(error);
-
-      navigate("/"); //navigate to homepage
-
-      //state reset
+      if (data.user === null && data.session === null && error) {
+        setErrors("error-login");
+        return;
+      }
+      //when user exist
+      setUsername(email);
+      navigate("/");
       setErrors("");
       setEmail("");
       setPassword("");
     }
   };
 
+  //UI
   return (
     <>
       <section className="login wrapper">
@@ -65,8 +68,12 @@ const Login = () => {
                   type="email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
+                {/* ERRORS */}
                 {errors.includes("error-email") ? (
                   <p className="error-email">Podany email jest niepoprawny!</p>
+                ) : null}
+                {errors.includes("error-login") ? (
+                  <p className="error-email">Użytkownik nie istnieje!</p>
                 ) : null}
               </label>
               <label>
@@ -77,10 +84,15 @@ const Login = () => {
                   type="password"
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                {/* ERRORS */}
                 {errors.includes("error-password") ? (
                   <p className="error-password">
+                    {errors.includes("error-login")}
                     Podane hasło jest za krótkie!
                   </p>
+                ) : null}
+                {errors.includes("error-login") ? (
+                  <p className="error-password">Hasło nieprawidłowe!</p>
                 ) : null}
               </label>
             </div>
