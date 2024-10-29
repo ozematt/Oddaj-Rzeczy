@@ -1,7 +1,7 @@
 import HomeContact from "./HomeContact";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useStoreActions } from "../api/store";
+import { useStoreActions } from "../store/store";
 
 const FormStepOne = () => {
   ////DATA

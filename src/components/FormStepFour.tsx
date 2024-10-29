@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import HomeContact from "./HomeContact";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { StepFour, useStoreActions } from "../api/store";
+import { StepFour, useStoreActions } from "../store/store";
 
 const FormStepFour = () => {
   const navigate = useNavigate();

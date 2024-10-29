@@ -18,7 +18,7 @@ import FormThankYou from "./components/FormThankYou";
 
 //easy-peasy
 import { StoreProvider } from "easy-peasy";
-import store from "./api/store";
+import store from "./store/store";
 
 const App = () => {
   return (

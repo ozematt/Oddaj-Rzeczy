@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import supabase from "../services/supabase";
+import { registerUser } from "../services/supabase";
 import { useNavigate } from "react-router-dom";
-import { useStoreActions } from "../api/store";
 import { validateEmail } from "../lib/validators";
 
 const Register = () => {
@@ -18,19 +17,6 @@ const Register = () => {
 
   // ////LOGIC
 
-  const registerUser = async (email: string, password: string) => {
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-    });
-    if (error) {
-      console.error("Error registering user:", error.message);
-      return null;
-    }
-
-    return data;
-  };
-
   const handleRegister = async (event: React.SyntheticEvent) => {
     event.preventDefault();
 
@@ -42,24 +28,27 @@ const Register = () => {
     if (password.length < 6) {
       validationErrors += "error-password ";
     }
-    if (password !== repeatPassword) {
-      validationErrors += "error-repeated-password ";
-    }
-    if (repeatPassword.includes(" ")) {
+    if (password !== repeatPassword || repeatPassword.includes(" ")) {
       validationErrors += "error-repeated-password ";
     }
 
     if (validationErrors) {
       setErrors(validationErrors);
     } else {
-      registerUser(email, password); //create new user
-
-      navigate("/"); //navigate to homepage
-      alert("Potwierdzenie zostało wysłane na twojego emaila ");
-      setErrors("");
-      setEmail("");
-      setPassword("");
-      setRepeatPassword("");
+      //create new user
+      try {
+        const user = await registerUser(email, password);
+        console.log("Zarejestrowano użytkownika:", user);
+        navigate("/"); //navigate to homepage
+        alert("Potwierdzenie zostało wysłane na twojego emaila ");
+        setErrors("");
+        setEmail("");
+        setPassword("");
+        setRepeatPassword("");
+      } catch (error) {
+        console.error("Błąd rejestracji:", error);
+        return;
+      }
     }
   };
 

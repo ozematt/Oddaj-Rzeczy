@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useStoreActions, useStoreState } from "../api/store";
+import { useStoreActions, useStoreState } from "../store/store";
 import supabase from "../services/supabase";
 
 const Authentication = () => {
