@@ -16,7 +16,6 @@ const HomeContact = () => {
 
   const [responseClass, setResponseClass] = useState("");
   const [errors, setErrors] = useState<Error[] | null>(null);
-  console.log(errors);
 
   ////LOGIC
 

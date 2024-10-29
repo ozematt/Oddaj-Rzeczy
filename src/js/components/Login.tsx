@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-// import { supabase } from "../../services/supabase.js";
+import supabase from "../../services/supabase";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState("");
 
   const navigate = useNavigate();
 
@@ -24,23 +24,26 @@ const Login = () => {
     let classNames = "";
 
     if (!validateEmail(email)) {
-      classNames += "error-email ";
+      classNames += "error-email "; // += added string to existing one
     }
     if (password.length < 6) {
       classNames += "error-password ";
 
-      classNames = classNames.trim();
-      setError(classNames);
+      // classNames = classNames.trim();
+      setErrors(classNames);
     } else {
-      //signIn
-      // const { data, error } = await supabase.auth.signInWithPassword({
-      //   email: email,
-      //   password: password,
-      // });
+      //sign in user
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: email,
+        password: password,
+      });
+      console.log(data);
+      console.log(error);
 
       navigate("/"); //navigate to homepage
+
       //state reset
-      setError("");
+      setErrors("");
       setEmail("");
       setPassword("");
     }
@@ -62,7 +65,7 @@ const Login = () => {
                   type="email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                {error.includes("error-email") ? (
+                {errors.includes("error-email") ? (
                   <p className="error-email">Podany email jest niepoprawny!</p>
                 ) : null}
               </label>
@@ -74,7 +77,7 @@ const Login = () => {
                   type="password"
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                {error.includes("error-password") ? (
+                {errors.includes("error-password") ? (
                   <p className="error-password">
                     Podane hasło jest za krótkie!
                   </p>
