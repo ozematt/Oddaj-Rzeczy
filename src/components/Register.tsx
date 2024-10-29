@@ -2,56 +2,52 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { registerUser } from "../services/supabase";
 import { useNavigate } from "react-router-dom";
-import { validateEmail } from "../lib/validators";
+import { registerValidation } from "../lib/validators";
 
 const Register = () => {
+  //
   ////DATA
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
   const [errors, setErrors] = useState("");
-  console.log(errors);
 
   const navigate = useNavigate();
 
-  // ////LOGIC
-
+  ////LOGIC
+  //handle user register
   const handleRegister = async (event: React.SyntheticEvent) => {
     event.preventDefault();
 
-    let validationErrors = "";
+    //registerValidation call
+    const isValid = registerValidation(
+      email,
+      password,
+      repeatPassword,
+      setErrors
+    );
+    if (!isValid) return;
 
-    if (!validateEmail(email)) {
-      validationErrors += "error-email ";
-    }
-    if (password.length < 6) {
-      validationErrors += "error-password ";
-    }
-    if (password !== repeatPassword || repeatPassword.includes(" ")) {
-      validationErrors += "error-repeated-password ";
-    }
+    //create new user
+    try {
+      const user = await registerUser(email, password);
+      console.log("User registered:", user?.email);
+      alert("Potwierdzenie zostało wysłane na twojego e-maila ");
 
-    if (validationErrors) {
-      setErrors(validationErrors);
-    } else {
-      //create new user
-      try {
-        const user = await registerUser(email, password);
-        console.log("Zarejestrowano użytkownika:", user);
-        navigate("/"); //navigate to homepage
-        alert("Potwierdzenie zostało wysłane na twojego emaila ");
-        setErrors("");
-        setEmail("");
-        setPassword("");
-        setRepeatPassword("");
-      } catch (error) {
-        console.error("Błąd rejestracji:", error);
-        return;
-      }
+      navigate("/");
+      setErrors("");
+      setEmail("");
+      setPassword("");
+      setRepeatPassword("");
+    } catch (error) {
+      console.error("Registration error:", error);
+      alert("Błąd rejestracji");
+      return;
     }
   };
 
+  ////UI
   return (
     <>
       <section className="login wrapper">

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import supabase from "../services/supabase";
+import { loginUser } from "../services/supabase";
 import { useNavigate } from "react-router-dom";
-import { useStoreActions, useStoreState } from "../store/store";
-import { validateEmail } from "../lib/validators";
+import { useStoreActions } from "../store/store";
+import { loginValidation } from "../lib/validators";
 
 const Login = () => {
   //
@@ -12,42 +12,32 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
 
+  const navigate = useNavigate();
+
   //global state action
   const setUsername = useStoreActions((actions) => actions.setUsername);
 
-  const navigate = useNavigate();
-
   ////LOGIC
-  //email validation helper function
-
-  // handle user log in
+  // handle user login
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    let classNames = ""; // class name, errors handler
+    //loginValidation call
+    const isValid = loginValidation(email, password, setErrors);
+    if (!isValid) return;
 
-    if (!validateEmail(email)) {
-      classNames += "error-email "; // += added string to existing one
-    }
-    if (password.length < 6) {
-      classNames += "error-password ";
-      setErrors(classNames);
-    } else {
-      //sign in user
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email: email,
-        password: password,
-      });
-      if (data.user === null && data.session === null && error) {
-        setErrors("error-login");
-        return;
-      }
-      //when user exist
+    //sign in user
+    try {
+      const user = await loginUser(email, password);
       setUsername(email);
       navigate("/");
       setErrors("");
       setEmail("");
       setPassword("");
+    } catch (error) {
+      console.error("Login error:", error);
+      setErrors("error-login");
+      return;
     }
   };
 
