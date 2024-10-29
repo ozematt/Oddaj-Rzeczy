@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import supabase from "../../services/supabase";
+import supabase from "../services/supabase";
 import { useNavigate } from "react-router-dom";
 import { useStoreActions } from "../api/store";
-// import { useStoreState, useStoreActions } from "easy-peasy";
+import { validateEmail } from "../lib/validators";
 
 const Register = () => {
   ////DATA
@@ -11,58 +11,52 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState("");
+  console.log(errors);
+
   const navigate = useNavigate();
-  // const [login, setLogin] = useState(false);
 
   // ////LOGIC
-  // const userData = useStoreState((state) => state.user.data);
-  // const setUser = useStoreActions((actions) => actions.user.setUser);
-  // console.log(userData);
 
-  const validateEmail = (email: string) => {
-    return String(email)
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
+  const registerUser = async (email: string, password: string) => {
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+    if (error) {
+      console.error("Error registering user:", error.message);
+      return null;
+    }
+
+    return data;
   };
 
   const handleRegister = async (event: React.SyntheticEvent) => {
     event.preventDefault();
 
-    let classNames = "";
+    let validationErrors = "";
 
     if (!validateEmail(email)) {
-      classNames += "error-email";
+      validationErrors += "error-email ";
     }
     if (password.length < 6) {
-      classNames += "error-password";
+      validationErrors += "error-password ";
     }
     if (password !== repeatPassword) {
-      classNames += "error-repeated-password";
+      validationErrors += "error-repeated-password ";
     }
     if (repeatPassword.includes(" ")) {
-      classNames += "error-repeated-password";
+      validationErrors += "error-repeated-password ";
     }
 
-    // classNames = classNames.trim();
-
-    if (classNames) {
-      setError(classNames);
+    if (validationErrors) {
+      setErrors(validationErrors);
     } else {
-      //create new user
-      const { data, error } = await supabase.auth.signUp({
-        email: email,
-        password: password,
-      });
-      navigate("/"); //navigate to homepage
-      // setUser({ email });
-      alert("Potwierdzenie zostało wysłane na twojego emaila ");
-      console.log(error);
-      console.log(data);
+      registerUser(email, password); //create new user
 
-      setError("");
+      navigate("/"); //navigate to homepage
+      alert("Potwierdzenie zostało wysłane na twojego emaila ");
+      setErrors("");
       setEmail("");
       setPassword("");
       setRepeatPassword("");
@@ -85,7 +79,7 @@ const Register = () => {
                   type="email"
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                {error.includes("error-email") ? (
+                {errors.includes("error-email") ? (
                   <p className="error-email">Podany email jest niepoprawny!</p>
                 ) : null}
               </label>
@@ -97,7 +91,7 @@ const Register = () => {
                   type="password"
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                {error.includes("error-password") ? (
+                {errors.includes("error-password") ? (
                   <p className="error-password">
                     Podane hasło jest za krótkie!
                   </p>
@@ -111,7 +105,7 @@ const Register = () => {
                   type="password"
                   onChange={(e) => setRepeatPassword(e.target.value)}
                 />
-                {error.includes("error-repeated-password") ? (
+                {errors.includes("error-repeated-password") ? (
                   <p className="error-repeated-password">
                     Podane hasło nie jest takie samo!
                   </p>

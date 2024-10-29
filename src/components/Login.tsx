@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import supabase from "../../services/supabase";
+import supabase from "../services/supabase";
 import { useNavigate } from "react-router-dom";
 import { useStoreActions, useStoreState } from "../api/store";
+import { validateEmail } from "../lib/validators";
 
 const Login = () => {
   //
@@ -11,21 +12,13 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
 
+  //global state action
   const setUsername = useStoreActions((actions) => actions.setUsername);
-  const username = useStoreState((state) => state.username);
-  // console.log(username);
 
   const navigate = useNavigate();
 
   ////LOGIC
   //email validation helper function
-  const validateEmail = (email: string) => {
-    return email
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
-  };
 
   // handle user log in
   const handleSubmit = async (e: React.SyntheticEvent) => {
