@@ -1,78 +1,46 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useStoreActions } from "../api/store";
+import { useStoreActions, useStoreState } from "../api/store";
 import supabase from "../../services/supabase";
-import { User } from "@supabase/supabase-js";
 
 const Authentication = () => {
   ///DATA
-  const [user, setUser] = useState("");
+  const setUsername = useStoreActions((actions) => actions.setUsername);
+  const username = useStoreState((state) => state.username);
 
   const navigate = useNavigate();
 
-  const setUserLogIn = useStoreActions((actions) => actions.setUserLogIn);
-
   ///LOGIC
-  useEffect(() => {
-    findUser();
-  }, [user]);
-
-  // find current user
-  const findUser = async (): Promise<void> => {
-    const {
-      data: { user },
-    }: { data: { user: User | null } } = await supabase.auth.getUser();
-
-    //if user exist
-    if (user && user.email) {
-      setUser(user.email);
-    } else {
-      setUser("");
-    }
-  };
-
   //log out
   const handleLogOut = async () => {
     const { error } = await supabase.auth.signOut();
     navigate("/wylogowano");
-    setUser("");
-    setUserLogIn(false);
+    setUsername(null);
     if (error) {
       alert(error.message);
     }
   };
 
-  const handleForm = () => {
-    navigate("/oddaj-rzeczy");
-  };
-
   //supporting functions
-  const LogIn = () => {
-    setUserLogIn(true);
+  const LogIn = (
+    <>
+      <p>Cześć, {username}</p>
+      <button onClick={() => navigate("/oddaj-rzeczy")}>Oddaj rzeczy</button>
+      <button onClick={handleLogOut}>Wyloguj</button>
+    </>
+  );
 
-    return (
-      <>
-        <p>Cześć, {user}</p>
-        <button onClick={handleForm}>Oddaj rzeczy</button>
-        <button onClick={handleLogOut}>Wyloguj</button>
-      </>
-    );
-  };
-
-  const withOutUser = () => {
-    return (
-      <>
-        <Link to="/logowanie">
-          <button>Zaloguj</button>
-        </Link>
-        <Link to="/rejestracja">
-          <button>Załóż konto</button>
-        </Link>
-      </>
-    );
-  };
+  const withOutUser = (
+    <>
+      <Link to="/logowanie">
+        <button>Zaloguj</button>
+      </Link>
+      <Link to="/rejestracja">
+        <button>Załóż konto</button>
+      </Link>
+    </>
+  );
 
   ///UI
-  return <div className="authentication">{user ? LogIn() : withOutUser()}</div>;
+  return <div className="authentication">{username ? LogIn : withOutUser}</div>;
 };
 export default Authentication;

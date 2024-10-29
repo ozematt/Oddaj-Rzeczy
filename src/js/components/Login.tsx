@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import supabase from "../../services/supabase";
 import { useNavigate } from "react-router-dom";
+import { useStoreActions, useStoreState } from "../api/store";
 
 const Login = () => {
   //
@@ -9,6 +10,10 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
+
+  const setUsername = useStoreActions((actions) => actions.setUsername);
+  const username = useStoreState((state) => state.username);
+  // console.log(username);
 
   const navigate = useNavigate();
 
@@ -45,6 +50,7 @@ const Login = () => {
         return;
       }
       //when user exist
+      setUsername(email);
       navigate("/");
       setErrors("");
       setEmail("");
