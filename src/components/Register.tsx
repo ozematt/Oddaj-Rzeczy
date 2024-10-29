@@ -1,27 +1,25 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { registerUser } from "../services/supabase";
+import supabase, { registerUser } from "../services/supabase";
 import { useNavigate } from "react-router-dom";
 import { validateEmail } from "../lib/validators";
 
 const Register = () => {
+  //
   ////DATA
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
   const [errors, setErrors] = useState("");
-  console.log(errors);
 
   const navigate = useNavigate();
 
-  // ////LOGIC
+  ////LOGIC
 
-  const handleRegister = async (event: React.SyntheticEvent) => {
-    event.preventDefault();
-
+  //helper validation function, set errors
+  const validationFields = (): boolean => {
     let validationErrors = "";
-
     if (!validateEmail(email)) {
       validationErrors += "error-email ";
     }
@@ -31,27 +29,42 @@ const Register = () => {
     if (password !== repeatPassword || repeatPassword.includes(" ")) {
       validationErrors += "error-repeated-password ";
     }
-
     if (validationErrors) {
       setErrors(validationErrors);
-    } else {
-      //create new user
-      try {
-        const user = await registerUser(email, password);
-        console.log("Zarejestrowano użytkownika:", user);
-        navigate("/"); //navigate to homepage
-        alert("Potwierdzenie zostało wysłane na twojego emaila ");
-        setErrors("");
-        setEmail("");
-        setPassword("");
-        setRepeatPassword("");
-      } catch (error) {
-        console.error("Błąd rejestracji:", error);
-        return;
-      }
+      return false;
+    }
+    setErrors("");
+    return true;
+  };
+
+  //user register
+  const handleRegister = async (event: React.SyntheticEvent) => {
+    event.preventDefault();
+
+    //validation call
+    const isValid = validationFields();
+    if (!isValid) return;
+
+    //create new user
+    try {
+      const user = await registerUser(email, password);
+      console.log("User registered:", user?.email);
+      alert("Potwierdzenie zostało wysłane na twojego e-maila ");
+
+      navigate("/");
+      //state reset
+      setErrors("");
+      setEmail("");
+      setPassword("");
+      setRepeatPassword("");
+    } catch (error) {
+      console.error("Registration error:", error);
+      alert("Błąd rejestracji");
+      return;
     }
   };
 
+  ////UI
   return (
     <>
       <section className="login wrapper">
