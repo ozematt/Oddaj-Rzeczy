@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import supabase, { registerUser } from "../services/supabase";
+import { registerUser } from "../services/supabase";
 import { useNavigate } from "react-router-dom";
 import { validateEmail } from "../lib/validators";
 
