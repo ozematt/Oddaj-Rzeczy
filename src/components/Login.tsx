@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { loginUser } from "../services/supabase";
 import { useNavigate } from "react-router-dom";
-import { useStoreActions, useStoreState } from "../store/store";
-import { validateEmail } from "../lib/validators";
+import { useStoreActions } from "../store/store";
+import { loginValidation } from "../lib/validators";
 
 const Login = () => {
   //
@@ -18,29 +18,12 @@ const Login = () => {
   const setUsername = useStoreActions((actions) => actions.setUsername);
 
   ////LOGIC
-  //helper validation function, set errors
-  const loginValidation = (): boolean => {
-    let validationErrors = "";
-    if (!validateEmail(email)) {
-      validationErrors += "error-email "; // += added string to existing one
-    }
-    if (password.length < 6) {
-      validationErrors += "error-password ";
-    }
-    if (validationErrors) {
-      setErrors(validationErrors);
-      return false;
-    }
-    setErrors("");
-    return true;
-  };
-
-  // handle user log in
+  // handle user login
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    //validation call
-    const isValid = loginValidation();
+    //loginValidation call
+    const isValid = loginValidation(email, password, setErrors);
     if (!isValid) return;
 
     //sign in user

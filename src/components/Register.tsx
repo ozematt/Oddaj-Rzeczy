@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { registerUser } from "../services/supabase";
 import { useNavigate } from "react-router-dom";
-import { validateEmail } from "../lib/validators";
+import { registerValidation } from "../lib/validators";
 
 const Register = () => {
   //
@@ -16,33 +16,17 @@ const Register = () => {
   const navigate = useNavigate();
 
   ////LOGIC
-
-  //helper validation function, set errors
-  const registerValidation = (): boolean => {
-    let validationErrors = "";
-    if (!validateEmail(email)) {
-      validationErrors += "error-email "; // += added string to existing one
-    }
-    if (password.length < 6) {
-      validationErrors += "error-password ";
-    }
-    if (password !== repeatPassword || repeatPassword.includes(" ")) {
-      validationErrors += "error-repeated-password ";
-    }
-    if (validationErrors) {
-      setErrors(validationErrors);
-      return false;
-    }
-    setErrors("");
-    return true;
-  };
-
-  //user register
+  //handle user register
   const handleRegister = async (event: React.SyntheticEvent) => {
     event.preventDefault();
 
-    //validation call
-    const isValid = registerValidation();
+    //registerValidation call
+    const isValid = registerValidation(
+      email,
+      password,
+      repeatPassword,
+      setErrors
+    );
     if (!isValid) return;
 
     //create new user
@@ -52,7 +36,6 @@ const Register = () => {
       alert("Potwierdzenie zostało wysłane na twojego e-maila ");
 
       navigate("/");
-      //state reset
       setErrors("");
       setEmail("");
       setPassword("");
