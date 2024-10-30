@@ -2,7 +2,7 @@ import { MainInfo } from "./MainInfo";
 import { Element } from "react-scroll";
 import { Dashboard } from "./Dashboard";
 
-export const HomeHeader = ({ userLogIn }: { userLogIn: boolean }) => {
+export const HomeHeader = () => {
   //
   ////UI
   return (
@@ -13,7 +13,7 @@ export const HomeHeader = ({ userLogIn }: { userLogIn: boolean }) => {
             <div className="header-hero" />
             <div>
               <Dashboard />
-              <MainInfo userLogIn={userLogIn} />
+              <MainInfo />
             </div>
           </header>
         </div>

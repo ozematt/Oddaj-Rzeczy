@@ -7,8 +7,9 @@ export const FormStepOne = () => {
   //
   ////DATA
   const [toGive, setToGive] = useState("");
-  const navigate = useNavigate();
   const setStepOne = useStoreActions((actions) => actions.setStepOne);
+
+  const navigate = useNavigate();
 
   ////LOGIC
   const handleToGive = (value: string) => {
