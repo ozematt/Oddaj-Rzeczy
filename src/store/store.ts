@@ -1,5 +1,4 @@
 import { createStore, action } from "easy-peasy";
-
 import { createTypedHooks } from "easy-peasy";
 import { StoreModel } from "../lib/types";
 
