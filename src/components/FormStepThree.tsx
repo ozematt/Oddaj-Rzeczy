@@ -19,14 +19,13 @@ export const FormStepThree = () => {
   //errors
   const [error, setError] = useState("");
 
-  //state send to store
+  //data send to store
   const [dataToSend, setDataToSend] = useState<StepThree>({
     location: "",
     whoWeHelp: [],
     organizationName: "",
   });
 
-  //navigate
   const navigate = useNavigate();
 
   //set form part three - store action
