@@ -1,9 +1,11 @@
-import { FromMainSection } from "./FromMainSection";
+import { FormMainSection } from "./FormMainSection";
 import { Link } from "react-router-dom";
 import { HomeContact } from "./HomeContact";
 import { useStoreState } from "../store/store";
 
 export const FormSummary = () => {
+  //
+  ////DATA
   const formData = useStoreState((state) => state.form);
 
   //destructuring
@@ -19,7 +21,7 @@ export const FormSummary = () => {
 
   return (
     <>
-      <FromMainSection />
+      <FormMainSection />
       <section className="wrapper">
         <div className="form-steps">
           <div className="form-box">

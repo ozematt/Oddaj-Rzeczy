@@ -1,10 +1,12 @@
-import { FromMainSection } from "./FromMainSection";
+import { FormMainSection } from "./FormMainSection";
 import { FormStepOne } from "./FormStepOne";
 
 export const Form = () => {
+  //
+  ////UI
   return (
     <>
-      <FromMainSection />
+      <FormMainSection />
       <FormStepOne />
     </>
   );

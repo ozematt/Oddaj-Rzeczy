@@ -2,6 +2,8 @@ import { BigBtn } from "./BigBtn";
 import { Element } from "react-scroll";
 
 export const HomeSimpleSteps = ({ userLogIn }: { userLogIn: boolean }) => {
+  //
+  //DATA
   const text = "ODDAJ\nRZECZY";
   return (
     <Element name="info" className="wrapper simple-steps">

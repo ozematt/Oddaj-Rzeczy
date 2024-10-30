@@ -1,4 +1,4 @@
-import { FromMainSection } from "./FromMainSection";
+import { FormMainSection } from "./FormMainSection";
 import { Link } from "react-router-dom";
 import { HomeContact } from "./HomeContact";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +6,8 @@ import { useState } from "react";
 import { StepFour, useStoreActions } from "../store/store";
 
 export const FormStepFour = () => {
+  //
+  ////DATA
   const navigate = useNavigate();
 
   const [dataToSend, setDataToSend] = useState<StepFour>({
@@ -110,7 +112,7 @@ export const FormStepFour = () => {
 
   return (
     <>
-      <FromMainSection />
+      <FormMainSection />
       <section className="wrapper">
         <div className="form-bar">
           <div className="form-box">

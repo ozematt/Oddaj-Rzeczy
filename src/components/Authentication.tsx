@@ -5,7 +5,9 @@ import { logoutUser } from "../services/supabase";
 export const Authentication = () => {
   //
   ///DATA
+  //set username - store action
   const setUsername = useStoreActions((actions) => actions.setUsername);
+  //username from store
   const username = useStoreState((state) => state.username);
 
   const navigate = useNavigate();
@@ -27,6 +29,7 @@ export const Authentication = () => {
     <div className="authentication">
       {username ? (
         <>
+          {/* WHEN USER IS LOG IN */}
           <p>Cześć, {username}</p>
           <button onClick={() => navigate("/oddaj-rzeczy")}>
             Oddaj rzeczy
@@ -35,6 +38,7 @@ export const Authentication = () => {
         </>
       ) : (
         <>
+          {/* WHEN USER IS LOG OUT */}
           <Link to="/logowanie">
             <button>Zaloguj</button>
           </Link>

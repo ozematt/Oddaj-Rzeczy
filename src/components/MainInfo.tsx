@@ -1,6 +1,8 @@
 import { BigBtn } from "./BigBtn";
 
 export const MainInfo = ({ userLogIn }: { userLogIn: boolean }) => {
+  //
+  ////DATA
   const text = "ODDAJ\nRZECZY";
   return (
     <main>

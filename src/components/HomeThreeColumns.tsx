@@ -1,4 +1,6 @@
 export const HomeThreeColumns = () => {
+  //
+  ////UI
   return (
     <section className="three-columns wrapper">
       <div>

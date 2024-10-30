@@ -9,6 +9,8 @@ export const PageNumber = ({
   pages: number[];
   handlePageChange: (page: number) => void;
 }) => {
+  //
+  ////UI
   return (
     <>
       <li

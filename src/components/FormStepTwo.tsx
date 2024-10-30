@@ -1,11 +1,12 @@
 import { HomeContact } from "./HomeContact";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FromMainSection } from "./FromMainSection";
+import { FormMainSection } from "./FormMainSection";
 import { useNavigate } from "react-router-dom";
 import { useStoreActions, useStoreState } from "../store/store";
 
 export const FormStepTwo = () => {
+  //
   ////DATA
   const [classesToggle, setClassesToggle] = useState(false);
   const [numberOfBugs, setNumberOfBugs] = useState("");
@@ -48,7 +49,7 @@ export const FormStepTwo = () => {
   ////UI
   return (
     <>
-      <FromMainSection />
+      <FormMainSection />
       <section className="wrapper">
         <div className="form-bar">
           <div className="form-box">

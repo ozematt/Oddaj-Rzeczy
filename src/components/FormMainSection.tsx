@@ -1,4 +1,6 @@
-export const FromMainSection = () => {
+export const FormMainSection = () => {
+  //
+  ////UI
   return (
     <>
       <section className="form-main wrapper">

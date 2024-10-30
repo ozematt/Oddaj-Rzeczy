@@ -18,6 +18,7 @@ interface Foundation {
 }
 
 export const HomeWhoWeHelp = () => {
+  //
   ////DATA
   const [currentPage, setCurrentPage] = useState(1);
   const [buttonClicked, setButtonClicked] = useState("Fundacjom");

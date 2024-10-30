@@ -3,6 +3,8 @@ import { Element } from "react-scroll";
 import { Dashboard } from "./Dashboard";
 
 export const HomeHeader = ({ userLogIn }: { userLogIn: boolean }) => {
+  //
+  ////UI
   return (
     <>
       <Element name="start">

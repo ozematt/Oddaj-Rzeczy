@@ -9,6 +9,7 @@ interface Error {
 }
 
 export const HomeContact = () => {
+  //
   ////DATA
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

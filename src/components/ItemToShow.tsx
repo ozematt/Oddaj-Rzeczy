@@ -1,6 +1,8 @@
 import { Item } from "./HomeWhoWeHelp";
 
 export const ItemToShow = ({ element }: { element: Item }) => {
+  //
+  ////UI
   return (
     <>
       <li className="item-to-show" key={element.id}>

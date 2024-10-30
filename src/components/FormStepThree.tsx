@@ -1,4 +1,4 @@
-import { FromMainSection } from "./FromMainSection";
+import { FormMainSection } from "./FormMainSection";
 import { Link } from "react-router-dom";
 import { HomeContact } from "./HomeContact";
 import { useEffect, useState } from "react";
@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { StepThree, useStoreActions, useStoreState } from "../store/store";
 
 export const FormStepThree = () => {
+  //
   ///DATA
   const [classesToggle, setClassesToggle] = useState(false);
   //checkbox
@@ -172,7 +173,7 @@ export const FormStepThree = () => {
   ////UI
   return (
     <>
-      <FromMainSection />
+      <FormMainSection />
       <section className="wrapper">
         <div className="form-bar">
           <div className="form-box">

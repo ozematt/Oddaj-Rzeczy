@@ -5,11 +5,13 @@ import { HomeAboutUs } from "./HomeAboutUs";
 import { HomeWhoWeHelp } from "./HomeWhoWeHelp";
 import { HomeContact } from "./HomeContact";
 import { useStoreState } from "../store/store";
-// import { useStoreState } from "easy-peasy";
 
 export const Home = () => {
+  //
+  ////DATA
   const userLogIn = useStoreState((state) => state.userLogIn);
 
+  ////UI
   return (
     <>
       <HomeHeader userLogIn={userLogIn} />

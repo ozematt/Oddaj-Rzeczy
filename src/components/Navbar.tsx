@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export const Navbar = () => {
+  //
   ////DATA
   const [classToggle, setClassToggle] = useState(false);
   ////LOGIC
