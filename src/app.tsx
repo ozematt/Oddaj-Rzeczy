@@ -1,20 +1,20 @@
+import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import React from "react";
 
 //components
-import Home from "./components/Home";
-import Login from "./components/Login";
-import NotFound from "./components/NotFound";
-import Dashboard from "./components/Dashboard";
-import Register from "./components/Register";
-import Logout from "./components/Logout";
-import Form from "./components/Form";
-import FormStepTwo from "./components/FormStepTwo";
-import FormStepThree from "./components/FormStepThree";
-import FormStepFour from "./components/FormStepFour";
-import FormSummary from "./components/FormSummary";
-import FormThankYou from "./components/FormThankYou";
+import { Home } from "./components/Home";
+import { Login } from "./components/Login";
+import { NotFound } from "./components/NotFound";
+import { Dashboard } from "./components/Dashboard";
+import { Register } from "./components/Register";
+import { Logout } from "./components/Logout";
+import { Form } from "./components/Form";
+import { FormStepTwo } from "./components/FormStepTwo";
+import { FormStepThree } from "./components/FormStepThree";
+import { FormStepFour } from "./components/FormStepFour";
+import { FormSummary } from "./components/FormSummary";
+import { FormThankYou } from "./components/FormThankYou";
 
 //easy-peasy
 import { StoreProvider } from "easy-peasy";
@@ -41,7 +41,6 @@ const App = () => {
     </BrowserRouter>
   );
 };
-export default App;
 
 const container = document.getElementById("app") as HTMLElement;
 const root = createRoot(container);

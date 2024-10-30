@@ -1,11 +1,11 @@
-import FromMainSection from "./FromMainSection";
+import { FromMainSection } from "./FromMainSection";
 import { Link } from "react-router-dom";
-import HomeContact from "./HomeContact";
+import { HomeContact } from "./HomeContact";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { StepFour, useStoreActions } from "../store/store";
 
-const FormStepFour = () => {
+export const FormStepFour = () => {
   const navigate = useNavigate();
 
   const [dataToSend, setDataToSend] = useState<StepFour>({
@@ -220,5 +220,3 @@ const FormStepFour = () => {
     </>
   );
 };
-
-export default FormStepFour;

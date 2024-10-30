@@ -1,7 +1,7 @@
-import FromMainSection from "./FromMainSection";
-import FormStepOne from "./FormStepOne";
+import { FromMainSection } from "./FromMainSection";
+import { FormStepOne } from "./FormStepOne";
 
-const Form = () => {
+export const Form = () => {
   return (
     <>
       <FromMainSection />
@@ -9,4 +9,3 @@ const Form = () => {
     </>
   );
 };
-export default Form;

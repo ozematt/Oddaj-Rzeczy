@@ -1,7 +1,7 @@
-import FromMainSection from "./FromMainSection";
-import HomeContact from "./HomeContact";
+import { FromMainSection } from "./FromMainSection";
+import { HomeContact } from "./HomeContact";
 
-const FormThankYou = () => {
+export const FormThankYou = () => {
   return (
     <>
       <FromMainSection />
@@ -20,4 +20,3 @@ const FormThankYou = () => {
     </>
   );
 };
-export default FormThankYou;

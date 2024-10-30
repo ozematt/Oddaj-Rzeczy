@@ -1,7 +1,7 @@
 import { useState } from "react";
-import PageNumber from "./PageNumber";
-import ItemToShow from "./ItemToShow";
-import ItemBtn from "./ItemBtn";
+import { PageNumber } from "./PageNumber";
+import { ItemToShow } from "./ItemToShow";
+import { ItemBtn } from "./ItemBtn";
 import { Element } from "react-scroll";
 import { DATA } from "../data/records";
 
@@ -17,7 +17,7 @@ interface Foundation {
   elements: Item[];
 }
 
-const HomeWhoWeHelp = () => {
+export const HomeWhoWeHelp = () => {
   ////DATA
   const [currentPage, setCurrentPage] = useState(1);
   const [buttonClicked, setButtonClicked] = useState("Fundacjom");
@@ -103,4 +103,3 @@ const HomeWhoWeHelp = () => {
     </>
   );
 };
-export default HomeWhoWeHelp;

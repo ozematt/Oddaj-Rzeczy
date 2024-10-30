@@ -1,9 +1,9 @@
-import FromMainSection from "./FromMainSection";
+import { FromMainSection } from "./FromMainSection";
 import { Link } from "react-router-dom";
-import HomeContact from "./HomeContact";
+import { HomeContact } from "./HomeContact";
 import { useStoreState } from "../store/store";
 
-const FormSummary = () => {
+export const FormSummary = () => {
   const formData = useStoreState((state) => state.form);
 
   //destructuring
@@ -101,4 +101,3 @@ const FormSummary = () => {
     </>
   );
 };
-export default FormSummary;

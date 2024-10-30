@@ -1,4 +1,4 @@
-const HomeThreeColumns = () => {
+export const HomeThreeColumns = () => {
   return (
     <section className="three-columns wrapper">
       <div>
@@ -28,4 +28,3 @@ const HomeThreeColumns = () => {
     </section>
   );
 };
-export default HomeThreeColumns;

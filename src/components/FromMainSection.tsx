@@ -1,4 +1,4 @@
-const FromMainSection = () => {
+export const FromMainSection = () => {
   return (
     <>
       <section className="form-main wrapper">
@@ -36,4 +36,3 @@ const FromMainSection = () => {
     </>
   );
 };
-export default FromMainSection;

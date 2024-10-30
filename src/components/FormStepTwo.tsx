@@ -1,11 +1,11 @@
-import HomeContact from "./HomeContact";
+import { HomeContact } from "./HomeContact";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import FromMainSection from "./FromMainSection";
+import { FromMainSection } from "./FromMainSection";
 import { useNavigate } from "react-router-dom";
 import { useStoreActions, useStoreState } from "../store/store";
 
-const FormStepTwo = () => {
+export const FormStepTwo = () => {
   ////DATA
   const [classesToggle, setClassesToggle] = useState(false);
   const [numberOfBugs, setNumberOfBugs] = useState("");
@@ -115,4 +115,3 @@ const FormStepTwo = () => {
     </>
   );
 };
-export default FormStepTwo;

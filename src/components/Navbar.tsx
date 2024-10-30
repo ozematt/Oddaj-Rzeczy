@@ -2,7 +2,7 @@ import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const Navbar = () => {
+export const Navbar = () => {
   ////DATA
   const [classToggle, setClassToggle] = useState(false);
   ////LOGIC
@@ -78,4 +78,3 @@ const Navbar = () => {
     </>
   );
 };
-export default Navbar;

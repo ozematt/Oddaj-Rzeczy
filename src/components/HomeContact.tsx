@@ -8,7 +8,7 @@ interface Error {
   value: string;
 }
 
-const HomeContact = () => {
+export const HomeContact = () => {
   ////DATA
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -156,4 +156,3 @@ const HomeContact = () => {
     </>
   );
 };
-export default HomeContact;

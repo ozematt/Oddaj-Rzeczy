@@ -1,7 +1,7 @@
-import BigBtn from "./BigBtn";
+import { BigBtn } from "./BigBtn";
 import { Element } from "react-scroll";
 
-const HomeSimpleSteps = ({ userLogIn }: { userLogIn: boolean }) => {
+export const HomeSimpleSteps = ({ userLogIn }: { userLogIn: boolean }) => {
   const text = "ODDAJ\nRZECZY";
   return (
     <Element name="info" className="wrapper simple-steps">
@@ -55,4 +55,3 @@ const HomeSimpleSteps = ({ userLogIn }: { userLogIn: boolean }) => {
     </Element>
   );
 };
-export default HomeSimpleSteps;

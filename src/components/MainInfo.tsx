@@ -1,6 +1,6 @@
-import BigBtn from "./BigBtn";
+import { BigBtn } from "./BigBtn";
 
-const MainInfo = ({ userLogIn }: { userLogIn: boolean }) => {
+export const MainInfo = ({ userLogIn }: { userLogIn: boolean }) => {
   const text = "ODDAJ\nRZECZY";
   return (
     <main>
@@ -16,4 +16,3 @@ const MainInfo = ({ userLogIn }: { userLogIn: boolean }) => {
     </main>
   );
 };
-export default MainInfo;

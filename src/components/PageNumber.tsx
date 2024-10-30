@@ -1,4 +1,4 @@
-const PageNumber = ({
+export const PageNumber = ({
   page,
   currentPage,
   pages,
@@ -20,4 +20,3 @@ const PageNumber = ({
     </>
   );
 };
-export default PageNumber;

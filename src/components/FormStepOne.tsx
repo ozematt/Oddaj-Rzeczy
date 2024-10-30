@@ -1,9 +1,9 @@
-import HomeContact from "./HomeContact";
+import { HomeContact } from "./HomeContact";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useStoreActions } from "../store/store";
 
-const FormStepOne = () => {
+export const FormStepOne = () => {
   ////DATA
   const [toGive, setToGive] = useState("");
   const navigate = useNavigate();
@@ -109,4 +109,3 @@ const FormStepOne = () => {
     </>
   );
 };
-export default FormStepOne;

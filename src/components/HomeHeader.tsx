@@ -1,8 +1,8 @@
-import MainInfo from "./MainInfo";
+import { MainInfo } from "./MainInfo";
 import { Element } from "react-scroll";
-import Dashboard from "./Dashboard";
+import { Dashboard } from "./Dashboard";
 
-const HomeHeader = ({ userLogIn }: { userLogIn: boolean }) => {
+export const HomeHeader = ({ userLogIn }: { userLogIn: boolean }) => {
   return (
     <>
       <Element name="start">
@@ -19,5 +19,3 @@ const HomeHeader = ({ userLogIn }: { userLogIn: boolean }) => {
     </>
   );
 };
-
-export default HomeHeader;

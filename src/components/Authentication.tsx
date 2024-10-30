@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useStoreActions, useStoreState } from "../store/store";
 import { logoutUser } from "../services/supabase";
 
-const Authentication = () => {
+export const Authentication = () => {
   //
   ///DATA
   const setUsername = useStoreActions((actions) => actions.setUsername);
@@ -46,5 +46,3 @@ const Authentication = () => {
     </div>
   );
 };
-
-export default Authentication;

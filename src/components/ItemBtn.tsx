@@ -1,4 +1,4 @@
-const ItemBtn = ({
+export const ItemBtn = ({
   buttonClicked,
   btn,
   handleButtonClick,
@@ -18,4 +18,3 @@ const ItemBtn = ({
     </>
   );
 };
-export default ItemBtn;
