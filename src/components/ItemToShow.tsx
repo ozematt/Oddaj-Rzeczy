@@ -1,4 +1,4 @@
-import { Item } from "./HomeWhoWeHelp";
+import { Item } from "../lib/types";
 
 export const ItemToShow = ({ element }: { element: Item }) => {
   //

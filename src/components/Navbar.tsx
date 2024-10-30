@@ -1,5 +1,4 @@
 import { Link as ScrollLink } from "react-scroll";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export const Navbar = () => {

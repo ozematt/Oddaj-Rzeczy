@@ -1,4 +1,4 @@
-import { StepFour } from "../store/store";
+import { StepFour } from "./types";
 
 const validateEmail = (email: string) => {
   return email
