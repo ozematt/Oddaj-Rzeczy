@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { HomeContact } from "./HomeContact";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { StepFour, useStoreActions } from "../store/store";
+import { useStoreActions } from "../store/store";
 import { addressValidation, deadlineValidation } from "../lib/validators";
+import { StepFour } from "../lib/types";
 
 export const FormStepFour = () => {
   //
