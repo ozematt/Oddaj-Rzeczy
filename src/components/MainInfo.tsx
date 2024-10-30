@@ -1,6 +1,10 @@
-import BigBtn from "./BigBtn";
+import { useStoreState } from "../store/store";
+import { BigBtn } from "./BigBtn";
 
-const MainInfo = ({ userLogIn }: { userLogIn: boolean }) => {
+export const MainInfo = () => {
+  //
+  ////DATA
+  const userLogin = useStoreState((store) => store.username) !== "";
   const text = "ODDAJ\nRZECZY";
   return (
     <main>
@@ -10,10 +14,9 @@ const MainInfo = ({ userLogIn }: { userLogIn: boolean }) => {
       </h3>
       <div className="ornament" />
       <div className="main-btns">
-        <BigBtn path={userLogIn ? "/oddaj-rzeczy" : "/logowanie"} fill={text} />
-        <BigBtn path="/logowanie" fill="ZORGANIZUJ ZBIÓRKE" />
+        <BigBtn path={userLogin ? "/oddaj-rzeczy" : "/logowanie"} fill={text} />
+        <BigBtn path="/logowanie" fill="ZORGANIZUJ ZBIÓRKĘ" />
       </div>
     </main>
   );
 };
-export default MainInfo;

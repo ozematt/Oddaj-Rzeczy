@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
-const Logout = () => {
+export const Logout = () => {
+  //
+  ////UI
   return (
     <>
       <section className="logout wrapper">
@@ -16,4 +18,3 @@ const Logout = () => {
     </>
   );
 };
-export default Logout;

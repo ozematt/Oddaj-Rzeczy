@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useStoreActions } from "../store/store";
 import { loginValidation } from "../lib/validators";
 
-const Login = () => {
+export const Login = () => {
   //
   //DATA
   const [email, setEmail] = useState("");
@@ -100,4 +100,3 @@ const Login = () => {
     </>
   );
 };
-export default Login;

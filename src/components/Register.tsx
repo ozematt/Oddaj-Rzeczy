@@ -4,7 +4,7 @@ import { registerUser } from "../services/supabase";
 import { useNavigate } from "react-router-dom";
 import { registerValidation } from "../lib/validators";
 
-const Register = () => {
+export const Register = () => {
   //
   ////DATA
   const [email, setEmail] = useState("");
@@ -111,4 +111,3 @@ const Register = () => {
     </>
   );
 };
-export default Register;

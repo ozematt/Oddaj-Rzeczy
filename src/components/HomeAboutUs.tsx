@@ -1,6 +1,8 @@
 import { Element } from "react-scroll";
 
-const HomeAboutUs = () => {
+export const HomeAboutUs = () => {
+  //
+  ////UI
   return (
     <>
       <Element name="aboutUs" className="about-us wrapper">
@@ -25,4 +27,3 @@ const HomeAboutUs = () => {
     </>
   );
 };
-export default HomeAboutUs;

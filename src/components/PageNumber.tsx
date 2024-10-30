@@ -1,4 +1,4 @@
-const PageNumber = ({
+export const PageNumber = ({
   page,
   currentPage,
   pages,
@@ -9,6 +9,8 @@ const PageNumber = ({
   pages: number[];
   handlePageChange: (page: number) => void;
 }) => {
+  //
+  ////UI
   return (
     <>
       <li
@@ -20,4 +22,3 @@ const PageNumber = ({
     </>
   );
 };
-export default PageNumber;

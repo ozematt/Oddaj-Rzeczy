@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
-const BigBtn = ({ path, fill }: { path: string; fill: string }) => {
+export const BigBtn = ({ path, fill }: { path: string; fill: string }) => {
+  //
+  ////UI
   return (
     <>
       <Link to={path}>
@@ -9,4 +11,3 @@ const BigBtn = ({ path, fill }: { path: string; fill: string }) => {
     </>
   );
 };
-export default BigBtn;

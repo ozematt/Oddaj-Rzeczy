@@ -1,54 +1,52 @@
-import HomeContact from "./HomeContact";
+import { HomeContact } from "./HomeContact";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import FromMainSection from "./FromMainSection";
+import { FormMainSection } from "./FormMainSection";
 import { useNavigate } from "react-router-dom";
 import { useStoreActions, useStoreState } from "../store/store";
 
-const FormStepTwo = () => {
+export const FormStepTwo = () => {
+  //
   ////DATA
   const [classesToggle, setClassesToggle] = useState(false);
-  const [numberOfBugs, setNumberOfBugs] = useState("");
+  const [numberOfSacks, setNumberOfSacks] = useState<number | null>(null);
 
   const navigate = useNavigate();
 
+  //set form part two - store action
+  const setSagsAmount = useStoreActions((actions) => actions.setStepTwo);
+
+  //number of sacks from store
+  const sacks = useStoreState((state) => state.form.stepTwo.numberOfSacks);
+
   ////LOGIC
-  const setBugsAmount = useStoreActions((actions) => actions.setStepTwo);
-  const formData = useStoreState((state) => state.form.stepTwo.numberOfBugs);
-
-  //log
-  const formDataAll = useStoreState((state) => state.form);
-  console.log(formDataAll);
-
-  //checks the contents of the store, if it is not empty, assigns the content to the state
-  //helps with window display
+  //store sacks quantity check - helps with options window display
   useEffect(() => {
-    if (formData) {
-      setNumberOfBugs(formData);
+    if (sacks) {
+      setNumberOfSacks(sacks);
     }
-  }, [formData]);
+  }, [sacks]);
 
-  //window display
+  //options window display
   const handleClassesToggle = () => {
     setClassesToggle(!classesToggle);
   };
 
-  const handleBugsAmount = (number: string) => {
-    setNumberOfBugs(number);
+  const handleSacksQuantity = (number: number) => {
+    setNumberOfSacks(number);
     setClassesToggle(false);
   };
 
-  //data submit
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleFormStepTwoSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    setBugsAmount(numberOfBugs); //data send to store
+    setSagsAmount(numberOfSacks); //data send to store
     navigate("/oddaj-rzeczy/step-3"); //next page navigate
   };
 
   ////UI
   return (
     <>
-      <FromMainSection />
+      <FormMainSection />
       <section className="wrapper">
         <div className="form-bar">
           <div className="form-box">
@@ -60,7 +58,10 @@ const FormStepTwo = () => {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="form-box form-steps">
+        <form
+          onSubmit={handleFormStepTwoSubmit}
+          className="form-box form-steps"
+        >
           <div className="form-box">
             <p className="steps-counter">Krok 2/4</p>
             <p className="steps-header">
@@ -71,13 +72,13 @@ const FormStepTwo = () => {
               <div className="select">
                 <p
                   className={
-                    !formData && !numberOfBugs
+                    !sacks && !numberOfSacks
                       ? "option-default"
                       : "option-default-edit"
                   }
                   onClick={handleClassesToggle}
                 >
-                  {numberOfBugs || formData || "wybierz"}
+                  {numberOfSacks || sacks || "wybierz"}
                 </p>
                 <div
                   className={
@@ -92,11 +93,11 @@ const FormStepTwo = () => {
                       : "option-window-s2 hidden"
                   }
                 >
-                  <div onClick={() => handleBugsAmount("1")}>1</div>
-                  <div onClick={() => handleBugsAmount("2")}>2</div>
-                  <div onClick={() => handleBugsAmount("3")}>3</div>
-                  <div onClick={() => handleBugsAmount("4")}>4</div>
-                  <div onClick={() => handleBugsAmount("5")}>5</div>
+                  <div onClick={() => handleSacksQuantity(1)}>1</div>
+                  <div onClick={() => handleSacksQuantity(2)}>2</div>
+                  <div onClick={() => handleSacksQuantity(3)}>3</div>
+                  <div onClick={() => handleSacksQuantity(4)}>4</div>
+                  <div onClick={() => handleSacksQuantity(5)}>5</div>
                 </div>
               </div>
             </div>
@@ -115,4 +116,3 @@ const FormStepTwo = () => {
     </>
   );
 };
-export default FormStepTwo;

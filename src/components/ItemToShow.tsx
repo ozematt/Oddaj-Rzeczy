@@ -1,6 +1,8 @@
 import { Item } from "./HomeWhoWeHelp";
 
-const ItemToShow = ({ element }: { element: Item }) => {
+export const ItemToShow = ({ element }: { element: Item }) => {
+  //
+  ////UI
   return (
     <>
       <li className="item-to-show" key={element.id}>
@@ -15,4 +17,3 @@ const ItemToShow = ({ element }: { element: Item }) => {
     </>
   );
 };
-export default ItemToShow;

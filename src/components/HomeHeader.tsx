@@ -1,8 +1,10 @@
-import MainInfo from "./MainInfo";
+import { MainInfo } from "./MainInfo";
 import { Element } from "react-scroll";
-import Dashboard from "./Dashboard";
+import { Dashboard } from "./Dashboard";
 
-const HomeHeader = ({ userLogIn }: { userLogIn: boolean }) => {
+export const HomeHeader = () => {
+  //
+  ////UI
   return (
     <>
       <Element name="start">
@@ -11,7 +13,7 @@ const HomeHeader = ({ userLogIn }: { userLogIn: boolean }) => {
             <div className="header-hero" />
             <div>
               <Dashboard />
-              <MainInfo userLogIn={userLogIn} />
+              <MainInfo />
             </div>
           </header>
         </div>
@@ -19,5 +21,3 @@ const HomeHeader = ({ userLogIn }: { userLogIn: boolean }) => {
     </>
   );
 };
-
-export default HomeHeader;

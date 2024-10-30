@@ -1,10 +1,12 @@
-import FromMainSection from "./FromMainSection";
-import HomeContact from "./HomeContact";
+import { FormMainSection } from "./FormMainSection";
+import { HomeContact } from "./HomeContact";
 
-const FormThankYou = () => {
+export const FormThankYou = () => {
+  //
+  ////UI
   return (
     <>
-      <FromMainSection />
+      <FormMainSection />
       <section className="wrapper">
         <div className="form-steps">
           <div className="form-thank">
@@ -20,4 +22,3 @@ const FormThankYou = () => {
     </>
   );
 };
-export default FormThankYou;

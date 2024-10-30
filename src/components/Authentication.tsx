@@ -2,10 +2,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { useStoreActions, useStoreState } from "../store/store";
 import { logoutUser } from "../services/supabase";
 
-const Authentication = () => {
+export const Authentication = () => {
   //
   ///DATA
+  //set username - store action
   const setUsername = useStoreActions((actions) => actions.setUsername);
+  //username from store
   const username = useStoreState((state) => state.username);
 
   const navigate = useNavigate();
@@ -27,6 +29,7 @@ const Authentication = () => {
     <div className="authentication">
       {username ? (
         <>
+          {/* WHEN USER IS LOG IN */}
           <p>Cześć, {username}</p>
           <button onClick={() => navigate("/oddaj-rzeczy")}>
             Oddaj rzeczy
@@ -35,6 +38,7 @@ const Authentication = () => {
         </>
       ) : (
         <>
+          {/* WHEN USER IS LOG OUT */}
           <Link to="/logowanie">
             <button>Zaloguj</button>
           </Link>
@@ -46,5 +50,3 @@ const Authentication = () => {
     </div>
   );
 };
-
-export default Authentication;

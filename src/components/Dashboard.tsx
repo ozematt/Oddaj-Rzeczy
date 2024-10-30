@@ -1,8 +1,10 @@
-import Authentication from "./Authentication";
-import Navbar from "./Navbar";
+import { Authentication } from "./Authentication";
+import { Navbar } from "./Navbar";
 import { Outlet } from "react-router-dom";
 
-const Dashboard = () => {
+export const Dashboard = () => {
+  //
+  ////UI
   return (
     <>
       <section className="nav-section wrapper">
@@ -13,4 +15,3 @@ const Dashboard = () => {
     </>
   );
 };
-export default Dashboard;

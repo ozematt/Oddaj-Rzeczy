@@ -1,13 +1,20 @@
-import FromMainSection from "./FromMainSection";
+import { FormMainSection } from "./FormMainSection";
 import { Link } from "react-router-dom";
-import HomeContact from "./HomeContact";
+import { HomeContact } from "./HomeContact";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { StepFour, useStoreActions } from "../store/store";
+import { addressValidation, deadlineValidation } from "../lib/validators";
 
-const FormStepFour = () => {
+export const FormStepFour = () => {
+  //
+  ////DATA
+  const [addressErrors, setAddressErrors] = useState<string[]>([]);
+  const [deadlineErrors, setDeadlineErrors] = useState<string[]>([]);
+
   const navigate = useNavigate();
 
+  //data send to store
   const [dataToSend, setDataToSend] = useState<StepFour>({
     address: {
       streetName: "",
@@ -22,14 +29,12 @@ const FormStepFour = () => {
     },
   });
 
-  const [addressErrors, setAddressErrors] = useState<string[]>([]);
-  const [deadlineErrors, setDeadlineErrors] = useState<string[]>([]);
-
+  //set form part four - store action
   const setStepFour = useStoreActions((actions) => actions.setStepFour);
-  // const formData = useStoreState((state) => state.form);
-  // console.log(formData);
 
+  ////LOGIC
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //getting values ​​from an event
     const { name, value } = e.target;
 
     setDataToSend((prevState) => {
@@ -60,57 +65,25 @@ const FormStepFour = () => {
     });
   };
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleFormStepFourSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    //address and deadline validation
-    let newAddressErrors = [];
-    let newDeadlineErrors = [];
-    //street name
-    if (dataToSend.address.streetName.length < 2) {
-      newAddressErrors.push("Nazwa ulicy powinna mieć co najmniej 2 znaki.");
-    }
-    //city
-    if (dataToSend.address.city.length < 2) {
-      newAddressErrors.push("Nazwa miasta powinna mieć co najmniej 2 znaki.");
-    }
-    //postal code
-    const postalCodeRegex = /^\d{2}-\d{3}$/; // XX-XXX
-    if (!postalCodeRegex.test(dataToSend.address.postalCode)) {
-      newAddressErrors.push(
-        "Proszę wprowadzić poprawny kod pocztowy (XX-XXX)."
-      );
-    }
-    //phone number
-    const phoneNumberRegex = /^\d{9}$/; // nine numbers only
-    if (!phoneNumberRegex.test(dataToSend.address.phoneNumber)) {
-      newAddressErrors.push("Proszę wprowadzić poprawny numer telefonu.");
-    }
-    //date
-    const dateRegex = /^(\d{2})\.(\d{2})\.(\d{4})$/;
-    if (!dateRegex.test(dataToSend.deadline.date)) {
-      newDeadlineErrors.push("Data powinna być w formacie DD.MM.YYYY.");
-    }
-    //hour
-    const timePattern = /^(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])$/;
-    if (!timePattern.test(dataToSend.deadline.hour)) {
-      newDeadlineErrors.push(
-        "Nieprawidłowy format czasu (oczekiwany format: HH:MM)"
-      );
-    }
-    //errors add
-    setAddressErrors(newAddressErrors);
-    setDeadlineErrors(newDeadlineErrors);
+    //address validation
+    const isAddressValid = addressValidation(dataToSend, setAddressErrors);
+    //deadline validation
+    const isDeadlineValid = deadlineValidation(dataToSend, setDeadlineErrors);
+
+    if (!isAddressValid || !isDeadlineValid) return;
+
     //summary
-    if (newAddressErrors.length === 0 && newDeadlineErrors.length === 0) {
-      setStepFour(dataToSend); //data send to store
-      navigate("/oddaj-rzeczy/summary"); //next page navigate
-    }
+    setStepFour(dataToSend); //data send to store
+    navigate("/oddaj-rzeczy/summary"); //next page navigate
   };
 
+  ////UI
   return (
     <>
-      <FromMainSection />
+      <FormMainSection />
       <section className="wrapper">
         <div className="form-bar">
           <div className="form-box">
@@ -118,7 +91,10 @@ const FormStepFour = () => {
             <p>Podaj adres oraz termin odbioru rzeczy.</p>
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="form-box form-steps">
+        <form
+          onSubmit={handleFormStepFourSubmit}
+          className="form-box form-steps"
+        >
           <div className="form-box">
             <p className="steps-counter">Krok 4/4</p>
             <p className="steps-header">
@@ -220,5 +196,3 @@ const FormStepFour = () => {
     </>
   );
 };
-
-export default FormStepFour;

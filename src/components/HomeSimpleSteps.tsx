@@ -1,8 +1,13 @@
-import BigBtn from "./BigBtn";
+import { useStoreState } from "../store/store";
+import { BigBtn } from "./BigBtn";
 import { Element } from "react-scroll";
 
-const HomeSimpleSteps = ({ userLogIn }: { userLogIn: boolean }) => {
+export const HomeSimpleSteps = () => {
+  //
+  //DATA
   const text = "ODDAJ\nRZECZY";
+  const userLogin = useStoreState((store) => store.username) !== "";
+
   return (
     <Element name="info" className="wrapper simple-steps">
       <h3>Wystraczą 4 proste kroki</h3>
@@ -50,9 +55,8 @@ const HomeSimpleSteps = ({ userLogIn }: { userLogIn: boolean }) => {
         </div>
       </div>
       <div className="four-steps-btn">
-        <BigBtn path={userLogIn ? "/oddaj-rzeczy" : "/logowanie"} fill={text} />
+        <BigBtn path={userLogin ? "/oddaj-rzeczy" : "/logowanie"} fill={text} />
       </div>
     </Element>
   );
 };
-export default HomeSimpleSteps;

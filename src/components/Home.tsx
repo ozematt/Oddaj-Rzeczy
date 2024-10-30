@@ -1,25 +1,21 @@
-import HomeHeader from "./HomeHeader";
-import HomeThreeColumns from "./HomeThreeColumns";
-import HomeSimpleSteps from "./HomeSimpleSteps";
-import HomeAboutUs from "./HomeAboutUs";
-import HomeWhoWeHelp from "./HomeWhoWeHelp";
-import HomeContact from "./HomeContact";
-import { useStoreState } from "../store/store";
-// import { useStoreState } from "easy-peasy";
+import { HomeHeader } from "./HomeHeader";
+import { HomeThreeColumns } from "./HomeThreeColumns";
+import { HomeSimpleSteps } from "./HomeSimpleSteps";
+import { HomeAboutUs } from "./HomeAboutUs";
+import { HomeWhoWeHelp } from "./HomeWhoWeHelp";
+import { HomeContact } from "./HomeContact";
 
-const Home = () => {
-  const userLogIn = useStoreState((state) => state.userLogIn);
-
+export const Home = () => {
+  //
+  ////UI
   return (
     <>
-      <HomeHeader userLogIn={userLogIn} />
+      <HomeHeader />
       <HomeThreeColumns />
-      <HomeSimpleSteps userLogIn={userLogIn} />
+      <HomeSimpleSteps />
       <HomeAboutUs />
       <HomeWhoWeHelp />
       <HomeContact />
     </>
   );
 };
-
-export default Home;
