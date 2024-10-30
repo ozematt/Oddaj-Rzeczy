@@ -28,7 +28,7 @@ export interface Form {
   };
 
   stepTwo: {
-    numberOfBugs: string;
+    numberOfSacks: number | null;
   };
   stepThree: StepThree;
 
@@ -40,7 +40,7 @@ export interface StoreModel {
   username: string | null;
   form: Form;
   setStepOne: Action<StoreModel, string>;
-  setStepTwo: Action<StoreModel, string>;
+  setStepTwo: Action<StoreModel, number | null>;
   setStepThree: Action<StoreModel, StepThree>;
   setStepFour: Action<StoreModel, StepFour>;
   setUserLogIn: Action<StoreModel, boolean>;
@@ -56,7 +56,7 @@ const storeModel: StoreModel = {
     },
 
     stepTwo: {
-      numberOfBugs: "",
+      numberOfSacks: null,
     },
 
     stepThree: {
@@ -85,7 +85,7 @@ const storeModel: StoreModel = {
   }),
 
   setStepTwo: action((state, payload) => {
-    state.form.stepTwo.numberOfBugs = payload;
+    state.form.stepTwo.numberOfSacks = payload;
   }),
 
   setStepThree: action((state, payload) => {
