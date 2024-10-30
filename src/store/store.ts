@@ -24,7 +24,7 @@ export interface StepFour {
 
 export interface Form {
   stepOne: {
-    toGive: string;
+    thingsToDonate: string;
   };
 
   stepTwo: {
@@ -52,7 +52,7 @@ const storeModel: StoreModel = {
   username: null,
   form: {
     stepOne: {
-      toGive: "",
+      thingsToDonate: "",
     },
 
     stepTwo: {
@@ -81,7 +81,7 @@ const storeModel: StoreModel = {
   },
 
   setStepOne: action((state, payload) => {
-    state.form.stepOne.toGive = payload;
+    state.form.stepOne.thingsToDonate = payload;
   }),
 
   setStepTwo: action((state, payload) => {
