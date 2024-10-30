@@ -1,5 +1,6 @@
 import { Element } from "react-scroll";
 import { useEffect, useState } from "react";
+import { sendContactData } from "../lib/api";
 
 interface Error {
   location: string;
@@ -19,37 +20,23 @@ export const HomeContact = () => {
   const [errors, setErrors] = useState<Error[] | null>(null);
 
   ////LOGIC
-
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleContactFormSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    fetch("https://fer-api.coderslab.pl/v1/portfolio/contact", {
-      method: "POST",
-      body: JSON.stringify({ name, email, message }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.status === 200) {
-          setResponseClass("success");
-          setErrors(null);
-          setName("");
-          setEmail("");
-          setMessage("");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setErrors(data.errors);
-        // console.log(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const result = await sendContactData(name, email, message);
+
+    if (result.status === "error") {
+      setErrors(result.errors);
+      return;
+    }
+    setResponseClass("success");
+    setErrors(null);
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
-  //error validation with class addition
+  //error validation, added class for error display
   useEffect(() => {
     if (errors) {
       const hasNameError = errors.some((error) => error.param === "name");
@@ -68,8 +55,6 @@ export const HomeContact = () => {
       if (hasMessageError) {
         classNames += "message ";
       }
-      //remove any space at the end
-      classNames = classNames.trim();
 
       setResponseClass(classNames);
     }
@@ -83,13 +68,13 @@ export const HomeContact = () => {
         <div className="form-section">
           <h3>Skontaktuj się z nami</h3>
           <div className="ornament" />
-          {/*  success message */}
+          {/*  SUCCESS MESSAGE */}
           {responseClass.includes("success") ? (
             <p className="success">
               Wiadomość została wysłana! <br /> Wkrótce się skontaktujemy.
             </p>
           ) : null}
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleContactFormSubmit}>
             <div className="form-name-box">
               <label className="placeholder-text">
                 Wpisz swoje imię
@@ -116,7 +101,7 @@ export const HomeContact = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="abc@xyz.pl"
                 />
-                {/*  email error message*/}
+                {/*  EMAIL ERROR MESSAGE */}
                 {responseClass.includes("email") ? (
                   <p className="contact-error">
                     Podany email jest nieprawidłowy!
@@ -133,7 +118,7 @@ export const HomeContact = () => {
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                 />
-                {/*  meassage error message*/}
+                {/*  TEXT ERROR MESSAGE */}
                 {responseClass.includes("message") ? (
                   <p className="contact-error textarea-error">
                     Wiadomość musi mieć conajmniej 120 znaków!

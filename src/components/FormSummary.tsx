@@ -8,10 +8,10 @@ export const FormSummary = () => {
   ////DATA
   const formData = useStoreState((state) => state.form);
 
-  //destructuring
+  //form data destructuring
   const {
-    stepOne: { toGive },
-    stepTwo: { numberOfBugs },
+    stepOne: { thingsToDonate },
+    stepTwo: { numberOfSacks },
     stepThree: { location, whoWeHelp, organizationName },
     stepFour: {
       address: { streetName, city, postalCode, phoneNumber },
@@ -19,6 +19,7 @@ export const FormSummary = () => {
     },
   } = formData;
 
+  ////UI
   return (
     <>
       <FormMainSection />
@@ -27,13 +28,14 @@ export const FormSummary = () => {
           <div className="form-box">
             <p className="summary-header">Podsumowanie Twojej darowizny</p>
 
+            {/* SUMMARY WITH FORM DATA */}
             <div className="form-data-summary">
               <p className="form-section-title"> Oddajesz:</p>
               <div className="summary-data">
                 <div>
                   <img src="/src/assets/Icon-shirt.png" alt="icon shirt" />
                   <p>
-                    {numberOfBugs} worki, {toGive}, {whoWeHelp}
+                    {numberOfSacks} worki, {thingsToDonate}, {whoWeHelp}
                   </p>
                 </div>
                 <div>
@@ -41,12 +43,15 @@ export const FormSummary = () => {
                     src="/src/assets/Icon-recycling.png"
                     alt="icon recycling"
                   />
-                  <p>dla lokalizacji: {location}</p>
+                  <p>
+                    dla lokalizacji: {location}
+                    {organizationName ? `, ${organizationName}` : undefined}
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/*summary table with data*/}
+            {/*SUMMARY TABLE WITH ADDRESS AND DATE*/}
             <table className="summary-table">
               <thead>
                 <tr>
