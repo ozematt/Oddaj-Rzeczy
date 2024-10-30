@@ -1,13 +1,7 @@
 import { Element } from "react-scroll";
 import { useEffect, useState } from "react";
 import { sendContactData } from "../lib/api";
-
-interface Error {
-  location: string;
-  msg: string;
-  param: string;
-  value: string;
-}
+import { Error } from "../lib/types";
 
 export const HomeContact = () => {
   //
