@@ -2,39 +2,6 @@ import { createStore, action, Action } from "easy-peasy";
 
 import { createTypedHooks } from "easy-peasy";
 
-export interface StepThree {
-  location: string;
-  whoWeHelp: string[];
-  organizationName: string;
-}
-
-export interface StepFour {
-  address: {
-    streetName: string;
-    city: string;
-    postalCode: string;
-    phoneNumber: string;
-  };
-  deadline: {
-    date: string;
-    hour: string;
-    comments: string;
-  };
-}
-
-export interface Form {
-  stepOne: {
-    thingsToDonate: string;
-  };
-
-  stepTwo: {
-    numberOfSacks: number | null;
-  };
-  stepThree: StepThree;
-
-  stepFour: StepFour;
-}
-
 export interface StoreModel {
   userLogIn: boolean;
   username: string | null;
