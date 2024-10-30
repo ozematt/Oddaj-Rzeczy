@@ -4,18 +4,7 @@ import { ItemToShow } from "./ItemToShow";
 import { ItemBtn } from "./ItemBtn";
 import { Element } from "react-scroll";
 import { DATA } from "../data/records";
-
-export interface Item {
-  id: string;
-  name: string;
-  purpose: string;
-  collected: string;
-}
-
-interface Foundation {
-  text: string;
-  elements: Item[];
-}
+import { Foundation } from "../lib/types";
 
 export const HomeWhoWeHelp = () => {
   //
