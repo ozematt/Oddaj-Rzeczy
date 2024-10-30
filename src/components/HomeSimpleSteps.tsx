@@ -6,8 +6,11 @@ export const HomeSimpleSteps = () => {
   //
   //DATA
   const text = "ODDAJ\nRZECZY";
+
+  //boolean user login
   const userLogin = useStoreState((store) => store.username) !== "";
 
+  ////UI
   return (
     <Element name="info" className="wrapper simple-steps">
       <h3>Wystraczą 4 proste kroki</h3>
