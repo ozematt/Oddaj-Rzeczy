@@ -23,8 +23,10 @@
   font-size: 24px;
   font-weight: lighter;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   .select-label {
+    padding-left: 30px;
     margin-right: 26px;
   }
 }
@@ -97,4 +99,10 @@
 
 .hidden {
   display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .select {
+    margin: 20px 0 0 30px;
+  }
 }
