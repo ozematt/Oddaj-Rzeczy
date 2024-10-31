@@ -8,10 +8,12 @@
   max-width: rem(1344px);
   width: 100%;
   color: $primary-font-color;
+  ul {
+    margin: 0 30px;
+  }
   .btn-section {
     display: flex;
     justify-content: space-evenly;
-    //gap: rem(110px);
   }
   .info-about-text {
     max-width: rem(640px);
@@ -41,7 +43,5 @@
     gap: 30px;
     display: flex;
     flex-wrap: wrap;
-  }
-  .info-about-text {
   }
 }
