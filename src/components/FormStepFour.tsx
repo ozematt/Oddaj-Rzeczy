@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { HomeContact } from "./HomeContact";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { StepFour, useStoreActions } from "../store/store";
+import { useStoreActions } from "../store/store";
 import { addressValidation, deadlineValidation } from "../lib/validators";
+import { StepFour } from "../lib/types";
 
 export const FormStepFour = () => {
   //
@@ -93,12 +94,12 @@ export const FormStepFour = () => {
         </div>
         <form
           onSubmit={handleFormStepFourSubmit}
-          className="form-box form-steps"
+          className="form-box form-steps mobile-box"
         >
-          <div className="form-box">
+          <div className="form-box ">
             <p className="steps-counter">Krok 4/4</p>
             <p className="steps-header">
-              Podaj adres oraz termin odbioru rzecz przez kuriera
+              Podaj adres oraz termin odbioru rzecz przez kuriera:
             </p>
             <div className="form-address-and-data">
               <div className="form-data">
@@ -180,7 +181,7 @@ export const FormStepFour = () => {
                   : null}
               </div>
             </div>
-            <div className="btns-box">
+            <div className="btns-box mobile">
               <Link to="/oddaj-rzeczy/step-3">
                 <button className="next-btn">Wstecz</button>
               </Link>

@@ -10,7 +10,7 @@ export const Navbar = () => {
     setClassToggle(!classToggle);
   };
 
-  ///UI
+  ////UI
   return (
     <>
       <div className="hamburger" onClick={handleHamburgerClick}>

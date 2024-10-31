@@ -10,11 +10,14 @@ export const FormThankYou = () => {
       <section className="wrapper">
         <div className="form-steps">
           <div className="form-thank">
-            <p>
-              Dziękujemy za przesłanie formularza <br /> Na maila prześlemy
-              wszelkie <br /> informacje o odbiorze.
-            </p>
-            <div className="ornament" />
+            <div style={{ marginRight: "30px" }}>
+              {" "}
+              <div>
+                Dziękujemy za przesłanie formularza <br /> Na maila prześlemy
+                wszelkie <br /> informacje o odbiorze.
+              </div>
+              <div className="ornament" style={{ marginTop: "30px" }} />
+            </div>
           </div>
         </div>
       </section>

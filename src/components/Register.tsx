@@ -10,7 +10,6 @@ export const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
-
   const [errors, setErrors] = useState("");
 
   const navigate = useNavigate();

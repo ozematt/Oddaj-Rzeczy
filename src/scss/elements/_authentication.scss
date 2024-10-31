@@ -2,14 +2,16 @@
 @import "../settings/colors.scss";
 
 .authentication {
-  width: 100%;
+  // width: 100%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: rem(10px);
   font-size: rem(14px);
   color: $secondary-font-color;
   line-height: rem(24px);
   margin-bottom: rem(17px);
+  margin-right: rem(30px);
   button {
     padding: rem(9px) rem(10px);
     background-color: transparent;
@@ -29,5 +31,10 @@
   .authentication {
     width: 100%;
     margin-right: 20px;
+  }
+}
+@media screen and (max-width: 527px) {
+  .authentication {
+    flex-wrap: wrap;
   }
 }

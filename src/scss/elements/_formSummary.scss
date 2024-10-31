@@ -6,10 +6,10 @@
   font-size: rem(36px);
   font-weight: 600;
   margin: 0;
-  padding-top: 70px;
-  padding-bottom: 45px;
+  padding: 70px 0 45px 30px;
 }
 .form-data-summary {
+  margin-left: 30px;
   margin-bottom: 10px;
 }
 .summary-data {
@@ -31,6 +31,7 @@
 }
 
 .summary-table {
+  margin-left: 30px;
   margin-top: 50px;
   th {
     font-size: 24px;
@@ -46,4 +47,10 @@
 }
 .gap-table {
   width: 405px;
+}
+
+@media screen and (max-width: 585px) {
+  .mobile-box {
+    height: 1300px;
+  }
 }

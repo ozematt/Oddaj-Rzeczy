@@ -57,6 +57,7 @@
       .form-name-box {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         input {
           outline: none;
           height: 35px;
@@ -146,6 +147,27 @@ footer {
     }
     .footer-icon {
       margin-right: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 597px) {
+  .form-name-box {
+    label {
+      margin: 0 30px 30px 30px;
+    }
+  }
+  .textarea-box {
+    label {
+      margin: 0 30px 30px 30px;
+    }
+  }
+  .submit-btn {
+    margin-right: 30px;
+  }
+  footer {
+    div {
+      margin-top: 160px;
     }
   }
 }

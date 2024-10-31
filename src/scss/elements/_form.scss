@@ -3,21 +3,28 @@
 @import "../settings/_functions.scss";
 
 .form-box {
-  width: 1616px;
+  // padding-left: 30px;
+  max-width: 1900px;
+  width: 100%;
   margin: 0 auto;
 }
 .form-bar {
+  // padding: 0 30px;
   background-color: #fad648;
   height: 178px;
   display: flex;
   align-items: center;
+  width: 100%;
+
   p:first-child {
+    padding: 0 30px;
     font-size: 36px;
     font-weight: 600;
     margin: 0;
     padding-bottom: 5px;
   }
   p:last-child {
+    padding: 0 30px;
     margin: 0;
     font-size: 22px;
     color: $primary-font-color;
@@ -30,22 +37,23 @@
   position: relative;
 
   .steps-counter {
+    padding: 36px 0 0 30px;
     font-size: 24px;
     font-weight: lighter;
     color: $primary-font-color;
-    padding-top: 36px;
     margin: 0;
   }
 
   .steps-header {
-    padding-top: 50px;
-    padding-bottom: 6px;
+    padding: 50px 0 6px 30px;
     font-size: 36px;
     font-weight: 600;
   }
 }
+
 .btns-box {
   position: absolute;
+
   bottom: 50px;
 }
 .next-btn {
@@ -54,35 +62,31 @@
   padding: 23px 63px;
   background: transparent;
   border: 0.75px solid $primary-font-color;
-  margin-right: 50px;
+  margin-left: 30px;
   cursor: pointer;
   &:hover {
     scale: 1.1;
   }
 }
 @media screen and (max-width: 1500px) {
-  .form-box {
-    padding: 0 20px;
-  }
   .form-steps {
-    padding: 0 10px;
     background-image: none;
     background-color: #e8e9e4;
   }
 }
 @media screen and (max-width: 1020px) {
-  .steps-header {
-    width: 700px;
-  }
-  .form-box {
-    height: auto;
-  }
+  // .steps-header {
+  //   min-width: 1000px;
+  // }
+  // .form-box {
+  //   height: 800px;
+  // }
 }
 @media screen and (max-width: 650px) {
   .steps-header {
     width: 450px;
   }
-  .btns-box {
-    bottom: 30px;
-  }
+  // .btns-box {
+  //   bottom: 30px;
+  // }
 }

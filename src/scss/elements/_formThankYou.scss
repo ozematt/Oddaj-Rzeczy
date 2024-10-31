@@ -3,11 +3,13 @@
 @import "../settings/_functions.scss";
 
 .form-thank {
-  width: 690px;
   font-size: 40px;
   font-weight: lighter;
   text-align: center;
   color: $primary-font-color;
-  padding-left: 294px;
   padding-top: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

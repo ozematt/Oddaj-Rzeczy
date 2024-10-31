@@ -58,7 +58,6 @@ export const HomeContact = () => {
   return (
     <>
       <Element name="contact" className="contact wrapper">
-        <div></div>
         <div className="form-section">
           <h3>Skontaktuj się z nami</h3>
           <div className="ornament" />
