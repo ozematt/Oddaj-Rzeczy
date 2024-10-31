@@ -11,7 +11,7 @@ export const HomeHeader = () => {
         <div className="wrapper">
           <header className="header">
             <div className="header-hero" />
-            <div>
+            <div style={{ margin: "0 30px 0 30px" }}>
               <Dashboard />
               <MainInfo />
             </div>

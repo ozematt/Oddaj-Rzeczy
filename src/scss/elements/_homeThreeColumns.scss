@@ -3,14 +3,17 @@
 
 .three-columns {
   display: flex;
+  flex-wrap: wrap;
   background-image: url("/src/assets/3 Columns Background.png");
-  height: rem(384px);
+  min-height: rem(384px);
+  height: 100%;
 
   align-items: center;
   div {
     width: rem(334px);
     height: rem(252px);
     text-align: center;
+    padding: 20px;
     margin: 0 auto;
     h4 {
       font-size: rem(90px);
@@ -32,13 +35,13 @@
   }
 }
 
-@media screen and (max-width: 927px) {
+@media screen and (max-width: 900px) {
   .three-columns {
     display: flex;
     flex-direction: column;
     height: 100%;
-    div {
-      margin: 30px;
-    }
+    // div {
+    //   margin: 30px;
+    // }
   }
 }
