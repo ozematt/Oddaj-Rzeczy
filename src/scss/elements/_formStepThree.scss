@@ -4,6 +4,7 @@
 @import "formStepTwo.scss";
 
 .form-location-select {
+  margin-left: 30px;
   font-size: 24px;
 }
 
@@ -35,6 +36,7 @@
   display: none;
 }
 .form-help-groups {
+  margin-left: 30px;
   margin-top: 50px;
   max-width: 650px;
   width: 100%;
@@ -63,6 +65,7 @@
 }
 
 .localization-specific {
+  margin-left: 30px;
   margin-top: 46px;
   width: 100%;
   p {
@@ -96,10 +99,11 @@
 }
 @media screen and (max-width: 632px) {
   .localization-specific {
+    width: 100%;
     max-width: 500px;
-    padding-bottom: 30px;
+    height: 200px;
     .input-org {
-      max-width: 300px;
+      max-width: 410px;
     }
   }
 }
