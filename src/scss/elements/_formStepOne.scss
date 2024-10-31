@@ -9,10 +9,12 @@
   gap: 42px;
   font-size: 24px;
   font-weight: lighter;
-  width: 100%;
+
   .radio {
+    margin-left: 30px;
     appearance: none;
-    width: 40px;
+    min-width: 40px;
+
     height: 40px;
     display: inline-block;
     vertical-align: middle;

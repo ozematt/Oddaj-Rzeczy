@@ -49,10 +49,18 @@ export const FormStepOne = () => {
         >
           <div className="form-box">
             <p className="steps-counter">Krok 1/4</p>
-            <p className="steps-header">Zaznacz co chcesz oddać:</p>
+            <p
+              className="steps-header"
+              style={{ maxWidth: "500px", width: "100%" }}
+            >
+              Zaznacz co chcesz oddać:
+            </p>
             <div className="form-radio">
               {options.map((option) => (
-                <label key={option}>
+                <div
+                  key={option}
+                  style={{ display: "flex", alignItems: "center" }}
+                >
                   <input
                     checked={thingsToDonate === option}
                     onChange={() => setThingsToDonate(option)}
@@ -60,8 +68,8 @@ export const FormStepOne = () => {
                     name="things"
                     className="radio"
                   />
-                  {option}
-                </label>
+                  <div> {option}</div>
+                </div>
               ))}
             </div>
             <div className="btns-box">

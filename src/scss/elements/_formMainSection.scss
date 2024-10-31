@@ -14,16 +14,21 @@
   width: 1015px;
   z-index: -1;
 }
+// .square-steps {
+//   margin: 0 auto;
+// }
 
 .form-main-section {
   position: relative;
   height: 455px;
   max-width: 663px;
+  width: 100%;
   float: right;
   color: $primary-font-color;
   margin-right: 200px;
   .form-header {
     margin-top: 80px;
+    padding: 0 30px;
     font-size: 38px;
     font-weight: normal;
     text-align: center;
@@ -72,5 +77,14 @@
   }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 680px) {
+  .square-steps {
+    // text-align: center;
+    margin: 0 auto;
+    width: 320px;
+    // margin-bottom: 90px;
+  }
+  .form-main {
+    margin-bottom: 90px;
+  }
 }
