@@ -10,7 +10,7 @@ export const FormStepThree = () => {
   //
   ///DATA
   const [classesToggle, setClassesToggle] = useState(false);
-  //checkbox
+  //checkboxes
   const [checkChild, setCheckChild] = useState(false);
   const [checkMothers, setCheckMothers] = useState(false);
   const [checkHomeless, setCheckHomeless] = useState(false);

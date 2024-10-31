@@ -12,26 +12,27 @@ export const HomeWhoWeHelp = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [buttonClicked, setButtonClicked] = useState("Fundacjom");
 
-  //btn array names
-  const btns = ["Fundacjom", "Organizacjom pozarządowym", "Lokalnym zbiórkom"];
+  //button names
+  const aidOrganizations = [
+    "Fundacjom",
+    "Organizacjom pozarządowym",
+    "Lokalnym zbiórkom",
+  ];
 
   ////LOGIC
   //element change
   let dataElements: Foundation = DATA.foundations[0];
 
-  let text =
-    "W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi\n" +
-    "          współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i\n" +
-    "          czego potrzebują.";
+  let orgDescription = "";
 
   if (buttonClicked === "Fundacjom") {
-    text = DATA.foundations[0].text;
+    orgDescription = DATA.foundations[0].text;
     dataElements = DATA.foundations[0];
   } else if (buttonClicked === "Organizacjom pozarządowym") {
-    text = DATA.organization[0].text;
+    orgDescription = DATA.organization[0].text;
     dataElements = DATA.organization[0];
   } else if (buttonClicked === "Lokalnym zbiórkom") {
-    text = DATA.local[0].text;
+    orgDescription = DATA.local[0].text;
     dataElements = DATA.local[0];
   }
 
@@ -63,7 +64,7 @@ export const HomeWhoWeHelp = () => {
         <h3>Komu pomagamy?</h3>
         <div className="ornament" />
         <div className="btn-section">
-          {btns.map((btn, index) => (
+          {aidOrganizations.map((btn, index) => (
             <ItemBtn
               key={index}
               buttonClicked={buttonClicked}
@@ -72,7 +73,7 @@ export const HomeWhoWeHelp = () => {
             />
           ))}
         </div>
-        <p className="info-about-text">{text}</p>
+        <p className="info-about-text">{orgDescription}</p>
         <ul>
           {elementsToShow.map((element) => (
             <ItemToShow key={element.id} element={element} />
