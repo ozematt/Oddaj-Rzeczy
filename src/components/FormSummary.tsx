@@ -24,7 +24,7 @@ export const FormSummary = () => {
     <>
       <FormMainSection />
       <section className="wrapper">
-        <div className="form-steps">
+        <div className="form-steps mobile-box">
           <div className="form-box">
             <p className="summary-header">Podsumowanie Twojej darowizny</p>
 
@@ -52,48 +52,57 @@ export const FormSummary = () => {
             </div>
 
             {/*SUMMARY TABLE WITH ADDRESS AND DATE*/}
-            <table className="summary-table">
-              <thead>
-                <tr>
-                  <th colSpan={2}>Adres odbioru:</th>
-                  <th colSpan={2}>Termin odbioru:</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Ulica</td>
-                  <td className="gap-table">{streetName}</td>
-                  <td>Data</td>
-                  <td>{date}</td>
-                </tr>
-                <tr>
-                  <td>Miasto</td>
-                  <td>{city}</td>
-                  <td>Godzina</td>
-                  <td>{hour}</td>
-                </tr>
-                <tr>
-                  <td>
-                    Kod <br />
-                    pocztowy
-                  </td>
-                  <td>{postalCode}</td>
-                  <td>
-                    Uwagi <br /> dla kuriera
-                  </td>
-                  <td>{comments}</td>
-                </tr>
-                <tr>
-                  <td>
-                    Numer <br /> telefonu
-                  </td>
-                  <td>{phoneNumber}</td>
-                  <td> </td>
-                  <td> </td>
-                </tr>
-              </tbody>
-            </table>
-            <div className="btns-box">
+            <div className="form-address-and-data">
+              <div className="form-data">
+                <p className="form-section-title">Adres odbioru:</p>
+                {/* ADDRESS */}
+                <div style={{ display: "flex" }}>
+                  {" "}
+                  <div>
+                    <label>Ulica:</label>
+                    <label>Miasto:</label>
+                    <label>
+                      Kod <br />
+                      pocztowy:
+                    </label>
+                    <label>
+                      {" "}
+                      Numer <br />
+                      telefonu:
+                    </label>
+                  </div>
+                  <div style={{ marginLeft: "35px" }}>
+                    {" "}
+                    <label>{streetName}</label>
+                    <label>{city}</label>
+                    <label style={{ paddingTop: "29px" }}>{postalCode}</label>
+                    <label style={{ paddingTop: "25px" }}>{phoneNumber}</label>
+                  </div>
+                </div>
+              </div>
+              <div className="form-data">
+                <p className="form-section-title">Termin odbioru:</p>
+                <div style={{ display: "flex" }}>
+                  {" "}
+                  <div>
+                    <label>Data:</label>
+                    <label>Godzina:</label>
+                    <label>
+                      Uwagi <br />
+                      dla kuriera
+                    </label>
+                  </div>
+                  <div style={{ marginLeft: "45px" }}>
+                    {" "}
+                    <label>{date}</label>
+                    <label>{hour}</label>
+                    <label style={{ paddingTop: "29px" }}>{comments}</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="btns-box mobile-wrap">
               <Link to="/oddaj-rzeczy/step-4">
                 <button className="next-btn">Wstecz</button>
               </Link>
