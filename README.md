@@ -54,6 +54,7 @@ Aby zainstalować projekt, wykonaj poniższe kroki:
    - Utwórz konto i projekt na Supabase.
    - Skopiuj klucze API i URL projektu z dashboardu Supabase.
    - Utwórz plik .env w katalogu projektu i dodaj następujące zmienne środowiskowe (zawartość pliku):
+
    
     ```sh
 
