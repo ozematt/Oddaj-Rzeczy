@@ -26,11 +26,12 @@ Witam w moim projekcie **Oddaj Rzeczy**, stworzonym w ramach modułu **Portfolio
 Projekt został zbudowany z wykorzystaniem następujących technologii:
 
 - **React**: Biblioteka do budowy interfejsów użytkownika.
+- **TypeScript**: Superset JavaScriptu, który zapewnia statyczne typowanie, co poprawia niezawodność i stabilność aplikacji.
 - **React Router**: Narzędzie do zarządzania routingiem w aplikacji React.
 - **React Scroll**: Biblioteka umożliwiająca płynne przewijanie w aplikacjach React.
 - **Sass**: Preprocesor CSS, który pozwala na bardziej zorganizowane i efektywne pisanie stylów.
 - **easy-peasy**: Biblioteka do zarządzania stanem w aplikacjach React.
-- **supabase**: Backend-as-a-Service (BaaS), który zapewnia funkcjonalności baz danych, uwierzytelniania i innych usług backendowych.
+- **supabase**: Backend-as-a-Service (BaaS), który zapewnia funkcjonalności uwierzytelniania urzytkownika.
 
 ### Instalacja
 
