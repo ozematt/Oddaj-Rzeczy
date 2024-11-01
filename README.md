@@ -57,8 +57,8 @@ Aby zainstalować projekt, wykonaj poniższe kroki:
    
     ```sh
 
-    VITE_SUPABASE_URL=YOUR_SUPABASE_URL
-    VITE_SUPABASE_KEY=YOUR_SUPABASE_ANON_KEY
+     VITE_SUPABASE_URL=YOUR_SUPABASE_URL
+     VITE_SUPABASE_KEY=YOUR_SUPABASE_ANON_KEY
 
     ```
 5. **Uruchom aplikacje:**
