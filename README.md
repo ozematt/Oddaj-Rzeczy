@@ -53,15 +53,12 @@ Aby zainstalować projekt, wykonaj poniższe kroki:
 4. **Konfiguracja Supabase:**
    - Utwórz konto i projekt na Supabase.
    - Skopiuj klucze API i URL projektu z dashboardu Supabase.
-   - Utwórz plik services/supabase.js w głównym katalogu projektu i dodaj następujące zmienne środowiskowe (zawartość pliku):
+   - Utwórz plik .env w katalogu projektu i dodaj następujące zmienne środowiskowe (zawartość pliku):
    
     ```sh
-    import { createClient } from "@supabase/supabase-js";
 
-    const supabaseUrl = "YOUR_SUPABASE_URL";
-    const supabaseAnonKey = "YOUR_SUPABASE_ANON_KEY";
-
-    export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+    VITE_SUPABASE_URL=YOUR_SUPABASE_URL
+    VITE_SUPABASE_KEY=YOUR_SUPABASE_ANON_KEY
 
     ```
 5. **Uruchom aplikacje:**
