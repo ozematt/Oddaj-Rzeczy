@@ -39,11 +39,11 @@ Aby zainstalować projekt, wykonaj poniższe kroki:
 
 1. **Sklonuj repozytorium:**
     ```sh
-    git clone https://github.com/twoja-nazwa-użytkownika/moj-projekt.git
+    git clone https://github.com/ozematt/Oddaj-Rzeczy.git
     ```
 2. **Przejdź do katalogu projektu:**
     ```sh
-    cd moj-projekt
+    cd Oddaj-Rzeczy
     ```
 3. **Zainstaluj zależności:**
    Upewnij się, że masz zainstalowany Node.js i npm. Następnie uruchom poniższą komendę, aby zainstalować wszystkie zależności projektu.
@@ -64,6 +64,11 @@ Aby zainstalować projekt, wykonaj poniższe kroki:
     export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
     ```
+5. **Uruchom aplikacje:**
+   ```sh
+   npm run dev
+   ```
+   Aplikacja będzie dostępna pod adresem: http://localhost:5173/
 
 
 ## Podsumowanie
