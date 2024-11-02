@@ -24,4 +24,29 @@ export const Authentication = () => {
     }
   };
 
-
+  ///UI
+  return (
+    <div className="authentication">
+      {username ? (
+        <>
+          {/* WHEN USER IS LOG IN */}
+          <p>Cześć, {username}</p>
+          <button onClick={() => navigate("/oddaj-rzeczy")}>
+            Oddaj rzeczy
+          </button>
+          <button onClick={handleLogout}>Wyloguj</button>
+        </>
+      ) : (
+        <>
+          {/* WHEN USER IS LOG OUT */}
+          <Link to="/logowanie">
+            <button>Zaloguj</button>
+          </Link>
+          <Link to="/rejestracja">
+            <button>Załóż konto</button>
+          </Link>
+        </>
+      )}
+    </div>
+  );
+};
