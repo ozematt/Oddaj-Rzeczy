@@ -52,7 +52,7 @@ export interface Form {
   stepFour: StepFour;
 }
 
-export interface StoreModel {
+export type StoreModel = {
   username: string | null;
   form: Form;
   setStepOne: Action<StoreModel, string>;
@@ -60,7 +60,7 @@ export interface StoreModel {
   setStepThree: Action<StoreModel, StepThree>;
   setStepFour: Action<StoreModel, StepFour>;
   setUsername: Action<StoreModel, string | null>;
-}
+};
 
 export type PageNumberProps = {
   page: number;
