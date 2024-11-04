@@ -17,7 +17,7 @@ export const HomeWhoWeHelp = () => {
     "Fundacjom",
     "Organizacjom pozarządowym",
     "Lokalnym zbiórkom",
-  ];
+  ] as const;
 
   ////LOGIC
   //element change
