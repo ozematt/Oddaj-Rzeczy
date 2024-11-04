@@ -68,3 +68,14 @@ export type PageNumberProps = {
   pages: number[];
   handlePageChange: (page: number) => void;
 };
+
+export type ItemBtnProps = {
+  buttonClicked: string;
+  btn: string;
+  handleButtonClick: (btn: string) => void;
+};
+
+export type BigBtnProps = {
+  path: string;
+  fill: string;
+};

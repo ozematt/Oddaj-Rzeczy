@@ -1,7 +1,7 @@
 import { Element } from "react-scroll";
 import { useEffect, useState } from "react";
 import { sendContactData } from "../lib/api";
-import { Error } from "../lib/types";
+import { type Error } from "../lib/types";
 
 export const HomeContact = () => {
   //

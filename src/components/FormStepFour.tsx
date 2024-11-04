@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useStoreActions } from "../store/store";
 import { addressValidation, deadlineValidation } from "../lib/validators";
-import { StepFour } from "../lib/types";
+import { type StepFour } from "../lib/types";
 
 export const FormStepFour = () => {
   //

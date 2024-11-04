@@ -1,8 +1,4 @@
-import {
-  Link as ScrollLink,
-  animateScroll as scroll,
-  scroller,
-} from "react-scroll";
+import { Link as ScrollLink, scroller } from "react-scroll";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 

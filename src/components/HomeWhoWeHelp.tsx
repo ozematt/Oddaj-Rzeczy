@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PageNumber from "./PageNumber";
+import { PageNumber } from "./PageNumber";
 import { ItemToShow } from "./ItemToShow";
 import { ItemBtn } from "./ItemBtn";
 import { Element } from "react-scroll";

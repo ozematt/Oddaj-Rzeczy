@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import { type BigBtnProps } from "../lib/types";
 
-export const BigBtn = ({ path, fill }: { path: string; fill: string }) => {
+export const BigBtn = ({ path, fill }: BigBtnProps) => {
   //
   ////UI
   return (

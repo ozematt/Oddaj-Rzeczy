@@ -1,12 +1,10 @@
+import { type ItemBtnProps } from "../lib/types";
+
 export const ItemBtn = ({
   buttonClicked,
   btn,
   handleButtonClick,
-}: {
-  buttonClicked: string;
-  btn: string;
-  handleButtonClick: (btn: string) => void;
-}) => {
+}: ItemBtnProps) => {
   //
   ////UI
   return (
