@@ -19,11 +19,11 @@ export interface Error {
   value: string;
 }
 
-export interface StepThree {
+export type StepThree = {
   location: string;
   whoWeHelp: string[];
   organizationName: string;
-}
+};
 
 export type StepFour = {
   address: {
