@@ -3,7 +3,6 @@ import { createTypedHooks } from "easy-peasy";
 import { StoreModel } from "../lib/types";
 
 const storeModel: StoreModel = {
-  userLogIn: false,
   username: null,
   form: {
     stepOne: {
@@ -48,9 +47,6 @@ const storeModel: StoreModel = {
   }),
   setStepFour: action((state, payload) => {
     state.form.stepFour = payload;
-  }),
-  setUserLogIn: action((state, payload) => {
-    state.userLogIn = payload;
   }),
   setUsername: action((state, payload) => {
     state.username = payload;

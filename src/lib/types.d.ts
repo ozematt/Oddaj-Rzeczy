@@ -53,13 +53,11 @@ export interface Form {
 }
 
 export interface StoreModel {
-  userLogIn: boolean;
   username: string | null;
   form: Form;
   setStepOne: Action<StoreModel, string>;
   setStepTwo: Action<StoreModel, number | null>;
   setStepThree: Action<StoreModel, StepThree>;
   setStepFour: Action<StoreModel, StepFour>;
-  setUserLogIn: Action<StoreModel, boolean>;
   setUsername: Action<StoreModel, string | null>;
 }

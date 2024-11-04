@@ -10,8 +10,6 @@ export const Authentication = () => {
 
   //username from store
   const username = useStoreState((state) => state.username);
-  console.log(username);
-
   const navigate = useNavigate();
 
   ///LOGIC
