@@ -25,7 +25,7 @@ export interface StepThree {
   organizationName: string;
 }
 
-export interface StepFour {
+export type StepFour = {
   address: {
     streetName: string;
     city: string;
@@ -37,7 +37,7 @@ export interface StepFour {
     hour: string;
     comments: string;
   };
-}
+};
 
 export type Form = {
   stepOne: {
