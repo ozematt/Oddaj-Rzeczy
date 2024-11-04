@@ -61,3 +61,10 @@ export interface StoreModel {
   setStepFour: Action<StoreModel, StepFour>;
   setUsername: Action<StoreModel, string | null>;
 }
+
+export type PageNumberProps = {
+  page: number;
+  currentPage: number;
+  pages: number[];
+  handlePageChange: (page: number) => void;
+};

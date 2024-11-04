@@ -1,14 +1,11 @@
-export const PageNumber = ({
+import { type PageNumberProps } from "../lib/types";
+
+export default function PageNumber({
   page,
   currentPage,
   pages,
   handlePageChange,
-}: {
-  page: number;
-  currentPage: number;
-  pages: number[];
-  handlePageChange: (page: number) => void;
-}) => {
+}: PageNumberProps) {
   //
   ////UI
   return (
@@ -21,4 +18,4 @@ export const PageNumber = ({
       </li>
     </>
   );
-};
+}
