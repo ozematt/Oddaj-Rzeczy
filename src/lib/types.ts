@@ -12,12 +12,12 @@ export interface Foundation {
   elements: Item[];
 }
 
-export interface Error {
+export type Error = {
   location: string;
   msg: string;
   param: string;
   value: string;
-}
+};
 
 export type StepThree = {
   location: string;
