@@ -1,10 +1,12 @@
 import { Link as ScrollLink } from "react-scroll";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
   //
   ////DATA
   const [classToggle, setClassToggle] = useState(false);
+  const navigate = useNavigate();
   ////LOGIC
   const handleHamburgerClick = () => {
     setClassToggle(!classToggle);
@@ -19,7 +21,12 @@ export const Navbar = () => {
         >
           <ul className="hamburger-ul">
             <li className="hamburger-menu-item">
-              <ScrollLink to="start" smooth={true} duration={500}>
+              <ScrollLink
+                to="start"
+                smooth={true}
+                duration={500}
+                onClick={() => navigate("/")}
+              >
                 Start
               </ScrollLink>
             </li>
@@ -49,7 +56,12 @@ export const Navbar = () => {
       <nav className="navbar">
         <ul>
           <li>
-            <ScrollLink to="start" smooth={true} duration={500}>
+            <ScrollLink
+              to="start"
+              smooth={true}
+              duration={500}
+              onClick={() => navigate("/")}
+            >
               Start
             </ScrollLink>
           </li>

@@ -8,15 +8,13 @@ export const HomeHeader = () => {
   return (
     <>
       <Element name="start">
-        <div className="wrapper">
-          <header className="header">
-            <div className="header-hero" />
-            <div>
-              <Dashboard />
-              <MainInfo />
-            </div>
-          </header>
-        </div>
+        <header className="header wrapper">
+          <div className="header-hero" />
+          <div>
+            <Dashboard />
+            <MainInfo />
+          </div>
+        </header>
       </Element>
     </>
   );
