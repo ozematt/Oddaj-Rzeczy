@@ -4,7 +4,7 @@ import { ItemToShow } from "./ItemToShow";
 import { ItemBtn } from "./ItemBtn";
 import { Element } from "react-scroll";
 import { DATA } from "../data/records";
-import { Foundation } from "../lib/types";
+import { type Foundation } from "../lib/types";
 
 export const HomeWhoWeHelp = () => {
   //
