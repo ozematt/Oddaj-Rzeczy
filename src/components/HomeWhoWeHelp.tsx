@@ -60,7 +60,7 @@ export const HomeWhoWeHelp = () => {
   ////UI
   return (
     <>
-      <Element name={"fundations"} className="who-we-help wrapper">
+      <Element name={"foundations"} className="who-we-help wrapper">
         <h3>Komu pomagamy?</h3>
         <div className="ornament" />
         <div className="btn-section">

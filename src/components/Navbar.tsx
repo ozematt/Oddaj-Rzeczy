@@ -1,21 +1,43 @@
-import { Link as ScrollLink } from "react-scroll";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {
+  Link as ScrollLink,
+  animateScroll as scroll,
+  scroller,
+} from "react-scroll";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
   //
   ////DATA
   const [classToggle, setClassToggle] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
   ////LOGIC
-  const handleHamburgerClick = () => {
-    setClassToggle(!classToggle);
+  //
+  useEffect(() => {
+    //checked if we are on the home page and if we have the `scrollTo` state to scroll
+    if (location.pathname === "/" && location.state?.scrollTo) {
+      scroller.scrollTo(location.state?.scrollTo, {
+        smooth: true,
+        duration: 500,
+      });
+      // navigate state reset
+      navigate("/", { replace: true, state: {} });
+    }
+  }, [location, navigate]);
+
+  // we pass "scrollElement" as state to "navigate" coz async
+  const handleScroll = async (scrollElement: string) => {
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollTo: scrollElement } });
+    }
   };
 
   ////UI
   return (
     <>
-      <div className="hamburger" onClick={handleHamburgerClick}>
+      <div className="hamburger" onClick={() => setClassToggle(!classToggle)}>
         <div
           className={classToggle ? "hamburger-menu" : "hamburger-menu hidden"}
         >
@@ -41,7 +63,7 @@ export const Navbar = () => {
               </ScrollLink>
             </li>
             <li className="hamburger-menu-item">
-              <ScrollLink to="fundations" smooth={true} duration={500}>
+              <ScrollLink to="foundations" smooth={true} duration={500}>
                 Fundacja i organizacje
               </ScrollLink>
             </li>
@@ -53,6 +75,7 @@ export const Navbar = () => {
           </ul>
         </div>
       </div>
+      {/* NAVIGATION */}
       <nav className="navbar">
         <ul>
           <li>
@@ -66,22 +89,42 @@ export const Navbar = () => {
             </ScrollLink>
           </li>
           <li>
-            <ScrollLink to="info" smooth={true} duration={500}>
+            <ScrollLink
+              to="info"
+              smooth={true}
+              duration={500}
+              onClick={() => handleScroll("info")}
+            >
               O co chodzi?
             </ScrollLink>
           </li>
           <li>
-            <ScrollLink to="aboutUs" smooth={true} duration={500}>
+            <ScrollLink
+              to="aboutUs"
+              smooth={true}
+              duration={500}
+              onClick={() => handleScroll("aboutUs")}
+            >
               O nas
             </ScrollLink>
           </li>
           <li>
-            <ScrollLink to="fundations" smooth={true} duration={500}>
+            <ScrollLink
+              to="foundations"
+              smooth={true}
+              duration={500}
+              onClick={() => handleScroll("foundations")}
+            >
               Fundacja i organizacje
             </ScrollLink>
           </li>
           <li>
-            <ScrollLink to="contact" smooth={true} duration={500}>
+            <ScrollLink
+              to="contact"
+              smooth={true}
+              duration={500}
+              onClick={() => handleScroll("contact")}
+            >
               Kontakt
             </ScrollLink>
           </li>
