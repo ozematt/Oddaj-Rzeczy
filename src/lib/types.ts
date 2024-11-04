@@ -1,16 +1,16 @@
 import { Action } from "easy-peasy";
 
-export interface Item {
+export type Item = {
   id: string;
   name: string;
   purpose: string;
   collected: string;
-}
+};
 
-export interface Foundation {
+export type Foundation = {
   text: string;
   elements: Item[];
-}
+};
 
 export type Error = {
   location: string;
