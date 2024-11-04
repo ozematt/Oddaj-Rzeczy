@@ -4,7 +4,7 @@ import { BigBtn } from "./BigBtn";
 export const MainInfo = () => {
   //
   ////DATA
-  const userLogin = useStoreState((store) => store.username) !== "";
+  const userLogin = useStoreState((store) => store.username);
   const text = "ODDAJ\nRZECZY";
 
   ////UI

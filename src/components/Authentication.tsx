@@ -7,8 +7,10 @@ export const Authentication = () => {
   ///DATA
   //set username - store action
   const setUsername = useStoreActions((actions) => actions.setUsername);
+
   //username from store
   const username = useStoreState((state) => state.username);
+  console.log(username);
 
   const navigate = useNavigate();
 
@@ -17,8 +19,8 @@ export const Authentication = () => {
   const handleLogout = async () => {
     try {
       await logoutUser();
-      navigate("/wylogowano");
       setUsername(null);
+      navigate("/wylogowano");
     } catch (error) {
       console.error("Logout error:", error);
     }

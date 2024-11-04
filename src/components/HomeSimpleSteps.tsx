@@ -8,7 +8,7 @@ export const HomeSimpleSteps = () => {
   const text = "ODDAJ\nRZECZY";
 
   //boolean user login
-  const userLogin = useStoreState((store) => store.username) !== "";
+  const userLogin = useStoreState((store) => store.username);
 
   ////UI
   return (
