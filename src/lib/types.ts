@@ -39,7 +39,7 @@ export interface StepFour {
   };
 }
 
-export interface Form {
+export type Form = {
   stepOne: {
     thingsToDonate: string;
   };
@@ -50,7 +50,7 @@ export interface Form {
   stepThree: StepThree;
 
   stepFour: StepFour;
-}
+};
 
 export type StoreModel = {
   username: string | null;
