@@ -4,6 +4,35 @@ import { StoreModel } from "../lib/types";
 
 const storeModel: StoreModel = {
   username: null,
+  form: {
+    stepOne: {
+      thingsToDonate: "",
+    },
+
+    stepTwo: {
+      numberOfSacks: null,
+    },
+
+    stepThree: {
+      location: "",
+      whoWeHelp: [],
+      organizationName: "",
+    },
+
+    stepFour: {
+      address: {
+        streetName: "",
+        city: "",
+        postalCode: "",
+        phoneNumber: "",
+      },
+      deadline: {
+        date: "",
+        hour: "",
+        comments: "",
+      },
+    },
+  },
 
   setStepOne: action((state, payload) => {
     state.form.stepOne.thingsToDonate = payload;
