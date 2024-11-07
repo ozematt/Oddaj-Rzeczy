@@ -77,5 +77,5 @@ export type ItemBtnProps = {
 
 export type BigBtnProps = {
   path: string;
-  fill: string;
+  children: string;
 };

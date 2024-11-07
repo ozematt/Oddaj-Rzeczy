@@ -58,7 +58,9 @@ export const HomeSimpleSteps = () => {
         </div>
       </div>
       <div className="four-steps-btn">
-        <BigBtn path={userLogin ? "/oddaj-rzeczy" : "/logowanie"} fill={text} />
+        <BigBtn path={userLogin ? "/oddaj-rzeczy" : "/logowanie"}>
+          {text}
+        </BigBtn>
       </div>
     </Element>
   );

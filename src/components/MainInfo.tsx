@@ -16,8 +16,10 @@ export const MainInfo = () => {
       </h3>
       <div className="ornament" />
       <div className="main-btns">
-        <BigBtn path={userLogin ? "/oddaj-rzeczy" : "/logowanie"} fill={text} />
-        <BigBtn path="/logowanie" fill="ZORGANIZUJ ZBIÓRKĘ" />
+        <BigBtn path={userLogin ? "/oddaj-rzeczy" : "/logowanie"}>
+          {text}
+        </BigBtn>
+        <BigBtn path="/logowanie">ZORGANIZUJ ZBIÓRKĘ</BigBtn>
       </div>
     </main>
   );
