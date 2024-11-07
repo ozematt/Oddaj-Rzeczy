@@ -14,7 +14,9 @@ export const HomeContact = () => {
   const [errors, setErrors] = useState<Error[] | null>(null);
 
   ////LOGIC
-  const handleContactFormSubmit = async (e: React.SyntheticEvent) => {
+  const handleContactFormSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
 
     const result = await sendContactData(name, email, message);

@@ -66,7 +66,7 @@ export const FormStepFour = () => {
     });
   };
 
-  const handleFormStepFourSubmit = (e: React.SyntheticEvent) => {
+  const handleFormStepFourSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     //address validation

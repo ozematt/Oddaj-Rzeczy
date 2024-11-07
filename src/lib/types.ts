@@ -39,7 +39,7 @@ export type FormStepFourData = {
   };
 };
 
-export type Form = {
+export type FormData = {
   stepOne: {
     thingsToDonate: string;
   };
@@ -54,7 +54,7 @@ export type Form = {
 
 export type StoreModel = {
   username: string | null;
-  form: Form;
+  form: FormData;
   setStepOne: Action<StoreModel, string>;
   setStepTwo: Action<StoreModel, number | null>;
   setStepThree: Action<StoreModel, FormStepThreeData>;
