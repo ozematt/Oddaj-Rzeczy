@@ -1,6 +1,11 @@
 import { type Item } from "../lib/types";
+import { Element } from "react-scroll";
 
-export const ItemToShow = ({ element }: { element: Item }) => {
+type ItemToShowProps = {
+  element: Item;
+};
+
+export const ItemToShow = ({ element }: ItemToShowProps) => {
   //
   ////UI
   return (

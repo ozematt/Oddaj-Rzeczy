@@ -3,6 +3,7 @@ import { Link as ScrollLink } from "react-scroll";
 
 export const NavbarHamburger = () => {
   const navigate = useNavigate();
+  ////UI
   return (
     <>
       <ul className="hamburger-ul">
