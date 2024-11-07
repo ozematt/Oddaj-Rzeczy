@@ -1,6 +1,7 @@
 import { Link as ScrollLink, scroller } from "react-scroll";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { NavbarHamburger } from "./NavbarHamburger";
 
 export const Navbar = () => {
   //
@@ -34,42 +35,11 @@ export const Navbar = () => {
   return (
     <>
       <div className="hamburger" onClick={() => setClassToggle(!classToggle)}>
-        <div
+        <nav
           className={classToggle ? "hamburger-menu" : "hamburger-menu hidden"}
         >
-          <ul className="hamburger-ul">
-            <li className="hamburger-menu-item">
-              <ScrollLink
-                to="start"
-                smooth={true}
-                duration={500}
-                onClick={() => navigate("/")}
-              >
-                Start
-              </ScrollLink>
-            </li>
-            <li className="hamburger-menu-item">
-              <ScrollLink to="info" smooth={true} duration={500}>
-                O co chodzi?
-              </ScrollLink>
-            </li>
-            <li className="hamburger-menu-item">
-              <ScrollLink to="aboutUs" smooth={true} duration={500}>
-                O nas
-              </ScrollLink>
-            </li>
-            <li className="hamburger-menu-item">
-              <ScrollLink to="foundations" smooth={true} duration={500}>
-                Fundacja i organizacje
-              </ScrollLink>
-            </li>
-            <li className="hamburger-menu-item">
-              <ScrollLink to="contact" smooth={true} duration={500}>
-                Kontakt
-              </ScrollLink>
-            </li>
-          </ul>
-        </div>
+          <NavbarHamburger />
+        </nav>
       </div>
       {/* NAVIGATION */}
       <nav className="navbar">
