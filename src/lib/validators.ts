@@ -1,4 +1,4 @@
-import { StepFour } from "./types";
+import { StepFourFormData } from "./types";
 
 const validateEmail = (email: string) => {
   return email
@@ -63,7 +63,7 @@ export const loginValidation = (
 
 ////address inputs validator
 export const addressValidation = (
-  dataToSend: StepFour,
+  dataToSend: StepFourFormData,
   setAddressErrors: (errors: string[]) => void
 ) => {
   let newAddressErrors = [];
@@ -96,7 +96,7 @@ export const addressValidation = (
 
 ////deadline inputs validator
 export const deadlineValidation = (
-  dataToSend: StepFour,
+  dataToSend: StepFourFormData,
   setDeadlineErrors: (errors: string[]) => void
 ) => {
   let newDeadlineErrors = [];

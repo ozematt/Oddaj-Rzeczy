@@ -4,7 +4,7 @@ import { HomeContact } from "./HomeContact";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useStoreActions, useStoreState } from "../store/store";
-import { type FormStepThreeData } from "../lib/types";
+import { type StepThreeFormData } from "../lib/types";
 
 export const FormStepThree = () => {
   //
@@ -21,7 +21,7 @@ export const FormStepThree = () => {
   const [error, setError] = useState("");
 
   //data send to store
-  const [dataToSend, setDataToSend] = useState<FormStepThreeData>({
+  const [dataToSend, setDataToSend] = useState<StepThreeFormData>({
     location: "",
     whoWeHelp: [],
     organizationName: "",

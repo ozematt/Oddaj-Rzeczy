@@ -19,13 +19,13 @@ export type Error = {
   value: string;
 };
 
-export type FormStepThreeData = {
+export type StepThreeFormData = {
   location: string;
   whoWeHelp: string[];
   organizationName: string;
 };
 
-export type FormStepFourData = {
+export type StepFourFormData = {
   address: {
     streetName: string;
     city: string;
@@ -47,9 +47,9 @@ export type FormData = {
   stepTwo: {
     numberOfSacks: number | null;
   };
-  stepThree: FormStepThreeData;
+  stepThree: StepThreeFormData;
 
-  stepFour: FormStepFourData;
+  stepFour: StepFourFormData;
 };
 
 export type StoreModel = {
@@ -57,8 +57,8 @@ export type StoreModel = {
   form: FormData;
   setStepOne: Action<StoreModel, string>;
   setStepTwo: Action<StoreModel, number | null>;
-  setStepThree: Action<StoreModel, FormStepThreeData>;
-  setStepFour: Action<StoreModel, FormStepFourData>;
+  setStepThree: Action<StoreModel, StepThreeFormData>;
+  setStepFour: Action<StoreModel, StepFourFormData>;
   setUsername: Action<StoreModel, string | null>;
 };
 
