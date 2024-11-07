@@ -1,5 +1,5 @@
 import { useStoreState } from "../store/store";
-import { BigBtn } from "./BigBtn";
+import { Button } from "./Button";
 
 export const MainInfo = () => {
   //
@@ -16,10 +16,10 @@ export const MainInfo = () => {
       </h3>
       <div className="ornament" />
       <div className="main-btns">
-        <BigBtn path={userLogin ? "/oddaj-rzeczy" : "/logowanie"}>
+        <Button path={userLogin ? "/oddaj-rzeczy" : "/logowanie"}>
           {text}
-        </BigBtn>
-        <BigBtn path="/logowanie">ZORGANIZUJ ZBIÓRKĘ</BigBtn>
+        </Button>
+        <Button path="/logowanie">ZORGANIZUJ ZBIÓRKĘ</Button>
       </div>
     </main>
   );

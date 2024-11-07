@@ -75,7 +75,7 @@ export type ItemBtnProps = {
   handleButtonClick: (btn: string) => void;
 };
 
-export type BigBtnProps = {
+export type ButtonProps = {
   path: string;
   children: string;
 };

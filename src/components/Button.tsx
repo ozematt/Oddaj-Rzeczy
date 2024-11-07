@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { type BigBtnProps } from "../lib/types";
+import { type ButtonProps } from "../lib/types";
 
-export const BigBtn = ({ path, children }: BigBtnProps) => {
+export const Button = ({ path, children }: ButtonProps) => {
   //
   ////UI
   return (

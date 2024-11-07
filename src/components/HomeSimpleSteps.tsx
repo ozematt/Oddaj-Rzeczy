@@ -1,5 +1,5 @@
 import { useStoreState } from "../store/store";
-import { BigBtn } from "./BigBtn";
+import { Button } from "./Button";
 import { Element } from "react-scroll";
 
 export const HomeSimpleSteps = () => {
@@ -58,9 +58,9 @@ export const HomeSimpleSteps = () => {
         </div>
       </div>
       <div className="four-steps-btn">
-        <BigBtn path={userLogin ? "/oddaj-rzeczy" : "/logowanie"}>
+        <Button path={userLogin ? "/oddaj-rzeczy" : "/logowanie"}>
           {text}
-        </BigBtn>
+        </Button>
       </div>
     </Element>
   );
