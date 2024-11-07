@@ -13,7 +13,7 @@ export const HomeSimpleSteps = () => {
   ////UI
   return (
     <Element name="info" className="wrapper simple-steps">
-      <h3>Wystraczą 4 proste kroki</h3>
+      <h3>Wystarczą 4 proste kroki</h3>
       <div className="ornament" />
       <div className="four-steps">
         <div className="steps">

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useStoreActions } from "../store/store";
 import { addressValidation, deadlineValidation } from "../lib/validators";
-import { type StepFour } from "../lib/types";
+import { type FormStepFourData } from "../lib/types";
 
 export const FormStepFour = () => {
   //
@@ -16,7 +16,7 @@ export const FormStepFour = () => {
   const navigate = useNavigate();
 
   //data send to store
-  const [dataToSend, setDataToSend] = useState<StepFour>({
+  const [dataToSend, setDataToSend] = useState<FormStepFourData>({
     address: {
       streetName: "",
       city: "",
