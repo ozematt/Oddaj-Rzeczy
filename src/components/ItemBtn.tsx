@@ -1,8 +1,7 @@
 import { type OrgButtonProps } from "../lib/types";
 
 export const OrgButton = ({
-  buttonClicked,
-  // btn,
+  activeButton,
   onClick,
   children,
 }: OrgButtonProps) => {
@@ -11,7 +10,7 @@ export const OrgButton = ({
   return (
     <>
       <button
-        className={`${buttonClicked === children ? "active-btn" : undefined} item-btn`}
+        className={`${activeButton === children ? "active-btn" : undefined} item-btn`}
         onClick={() => onClick(children)}
       >
         {children}

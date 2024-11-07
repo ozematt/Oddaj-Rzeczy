@@ -69,10 +69,15 @@ export type PageNumberProps = {
   onPageChange: (page: number) => void;
 };
 
+export type AidOrganization =
+  | "Fundacjom"
+  | "Organizacjom pozarządowym"
+  | "Lokalnym zbiórkom";
+
 export type OrgButtonProps = {
-  buttonClicked: string;
-  onClick: (btn: string) => void;
-  children: "Fundacjom" | "Organizacjom pozarządowym" | "Lokalnym zbiórkom";
+  activeButton: AidOrganization;
+  onClick: (activeButton: AidOrganization) => void;
+  children: AidOrganization;
 };
 
 export type ButtonProps = {

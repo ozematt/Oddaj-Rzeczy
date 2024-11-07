@@ -4,7 +4,7 @@ import { ItemToShow } from "./ItemToShow";
 import { OrgButton } from "./ItemBtn";
 import { Element } from "react-scroll";
 import { DATA } from "../data/records";
-import { type Foundation } from "../lib/types";
+import { AidOrganization, type Foundation } from "../lib/types";
 
 //button names
 const aidOrganizations = [
@@ -17,7 +17,8 @@ export const HomeWhoWeHelp = () => {
   //
   ////DATA
   const [currentPage, setCurrentPage] = useState(1);
-  const [buttonClicked, setButtonClicked] = useState("Fundacjom");
+  const [activeButton, setActiveButton] =
+    useState<AidOrganization>("Fundacjom");
 
   ////LOGIC
   //element change
@@ -25,13 +26,13 @@ export const HomeWhoWeHelp = () => {
 
   let orgDescription = "";
 
-  if (buttonClicked === "Fundacjom") {
+  if (activeButton === "Fundacjom") {
     orgDescription = DATA.foundations[0].text;
     dataElements = DATA.foundations[0];
-  } else if (buttonClicked === "Organizacjom pozarządowym") {
+  } else if (activeButton === "Organizacjom pozarządowym") {
     orgDescription = DATA.organization[0].text;
     dataElements = DATA.organization[0];
-  } else if (buttonClicked === "Lokalnym zbiórkom") {
+  } else if (activeButton === "Lokalnym zbiórkom") {
     orgDescription = DATA.local[0].text;
     dataElements = DATA.local[0];
   }
@@ -52,8 +53,8 @@ export const HomeWhoWeHelp = () => {
     setCurrentPage(page);
   };
 
-  const handleButtonClick = (name: string) => {
-    setButtonClicked(name);
+  const handleButtonClick = (name: AidOrganization) => {
+    setActiveButton(name);
     setCurrentPage(1);
   };
 
@@ -67,7 +68,7 @@ export const HomeWhoWeHelp = () => {
           {aidOrganizations.map((buttonName, index) => (
             <OrgButton
               key={index}
-              buttonClicked={buttonClicked}
+              activeButton={activeButton}
               onClick={handleButtonClick}
             >
               {buttonName}
