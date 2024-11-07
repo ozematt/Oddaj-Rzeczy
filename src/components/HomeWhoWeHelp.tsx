@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { PageNumber } from "./PageNumber";
 import { ItemToShow } from "./ItemToShow";
-import { ItemBtn } from "./ItemBtn";
+import { OrgButton } from "./ItemBtn";
 import { Element } from "react-scroll";
 import { DATA } from "../data/records";
 import { type Foundation } from "../lib/types";
@@ -64,13 +64,14 @@ export const HomeWhoWeHelp = () => {
         <h3>Komu pomagamy?</h3>
         <div className="ornament" />
         <div className="btn-section">
-          {aidOrganizations.map((btn, index) => (
-            <ItemBtn
+          {aidOrganizations.map((buttonName, index) => (
+            <OrgButton
               key={index}
               buttonClicked={buttonClicked}
-              btn={btn}
-              handleButtonClick={handleButtonClick}
-            />
+              onClick={handleButtonClick}
+            >
+              {buttonName}
+            </OrgButton>
           ))}
         </div>
         <p className="info-about-text">{orgDescription}</p>

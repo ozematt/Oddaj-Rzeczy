@@ -1,19 +1,20 @@
-import { type ItemBtnProps } from "../lib/types";
+import { type OrgButtonProps } from "../lib/types";
 
-export const ItemBtn = ({
+export const OrgButton = ({
   buttonClicked,
-  btn,
-  handleButtonClick,
-}: ItemBtnProps) => {
+  // btn,
+  onClick,
+  children,
+}: OrgButtonProps) => {
   //
   ////UI
   return (
     <>
       <button
-        className={`${buttonClicked === btn ? "active-btn" : undefined} item-btn`}
-        onClick={() => handleButtonClick(btn)}
+        className={`${buttonClicked === children ? "active-btn" : undefined} item-btn`}
+        onClick={() => onClick(children)}
       >
-        {btn}
+        {children}
       </button>
     </>
   );
