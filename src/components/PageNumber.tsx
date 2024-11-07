@@ -4,7 +4,7 @@ export const PageNumber = ({
   page,
   currentPage,
   pages,
-  handlePageChange,
+  onPageChange,
 }: PageNumberProps) => {
   //
   ////UI
@@ -12,7 +12,7 @@ export const PageNumber = ({
     <>
       <li
         className={`${page === currentPage ? "active" : ""} ${pages.length === 1 ? "hidden" : ""} page-number`}
-        onClick={() => handlePageChange(page)}
+        onClick={() => onPageChange(page)}
       >
         {page}
       </li>

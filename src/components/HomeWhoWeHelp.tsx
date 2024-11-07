@@ -6,18 +6,18 @@ import { Element } from "react-scroll";
 import { DATA } from "../data/records";
 import { type Foundation } from "../lib/types";
 
+//button names
+const aidOrganizations = [
+  "Fundacjom",
+  "Organizacjom pozarządowym",
+  "Lokalnym zbiórkom",
+] as const;
+
 export const HomeWhoWeHelp = () => {
   //
   ////DATA
   const [currentPage, setCurrentPage] = useState(1);
   const [buttonClicked, setButtonClicked] = useState("Fundacjom");
-
-  //button names
-  const aidOrganizations = [
-    "Fundacjom",
-    "Organizacjom pozarządowym",
-    "Lokalnym zbiórkom",
-  ] as const;
 
   ////LOGIC
   //element change
@@ -86,7 +86,7 @@ export const HomeWhoWeHelp = () => {
               page={page}
               currentPage={currentPage}
               pages={pages}
-              handlePageChange={handlePageChange}
+              onPageChange={handlePageChange}
             />
           ))}
         </ul>

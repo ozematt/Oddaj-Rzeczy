@@ -66,7 +66,7 @@ export type PageNumberProps = {
   page: number;
   currentPage: number;
   pages: number[];
-  handlePageChange: (page: number) => void;
+  onPageChange: (page: number) => void;
 };
 
 export type ItemBtnProps = {
