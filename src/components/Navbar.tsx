@@ -35,11 +35,7 @@ export const Navbar = () => {
   return (
     <>
       <div className="hamburger" onClick={() => setClassToggle(!classToggle)}>
-        <nav
-          className={classToggle ? "hamburger-menu" : "hamburger-menu hidden"}
-        >
-          <NavbarHamburger />
-        </nav>
+        <NavbarHamburger classToggle={classToggle} />
       </div>
       {/* NAVIGATION */}
       <nav className="navbar">
