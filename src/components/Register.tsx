@@ -16,7 +16,7 @@ export const Register = () => {
 
   ////LOGIC
   //handle user register
-  const handleRegister = async (event: React.SyntheticEvent) => {
+  const handleRegister = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     //registerValidation call

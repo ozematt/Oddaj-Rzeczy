@@ -89,7 +89,7 @@ export const FormStepThree = () => {
   //checking the location and organization
   const validateFormData = dataToSend.location || dataToSend.organizationName;
 
-  const handleFormStepThreeSubmit = (e: React.SyntheticEvent) => {
+  const handleFormStepThreeSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (validateFormChecks && validateFormData) {

@@ -37,7 +37,7 @@ export const FormStepTwo = () => {
     setClassesToggle(false);
   };
 
-  const handleFormStepTwoSubmit = (e: React.SyntheticEvent) => {
+  const handleFormStepTwoSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSagsAmount(numberOfSacks); //data send to store
     navigate("/oddaj-rzeczy/step-3"); //next page navigate

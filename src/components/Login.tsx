@@ -19,7 +19,7 @@ export const Login = () => {
 
   ////LOGIC
   // handle user login
-  const handleSubmit = async (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     //loginValidation call

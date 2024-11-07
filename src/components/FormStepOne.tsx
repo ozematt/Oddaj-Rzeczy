@@ -22,7 +22,7 @@ export const FormStepOne = () => {
   ];
 
   ////LOGIC
-  const handleFormStepOneSubmit = (e: React.SyntheticEvent) => {
+  const handleFormStepOneSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setStepOne(thingsToDonate); //data send to store
