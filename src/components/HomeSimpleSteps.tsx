@@ -16,17 +16,7 @@ export const HomeSimpleSteps = () => {
       <h3>Wystarczą 4 proste kroki</h3>
       <div className="ornament" />
       <div className="four-steps">
-        <div className="steps">
-          <img
-            src="/src/assets/Icon-1.svg"
-            alt="t-shirt icon"
-            className="icon"
-          />
-          <h4>Wybierz rzeczy</h4>
-          <p>
-            ubrania, zabawki, <br /> sprzęt i inne
-          </p>
-        </div>
+        <div className="steps"></div>
         <div className="steps">
           <img src="/src/assets/Icon-2.svg" alt="bag icon" className="icon" />
           <h4>Spakuj je</h4>
