@@ -1,12 +1,12 @@
 import { StepFourFormData } from "./types";
 
-const validateEmail = (email: string) => {
+export default function validateEmail(email: string) {
   return email
     .toLowerCase()
     .match(
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
-};
+}
 
 //// register inputs validator
 export const registerValidation = (
