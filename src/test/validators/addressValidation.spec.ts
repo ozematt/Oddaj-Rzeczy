@@ -1,20 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { addressValidation } from "../../lib/validators";
 
-// const dataToSend = {
-//     address: {
-//       streetName: "",
-//       city: "",
-//       postalCode: "",
-//       phoneNumber: "",
-//     },
-//     deadline: {
-//       date: "",
-//       hour: "",
-//       comments: "",
-//     },
-//   };
-
 describe("test addressValidation helper function", () => {
   it("should return true and not set errors for valid address data", () => {
     const setAddressErrors = vi.fn();

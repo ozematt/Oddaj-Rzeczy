@@ -116,7 +116,7 @@ export const deadlineValidation = (
   }
   if (newDeadlineErrors.length > 0) {
     setDeadlineErrors(newDeadlineErrors);
-    return;
+    return false;
   }
   setDeadlineErrors([]);
   return true;
