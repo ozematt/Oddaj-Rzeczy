@@ -55,7 +55,8 @@ export const loginValidation = (
     validationErrors += "error-password ";
   }
   if (validationErrors) {
-    setErrors(validationErrors);
+    const trimErrorsValues = validationErrors.trim();
+    setErrors(trimErrorsValues);
     return false;
   }
   setErrors("");
