@@ -1,20 +1,20 @@
 import { StepFourFormData } from "./types";
 
-export default function validateEmail(email: string) {
+export const validateEmail = (email: string) => {
   return email
     .toLowerCase()
     .match(
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
-}
+};
 
 //// register inputs validator
-export const registerValidation = (
+export function registerValidation(
   email: string,
   password: string,
   repeatPassword: string,
   setErrors: (errors: string) => void
-): boolean => {
+): boolean {
   let validationErrors = "";
 
   //email
@@ -35,7 +35,7 @@ export const registerValidation = (
   }
   setErrors("");
   return true;
-};
+}
 
 ////login inputs validator
 export const loginValidation = (

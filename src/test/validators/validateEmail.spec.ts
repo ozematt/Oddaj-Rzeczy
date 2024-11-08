@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import validateEmail from "../../lib/validators";
+import { validateEmail } from "../../lib/validators";
 
 describe("test validateEmail helper function", () => {
   it("should return a match for a valid email address", () => {
