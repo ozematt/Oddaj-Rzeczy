@@ -22,4 +22,20 @@ describe("<OrgButton/>", () => {
     await user.click(button);
     expect(onClick).toHaveBeenCalledTimes(1);
   });
+  it("should render button with the correct label and inactive button", async () => {
+    const user = userEvent.setup();
+    const onClick = vi.fn();
+
+    render(
+      <OrgButton
+        activeButton="Lokalnym zbiórkom"
+        children="Fundacjom"
+        onClick={onClick}
+      />
+    );
+    const button = screen.getByRole("button", { name: "Fundacjom" });
+    expect(button).toBeInTheDocument();
+
+    expect(button).not.toHaveClass("active-btn");
+  });
 });
