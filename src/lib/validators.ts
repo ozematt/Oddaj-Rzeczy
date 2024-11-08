@@ -1,6 +1,6 @@
 import { StepFourFormData } from "./types";
 
-const validateEmail = (email: string) => {
+export const validateEmail = (email: string) => {
   return email
     .toLowerCase()
     .match(
@@ -30,7 +30,8 @@ export const registerValidation = (
     validationErrors += "error-repeated-password ";
   }
   if (validationErrors) {
-    setErrors(validationErrors);
+    const trimErrorsValues = validationErrors.trim();
+    setErrors(trimErrorsValues);
     return false;
   }
   setErrors("");
@@ -54,7 +55,8 @@ export const loginValidation = (
     validationErrors += "error-password ";
   }
   if (validationErrors) {
-    setErrors(validationErrors);
+    const trimErrorsValues = validationErrors.trim();
+    setErrors(trimErrorsValues);
     return false;
   }
   setErrors("");
@@ -88,7 +90,7 @@ export const addressValidation = (
   }
   if (newAddressErrors.length > 0) {
     setAddressErrors(newAddressErrors);
-    return;
+    return false;
   }
   setAddressErrors([]);
   return true;
@@ -114,7 +116,7 @@ export const deadlineValidation = (
   }
   if (newDeadlineErrors.length > 0) {
     setDeadlineErrors(newDeadlineErrors);
-    return;
+    return false;
   }
   setDeadlineErrors([]);
   return true;
