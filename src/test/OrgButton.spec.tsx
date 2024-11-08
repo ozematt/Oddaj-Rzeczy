@@ -4,7 +4,7 @@ import { OrgButton } from "../components/OrgButton";
 import userEvent from "@testing-library/user-event";
 
 describe("<OrgButton/>", () => {
-  it("", async () => {
+  it("should render button with the correct label and respond to click events ", async () => {
     const user = userEvent.setup();
     const onClick = vi.fn();
 
