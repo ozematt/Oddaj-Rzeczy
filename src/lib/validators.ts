@@ -90,7 +90,7 @@ export const addressValidation = (
   }
   if (newAddressErrors.length > 0) {
     setAddressErrors(newAddressErrors);
-    return;
+    return false;
   }
   setAddressErrors([]);
   return true;
