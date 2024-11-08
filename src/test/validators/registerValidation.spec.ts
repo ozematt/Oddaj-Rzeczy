@@ -19,7 +19,7 @@ describe("test registerValidation helper function", () => {
     expect(isValid).toBe(true);
     expect(setErrorsMock).toHaveBeenCalledWith(""); // Brak błędów
   });
-  it("should return set errors for invalid email", () => {
+  it("should set an error for invalid email", () => {
     const setErrorsMock = vi.fn();
     const isValid = registerValidation(
       "invalidEmail",
@@ -29,6 +29,56 @@ describe("test registerValidation helper function", () => {
     );
 
     expect(isValid).toBe(false);
-    expect(setErrorsMock).toHaveBeenCalledWith("error-email ");
+    expect(setErrorsMock).toHaveBeenCalledWith("error-email");
+  });
+  it("should set an error for passwords shorter than 6 characters", () => {
+    const setErrorsMock = vi.fn();
+    const isValid = registerValidation(
+      "test@example.com",
+      "123",
+      "123",
+      setErrorsMock
+    );
+
+    expect(isValid).toBe(false);
+    expect(setErrorsMock).toHaveBeenCalledWith("error-password");
+  });
+  it("should set an error for unmatched passwords", () => {
+    const setErrorsMock = vi.fn();
+    const isValid = registerValidation(
+      "test@example.com",
+      "securePassword",
+      "differentPassword",
+      setErrorsMock
+    );
+
+    expect(isValid).toBe(false);
+    expect(setErrorsMock).toHaveBeenCalledWith("error-repeated-password");
+  });
+  it("should set an error for a password repeated with whitespace", () => {
+    const setErrorsMock = vi.fn();
+    const isValid = registerValidation(
+      "test@example.com",
+      "securePassword",
+      "securePassword ",
+      setErrorsMock
+    );
+
+    expect(isValid).toBe(false);
+    expect(setErrorsMock).toHaveBeenCalledWith("error-repeated-password");
+  });
+  it("should set an errors for invalid data", () => {
+    const setErrorsMock = vi.fn();
+    const isValid = registerValidation(
+      "invalidEmail",
+      "123",
+      "differentPassword ",
+      setErrorsMock
+    );
+
+    expect(isValid).toBe(false);
+    expect(setErrorsMock).toHaveBeenCalledWith(
+      "error-email error-password error-repeated-password"
+    );
   });
 });

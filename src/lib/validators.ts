@@ -9,12 +9,12 @@ export const validateEmail = (email: string) => {
 };
 
 //// register inputs validator
-export function registerValidation(
+export const registerValidation = (
   email: string,
   password: string,
   repeatPassword: string,
   setErrors: (errors: string) => void
-): boolean {
+): boolean => {
   let validationErrors = "";
 
   //email
@@ -30,12 +30,13 @@ export function registerValidation(
     validationErrors += "error-repeated-password ";
   }
   if (validationErrors) {
-    setErrors(validationErrors);
+    const trimErrorsValues = validationErrors.trim();
+    setErrors(trimErrorsValues);
     return false;
   }
   setErrors("");
   return true;
-}
+};
 
 ////login inputs validator
 export const loginValidation = (
