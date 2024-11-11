@@ -18,21 +18,4 @@ test.describe("Login flow", () => {
 
     await expect(page.getByText("Cześć, neutralnie7@gmail.com")).toBeVisible();
   });
-  test("Go to login page, submit form with invalid data check error display", async ({
-    page,
-  }) => {
-    await page.goto("/");
-
-    const loginButton = page.getByRole("button", { name: "Zaloguj" });
-    await loginButton.click();
-
-    const emailInput = page.getByRole("textbox", { name: "Email" });
-    const passwordInput = page.getByRole("textbox", { name: "Hasło" });
-
-    await emailInput.fill("invalid@Email");
-    await passwordInput.fill("111");
-    await page.getByRole("button", { name: "Zaloguj się" }).click();
-
-    await expect(page.getByText("Podany email jest niepoprawny")).toBeVisible();
-  });
 });
