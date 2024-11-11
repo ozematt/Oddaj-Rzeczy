@@ -9,11 +9,9 @@ describe("<OrgButton/>", () => {
     const onClick = vi.fn();
 
     render(
-      <OrgButton
-        activeButton="Fundacjom"
-        children="Fundacjom"
-        onClick={onClick}
-      />
+      <OrgButton activeButton="Fundacjom" onClick={onClick}>
+        Fundacjom
+      </OrgButton>
     );
     const button = screen.getByRole("button", { name: "Fundacjom" });
     expect(button).toBeInTheDocument();

@@ -76,11 +76,11 @@ export type AidOrganization =
 
 export type OrgButtonProps = {
   activeButton: AidOrganization;
-  onClick: (activeButton: AidOrganization) => void;
-  children: AidOrganization;
+  onClick: (activeButton: React.ReactNode) => void;
+  children: React.ReactNode;
 };
 
 export type ButtonProps = {
   path: string;
-  children: string;
+  children: React.ReactNode;
 };
