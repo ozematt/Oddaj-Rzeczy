@@ -1,5 +1,4 @@
 import { type Item } from "../lib/types";
-import { Element } from "react-scroll";
 
 type ItemToShowProps = {
   element: Item;

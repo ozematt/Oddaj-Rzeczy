@@ -3,6 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useStoreActions } from "../store/store";
 
+const options = [
+  "ubrania, które nadają się do ponownego użycia",
+  "ubrania, do wyrzucenia",
+  "zabawki",
+  "książki",
+  "Inne",
+] as const;
+
 export const FormStepOne = () => {
   //
   ////DATA
@@ -12,14 +20,6 @@ export const FormStepOne = () => {
   const setStepOne = useStoreActions((actions) => actions.setStepOne);
 
   const navigate = useNavigate();
-
-  const options = [
-    "ubrania, które nadają się do ponownego użycia",
-    "ubrania, do wyrzucenia",
-    "zabawki",
-    "książki",
-    "Inne",
-  ];
 
   ////LOGIC
   const handleFormStepOneSubmit = (e: React.FormEvent<HTMLFormElement>) => {
