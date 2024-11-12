@@ -5,7 +5,25 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  test:
+  unit_tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Vitest tests
+        run: npm run test
+
+  e2e:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -17,13 +35,6 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Start application server
-        run: npm run dev -- --port 5173 &
-      # Czekaj chwilę, aż serwer się uruchomi
-      # Alternatywnie, można użyć narzędzi, aby sprawdzić, czy serwer działa
-      # na przykład wait-on.
-      # - name: Wait for server to be ready
-      #   run: npx wait-on http://localhost:5173
       - name: Run Playwright tests
         run: npx playwright test
       - uses: actions/upload-artifact@v4
