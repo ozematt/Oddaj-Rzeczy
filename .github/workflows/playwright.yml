@@ -5,7 +5,26 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  test:
+  unit_tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "21"
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./app
+
+      - name: Run Vitest tests
+        run: npm run test
+        working-directory: ./app
+  e2e:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
