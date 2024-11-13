@@ -28,7 +28,8 @@ export default defineConfig({
     baseURL: "http://127.0.0.1:5173",
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: "on-first-retry",
+    trace: process.env.CI ? "on" : "retain-on-failure",
+    headless: true,
   },
 
   /* Configure projects for major browsers */
@@ -74,7 +75,7 @@ export default defineConfig({
     command: "npm run start",
     url: "http://127.0.0.1:5173",
     reuseExistingServer: true,
-    timeout: 120 * 1000,
+    timeout: 130 * 1000,
     stdout: "pipe",
     stderr: "pipe",
   },
