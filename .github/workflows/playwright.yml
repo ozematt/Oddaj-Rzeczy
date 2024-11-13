@@ -25,7 +25,9 @@ jobs:
 
   e2e:
     timeout-minutes: 60
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
+    env:
+      BASE_URL: "http://localhost:5173"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -49,7 +51,7 @@ jobs:
       #     CI: true
 
       - name: Run Vite server and Playwright tests
-        run: npx start-server-and-test start http://127.0.0.1:5173 "npx playwright test"
+        run: npx start-server-and-test start http://localhost:5173 "npx playwright test"
         env:
           CI: true
       # - name: Run Playwright tests
