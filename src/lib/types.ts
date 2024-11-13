@@ -11,7 +11,6 @@ export type Foundation = {
   text: string;
   elements: Item[];
 };
-
 export type Error = {
   location: string;
   msg: string;
