@@ -1,6 +1,6 @@
-@import "../settings/_fonts.scss";
-@import "../settings/_colors.scss";
-@import "../settings/_functions.scss";
+@use "../settings/_fonts.scss";
+@use "../settings/_colors.scss";
+@use "../settings/_functions.scss";
 
 .form-box {
   padding-left: 30px;
@@ -27,7 +27,7 @@
     padding: 0 30px;
     margin: 0;
     font-size: 22px;
-    color: $primary-font-color;
+    color: colors.$primary-font-color;
   }
 }
 .form-steps {
@@ -40,7 +40,7 @@
     padding: 36px 0 0 30px;
     font-size: 24px;
     font-weight: lighter;
-    color: $primary-font-color;
+    color: colors.$primary-font-color;
     margin: 0;
   }
 
@@ -61,7 +61,7 @@
   font-weight: lighter;
   padding: 23px 63px;
   background: transparent;
-  border: 0.75px solid $primary-font-color;
+  border: 0.75px solid colors.$primary-font-color;
   margin-left: 30px;
   cursor: pointer;
   &:hover {

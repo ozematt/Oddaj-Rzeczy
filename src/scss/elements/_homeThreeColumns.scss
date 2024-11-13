@@ -1,36 +1,36 @@
-@import "../settings/functions.scss";
-@import "../settings/colors.scss";
+@use "../settings/functions.scss";
+@use "../settings/colors.scss";
 
 .three-columns {
   display: flex;
   flex-wrap: wrap;
   background-image: url("/src/assets/3 Columns Background.png");
-  min-height: rem(384px);
+  min-height: functions.rem(384px);
   height: 100%;
 
   align-items: center;
   div {
-    width: rem(334px);
-    height: rem(252px);
+    width: functions.rem(334px);
+    height: functions.rem(252px);
     text-align: center;
     padding: 20px;
     margin: 0 auto;
     h4 {
-      font-size: rem(90px);
+      font-size: functions.rem(90px);
       font-weight: lighter;
-      color: $number-color;
+      color: colors.$number-color;
       margin: 0;
     }
     h5 {
-      font-size: rem(18px);
+      font-size: functions.rem(18px);
       font-weight: normal;
-      color: $primary-font-color;
-      margin-top: rem(15px);
+      color: colors.$primary-font-color;
+      margin-top: functions.rem(15px);
     }
     p {
-      font-size: rem(16px);
+      font-size: functions.rem(16px);
       font-weight: lighter;
-      line-height: rem(25px);
+      line-height: functions.rem(25px);
     }
   }
 }

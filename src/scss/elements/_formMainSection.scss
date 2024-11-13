@@ -1,6 +1,6 @@
-@import "../settings/_fonts.scss";
-@import "../settings/_colors.scss";
-@import "../settings/_functions.scss";
+@use "../settings/_fonts.scss";
+@use "../settings/_colors.scss";
+@use "../settings/_functions.scss";
 
 .form-main {
   height: 713px;
@@ -24,7 +24,7 @@
   max-width: 663px;
   width: 100%;
   float: right;
-  color: $primary-font-color;
+  color: colors.$primary-font-color;
   margin-right: 200px;
   .form-header {
     margin-top: 80px;
@@ -42,7 +42,7 @@
   .square-step {
     height: 135px;
     width: 135px;
-    border: 0.75px solid $primary-font-color;
+    border: 0.75px solid colors.$primary-font-color;
     text-align: center;
     font-weight: lighter;
     transform: rotate(45deg);

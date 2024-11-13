@@ -1,15 +1,15 @@
-@import "../settings/functions.scss";
-@import "../settings/colors.scss";
+@use "../settings/functions.scss";
+@use "../settings/colors.scss";
 
 main {
   margin: 210px 130px 0 66px;
   .main-btns {
-    font-size: rem(36px);
+    font-size: functions.rem(36px);
     font-weight: lighter;
-    gap: rem(44px);
+    gap: functions.rem(44px);
     display: flex;
     justify-content: center;
-    margin-top: rem(65px);
+    margin-top: functions.rem(65px);
   }
 }
 

@@ -1,10 +1,10 @@
-@import "../settings/functions.scss";
-@import "../settings/colors.scss";
+@use "../settings/functions.scss";
+@use "../settings/colors.scss";
 
 .header-hero {
-  max-width: rem(885px);
+  max-width: functions.rem(885px);
   width: 100%;
-  height: rem(963px);
+  height: functions.rem(963px);
   background-image: url("/src/assets/Home-Hero-Image.jpg");
   background-position: right;
 }

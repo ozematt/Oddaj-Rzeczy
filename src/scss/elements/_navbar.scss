@@ -1,23 +1,23 @@
-@import "../settings/functions.scss";
-@import "../settings/colors.scss";
+@use "../settings/functions.scss";
+@use "../settings/colors.scss";
 
 .navbar {
-  font-size: rem(18px);
-  line-height: rem(24px);
-  color: $primary-font-color;
+  font-size: functions.rem(18px);
+  line-height: functions.rem(24px);
+  color: colors.$primary-font-color;
   margin-right: 20px;
   ul {
     display: flex;
     justify-content: flex-end;
     li {
-      margin-left: rem(15px);
+      margin-left: functions.rem(15px);
       cursor: pointer;
-      padding: rem(9px) rem(20px);
+      padding: functions.rem(9px) functions.rem(20px);
       border: 0.75px solid transparent;
       transition: all 0.3s ease-in-out;
     }
     li:hover {
-      border: 0.75px solid $primary-font-color;
+      border: 0.75px solid colors.$primary-font-color;
     }
   }
 }
@@ -37,7 +37,7 @@
   position: absolute;
   width: 142px;
   height: 205px;
-  border: 0.75px solid $primary-font-color;
+  border: 0.75px solid colors.$primary-font-color;
   top: 60px;
   background-color: white;
   .hamburger-ul {
@@ -45,11 +45,11 @@
     margin: 0;
     .hamburger-menu-item {
       cursor: pointer;
-      padding: rem(9px) rem(20px);
+      padding: functions.rem(9px) functions.rem(20px);
       border: 0.75px solid transparent;
       transition: all 0.3s ease-in-out;
       &:hover {
-        border: 0.75px solid $primary-font-color;
+        border: 0.75px solid colors.$primary-font-color;
       }
     }
   }

@@ -1,6 +1,6 @@
-@import "../settings/_fonts.scss";
-@import "../settings/_colors.scss";
-@import "../settings/_functions.scss";
+@use "../settings/_fonts.scss";
+@use "../settings/_colors.scss";
+@use "../settings/_functions.scss";
 
 .form-radio {
   display: flex;
@@ -18,7 +18,7 @@
     height: 40px;
     display: inline-block;
     vertical-align: middle;
-    border: 0.75px solid $primary-font-color;
+    border: 0.75px solid colors.$primary-font-color;
     margin-right: 30px;
     &:checked {
       background: #fad648;

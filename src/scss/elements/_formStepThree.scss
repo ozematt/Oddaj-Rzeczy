@@ -1,7 +1,7 @@
-@import "../settings/_fonts.scss";
-@import "../settings/_colors.scss";
-@import "../settings/_functions.scss";
-@import "formStepTwo.scss";
+@use "../settings/_fonts.scss";
+@use "../settings/_colors.scss";
+@use "../settings/_functions.scss";
+@use "formStepTwo.scss";
 
 .form-location-select {
   margin-left: 30px;
@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border: 0.75px solid $primary-font-color;
+  border: 0.75px solid colors.$primary-font-color;
   background-color: #e8e9e4;
   position: absolute;
   top: 64px;
@@ -26,8 +26,8 @@
     border: 2px solid transparent;
     &:hover {
       font-weight: 600;
-      border-left: 2px solid $primary-font-color;
-      border-right: 2px solid $primary-font-color;
+      border-left: 2px solid colors.$primary-font-color;
+      border-right: 2px solid colors.$primary-font-color;
       z-index: 2;
     }
   }
@@ -55,7 +55,7 @@
     div {
       cursor: pointer;
       padding: 11px 26px;
-      border: 0.75px solid $primary-font-color;
+      border: 0.75px solid colors.$primary-font-color;
     }
   }
 }
@@ -77,7 +77,7 @@
     width: 100%;
     height: 40px;
     background: transparent;
-    border: 0.75px solid $primary-font-color;
+    border: 0.75px solid colors.$primary-font-color;
     outline: none;
     cursor: pointer;
   }

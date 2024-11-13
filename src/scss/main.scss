@@ -1,37 +1,37 @@
 //GENERIC
-@import "generic/normalize.scss";
-@import "generic/reset.scss";
+@use "generic/normalize.scss";
+@use "generic/reset.scss";
 
-@import "settings/colors.scss";
-@import "settings/fonts.scss";
-@import "elements/base.scss";
+@use "settings/colors.scss";
+@use "settings/fonts.scss";
+@use "elements/base.scss";
 
 //ELEMENTS
-@import "elements/bigBtn.scss";
-@import "elements/dashboard.scss";
-@import "elements/login.scss";
-@import "elements/logout.scss";
+@use "elements/bigBtn.scss";
+@use "elements/dashboard.scss";
+@use "elements/login.scss";
+@use "elements/logout.scss";
 
-@import "elements/homeHeader.scss";
-@import "elements/navbar.scss";
-@import "elements/authentication.scss";
-@import "elements/mainInfo.scss";
+@use "elements/homeHeader.scss";
+@use "elements/navbar.scss";
+@use "elements/authentication.scss";
+@use "elements/mainInfo.scss";
 
-@import "elements/homeThreeColumns.scss";
-@import "elements/homeSimpleSteps.scss";
-@import "elements/homeAboutUs.scss";
+@use "elements/homeThreeColumns.scss";
+@use "elements/homeSimpleSteps.scss";
+@use "elements/homeAboutUs.scss";
 
-@import "elements/homeWhoWeHelp.scss";
-@import "elements/itemBtn.scss";
-@import "elements/itemToShow.scss";
-@import "elements/pageNumber.scss";
-@import "elements/homeContact.scss";
+@use "elements/homeWhoWeHelp.scss";
+@use "elements/itemBtn.scss";
+@use "elements/itemToShow.scss";
+@use "elements/pageNumber.scss";
+@use "elements/homeContact.scss";
 
-@import "elements/form.scss";
-@import "elements/formMainSection";
-@import "elements/formStepOne.scss";
-@import "elements/formStepTwo.scss";
-@import "elements/formStepThree.scss";
-@import "elements/formStepFour.scss";
-@import "elements/formSummary.scss";
-@import "elements/formThankYou.scss";
+@use "elements/form.scss";
+@use "elements/formMainSection";
+@use "elements/formStepOne.scss";
+@use "elements/formStepTwo.scss";
+@use "elements/formStepThree.scss";
+@use "elements/formStepFour.scss";
+@use "elements/formSummary.scss";
+@use "elements/formThankYou.scss";

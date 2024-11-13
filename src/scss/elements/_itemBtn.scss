@@ -1,22 +1,22 @@
-@import "../settings/_fonts.scss";
-@import "../settings/_colors.scss";
-@import "../settings/_functions.scss";
+@use "../settings/_fonts.scss";
+@use "../settings/_colors.scss";
+@use "../settings/_functions.scss";
 
 .item-btn {
-  font-size: rem(24px);
+  font-size: functions.rem(24px);
   font-weight: normal;
   background-color: transparent;
   border: 0.75px solid transparent;
-  width: rem(208px);
+  width: functions.rem(208px);
   padding: 10px;
-  margin-top: rem(50px);
+  margin-top: functions.rem(50px);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   &.active-btn {
-    border: 0.75px solid $primary-font-color;
+    border: 0.75px solid colors.$primary-font-color;
   }
   &:hover {
-    border: 0.75px solid $primary-font-color;
+    border: 0.75px solid colors.$primary-font-color;
     scale: 1.05;
   }
 }

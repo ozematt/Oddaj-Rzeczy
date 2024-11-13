@@ -1,13 +1,13 @@
-@import "../settings/_fonts.scss";
-@import "../settings/_colors.scss";
-@import "../settings/_functions.scss";
+@use "../settings/_fonts.scss";
+@use "../settings/_colors.scss";
+@use "../settings/_functions.scss";
 
 .who-we-help {
-  margin-top: rem(70px);
-  height: rem(862px);
-  max-width: rem(1344px);
+  margin-top: functions.rem(70px);
+  height: functions.rem(862px);
+  max-width: functions.rem(1344px);
   width: 100%;
-  color: $primary-font-color;
+  color: colors.$primary-font-color;
   ul {
     margin: 0 30px;
   }
@@ -16,20 +16,20 @@
     justify-content: space-evenly;
   }
   .info-about-text {
-    max-width: rem(640px);
+    max-width: functions.rem(640px);
     width: 100%;
-    height: rem(94px);
+    height: functions.rem(94px);
     margin: 0 auto;
-    margin-top: rem(70px);
+    margin-top: functions.rem(70px);
     text-align: center;
-    font-size: rem(22px);
-    line-height: rem(30px);
+    font-size: functions.rem(22px);
+    line-height: functions.rem(30px);
   }
   .pages {
     display: flex;
     justify-content: center;
-    gap: rem(40px);
-    margin-top: rem(63px);
+    gap: functions.rem(40px);
+    margin-top: functions.rem(63px);
   }
 }
 

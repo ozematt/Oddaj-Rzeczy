@@ -1,30 +1,30 @@
-@import "../settings/_fonts.scss";
-@import "../settings/_functions.scss";
-@import "../settings/_colors.scss";
+@use "../settings/_fonts.scss";
+@use "../settings/_functions.scss";
+@use "../settings/_colors.scss";
 
 body {
-  font-family: $font-base;
+  font-family: fonts.$font-base;
 }
 
 .wrapper {
-  max-width: rem(1900px);
+  max-width: functions.rem(1900px);
   width: 100%;
   margin: 0 auto;
   padding: 0;
 }
 
 .ornament {
-  width: rem(253px);
-  height: rem(33px);
+  width: functions.rem(253px);
+  height: functions.rem(33px);
   background-image: url("/src/assets/Decoration.svg");
   margin: 0 auto;
 }
 h3 {
   text-align: center;
-  font-size: rem(38px);
+  font-size: functions.rem(38px);
   font-weight: normal;
-  color: $primary-font-color;
-  line-height: rem(55px);
+  color: colors.$primary-font-color;
+  line-height: functions.rem(55px);
   width: 100%;
 }
 ul {

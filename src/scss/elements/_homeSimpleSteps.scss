@@ -1,41 +1,41 @@
-@import "../settings/functions.scss";
-@import "../settings/colors.scss";
+@use "../settings/functions.scss";
+@use "../settings/colors.scss";
 
 .simple-steps {
-  margin-top: rem(55px);
+  margin-top: functions.rem(55px);
 
   .four-steps {
     margin-top: 30px;
-    background-color: $four-steps-bgc;
+    background-color: colors.$four-steps-bgc;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
-    color: $primary-font-color;
+    color: colors.$primary-font-color;
     .steps {
       padding: 30px;
     }
     h4 {
-      font-size: rem(18px);
+      font-size: functions.rem(18px);
       font-weight: normal;
-      margin-bottom: rem(17px);
+      margin-bottom: functions.rem(17px);
     }
     h4::after {
       content: "";
       display: block;
-      width: rem(70px);
-      height: rem(1px);
+      width: functions.rem(70px);
+      height: functions.rem(1px);
       background-color: black;
       margin: 0 auto;
-      margin-top: rem(12px);
+      margin-top: functions.rem(12px);
     }
   }
   .four-steps-btn {
     display: flex;
     justify-content: center;
-    margin-top: rem(35px);
-    margin-bottom: rem(80px);
+    margin-top: functions.rem(35px);
+    margin-bottom: functions.rem(80px);
   }
 }
 
@@ -44,7 +44,7 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    margin-top: rem(30px);
+    margin-top: functions.rem(30px);
     .steps {
       padding: 45px;
     }
