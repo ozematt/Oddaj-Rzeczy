@@ -28,7 +28,7 @@ export const Login = () => {
 
     //sign in user
     try {
-      const user = await loginUser(email, password);
+      await loginUser(email, password);
       setUsername(email);
       navigate("/");
       setErrors("");
