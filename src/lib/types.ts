@@ -75,9 +75,9 @@ export type AidOrganization =
   | "Lokalnym zbiórkom";
 
 export type OrgButtonProps = {
-  activeButton: AidOrganization;
-  onClick: (activeButton: React.ReactNode) => void;
-  children: React.ReactNode;
+  activeButton: string;
+  onClick: (activeButton: string) => void;
+  children: string;
 };
 
 export type ButtonProps = {
