@@ -148,7 +148,6 @@ export const FormStepFour = () => {
                   Data
                   <input
                     onChange={handleInputChange}
-                    onClick={(e) => console.log(1)}
                     name="date"
                     type="text"
                     placeholder=" DD.MM.YYYY"

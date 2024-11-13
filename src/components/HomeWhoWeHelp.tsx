@@ -4,7 +4,7 @@ import { ItemToShow } from "./ItemToShow";
 import { OrgButton } from "./OrgButton";
 import { Element } from "react-scroll";
 import { DATA } from "../data/records";
-import { AidOrganization, type Foundation } from "../lib/types";
+import { type Foundation } from "../lib/types";
 
 //button names
 const aidOrganizations = [

@@ -21,7 +21,6 @@ describe("<OrgButton/>", () => {
     expect(onClick).toHaveBeenCalledTimes(1);
   });
   it("should render button with the correct label and inactive button", async () => {
-    const user = userEvent.setup();
     const onClick = vi.fn();
 
     render(
