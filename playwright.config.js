@@ -75,7 +75,7 @@ export default defineConfig({
     command: "npm run start",
     url: "http://127.0.0.1:5173",
     reuseExistingServer: true,
-    timeout: 130 * 1000,
+    timeout: 120 * 1000,
     stdout: "pipe",
     stderr: "pipe",
   },
