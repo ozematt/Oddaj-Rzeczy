@@ -17,8 +17,7 @@ export const HomeWhoWeHelp = () => {
   //
   ////DATA
   const [currentPage, setCurrentPage] = useState(1);
-  const [activeButton, setActiveButton] =
-    useState<AidOrganization>("Fundacjom");
+  const [activeButton, setActiveButton] = useState<string>("Fundacjom");
 
   ////LOGIC
   //element change
@@ -53,7 +52,7 @@ export const HomeWhoWeHelp = () => {
     setCurrentPage(page);
   };
 
-  const handleButtonClick = (name: AidOrganization) => {
+  const handleButtonClick = (name: string) => {
     setActiveButton(name);
     setCurrentPage(1);
   };
