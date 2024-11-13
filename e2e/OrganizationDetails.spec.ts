@@ -9,7 +9,6 @@ test.describe("Organization details display", () => {
       .getByRole("navigation")
       .getByText("Fundacja i organizacje")
       .click();
-
     await page.getByRole("button", { name: "Fundacjom" }).click();
     await expect(page.getByText("W naszej bazie znajdziesz")).toBeVisible();
     await expect(page.getByText("Fundacja “Dbam o Zdrowie”")).toBeVisible();
