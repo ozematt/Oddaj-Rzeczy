@@ -7,7 +7,6 @@ describe("<OrgButton/>", () => {
   it("should render button with the correct label and respond to click events ", async () => {
     const user = userEvent.setup();
     const onClick = vi.fn();
-
     render(
       <OrgButton activeButton="Fundacjom" onClick={onClick}>
         Fundacjom
