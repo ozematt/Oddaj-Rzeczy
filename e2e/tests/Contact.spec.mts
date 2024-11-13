@@ -3,6 +3,7 @@ import { test, expect } from "@playwright/test";
 test.describe("Contact submit flow", () => {
   test("should submit contact form with valid data", async ({ page }) => {
     await page.goto("/");
+    await page.waitForTimeout(2000);
     const contactButton = page
       .getByRole("navigation")
       .locator("li")
