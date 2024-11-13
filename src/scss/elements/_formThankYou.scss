@@ -1,12 +1,12 @@
-@import "../settings/_fonts.scss";
-@import "../settings/_colors.scss";
-@import "../settings/_functions.scss";
+@use "../settings/_fonts.scss";
+@use "../settings/_colors.scss";
+@use "../settings/_functions.scss";
 
 .form-thank {
   font-size: 40px;
   font-weight: lighter;
   text-align: center;
-  color: $primary-font-color;
+  color: colors.$primary-font-color;
   padding-top: 300px;
   display: flex;
   flex-direction: column;

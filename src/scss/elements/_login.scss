@@ -1,11 +1,11 @@
-@import "../settings/_fonts.scss";
-@import "../settings/_colors.scss";
-@import "../settings/_functions.scss";
+@use "../settings/_fonts.scss";
+@use "../settings/_colors.scss";
+@use "../settings/_functions.scss";
 
 .login {
-  width: rem(504px);
+  width: functions.rem(504px);
   margin: 0 auto;
-  color: $primary-font-color;
+  color: colors.$primary-font-color;
 
   h2 {
     margin-top: 123px;
@@ -29,7 +29,7 @@
     margin: 0 auto;
     margin-top: 60px;
     width: 384px;
-    background-color: $primary;
+    background-color: colors.$primary;
 
     .login-box {
       position: relative;
@@ -87,11 +87,11 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   &:hover {
-    border: 0.75px solid $primary-font-color;
+    border: 0.75px solid colors.$primary-font-color;
   }
 }
 .log-btn {
-  border: 0.75px solid $primary-font-color;
+  border: 0.75px solid colors.$primary-font-color;
   transition: all 0.3s ease-in-out;
   &:hover {
     scale: 1.1;

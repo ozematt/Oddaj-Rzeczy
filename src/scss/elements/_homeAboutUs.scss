@@ -1,41 +1,41 @@
-@import "../settings/functions.scss";
-@import "../settings/colors.scss";
+@use "../settings/functions.scss";
+@use "../settings/colors.scss";
 
 .about-us {
-  height: rem(935px);
+  height: functions.rem(935px);
   display: flex;
   .left-section {
-    max-width: rem(958px);
+    max-width: functions.rem(958px);
     width: 100%;
-    background-color: $four-steps-bgc;
+    background-color: colors.$four-steps-bgc;
     &_box {
       margin: 0 auto;
-      margin-top: rem(186px);
-      max-width: rem(657px);
+      margin-top: functions.rem(186px);
+      max-width: functions.rem(657px);
     }
     h3 {
-      font-size: rem(38px);
+      font-size: functions.rem(38px);
       font-weight: normal;
       text-align: center;
-      color: $primary-font-color;
+      color: colors.$primary-font-color;
     }
     p {
       width: 100%;
-      font-size: rem(30px);
+      font-size: functions.rem(30px);
       font-weight: lighter;
       text-align: center;
-      line-height: rem(54px);
-      margin-top: rem(55px);
+      line-height: functions.rem(54px);
+      margin-top: functions.rem(55px);
     }
     .signature {
-      margin-top: rem(44px);
+      margin-top: functions.rem(44px);
       float: right;
     }
   }
   .foto {
     background-image: url("/src/assets/People.jpg");
-    width: rem(942px);
-    height: rem(935px);
+    width: functions.rem(942px);
+    height: functions.rem(935px);
   }
 }
 @media screen and (max-width: 1143px) {

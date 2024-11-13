@@ -1,5 +1,5 @@
-@import "../settings/_functions.scss";
+@use "../settings/_functions.scss";
 
 .nav-section {
-  margin-top: rem(37px);
+  margin-top: functions.rem(37px);
 }

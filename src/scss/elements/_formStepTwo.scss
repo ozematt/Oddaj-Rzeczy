@@ -1,11 +1,11 @@
-@import "../settings/_fonts.scss";
-@import "../settings/_colors.scss";
-@import "../settings/_functions.scss";
+@use "../settings/_fonts.scss";
+@use "../settings/_colors.scss";
+@use "../settings/_functions.scss";
 
 %pseudo-element {
   position: absolute;
   content: "";
-  background-color: $primary-font-color;
+  background-color: colors.$primary-font-color;
   width: 17px;
   height: 1px;
   top: 50%;
@@ -34,7 +34,7 @@
   width: 300px;
   height: 49px;
   font-weight: lighter;
-  border: 0.75px solid $primary-font-color;
+  border: 0.75px solid colors.$primary-font-color;
   position: relative;
   cursor: pointer;
   .option-default {
@@ -76,7 +76,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 0.75px solid $primary-font-color;
+  border: 0.75px solid colors.$primary-font-color;
   width: 85px;
   height: 185px;
   padding: 6px;
@@ -91,8 +91,8 @@
     &:hover {
       scale: 1.1;
       font-weight: 600;
-      border-left: 2px solid $primary-font-color;
-      border-right: 2px solid $primary-font-color;
+      border-left: 2px solid colors.$primary-font-color;
+      border-right: 2px solid colors.$primary-font-color;
     }
   }
 }

@@ -1,25 +1,25 @@
-@import "../settings/_fonts.scss";
-@import "../settings/_colors.scss";
-@import "../settings/_functions.scss";
+@use "../settings/_fonts.scss";
+@use "../settings/_colors.scss";
+@use "../settings/_functions.scss";
 
 .logout {
-  color: $primary-font-color;
+  color: colors.$primary-font-color;
   display: flex;
   flex-direction: column;
   align-items: center;
   h2 {
-    margin-top: rem(123px);
+    margin-top: functions.rem(123px);
     text-align: center;
-    font-size: rem(40px);
+    font-size: functions.rem(40px);
     font-weight: normal;
   }
   button {
-    margin-top: rem(35px);
-    font-size: rem(18px);
+    margin-top: functions.rem(35px);
+    font-size: functions.rem(18px);
     font-weight: lighter;
-    padding: rem(13px) rem(17px);
+    padding: functions.rem(13px) functions.rem(17px);
     background: none;
-    border: 0.75px solid $primary-font-color;
+    border: 0.75px solid colors.$primary-font-color;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     &:hover {

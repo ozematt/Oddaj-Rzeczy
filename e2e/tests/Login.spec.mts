@@ -7,6 +7,7 @@ test.describe("Login flow", () => {
     await page.goto("/");
 
     const loginButton = page.getByRole("button", { name: "Zaloguj" });
+    expect(loginButton).toBeVisible();
     await loginButton.click();
 
     const emailInput = page.getByRole("textbox", { name: "Email" });
@@ -24,6 +25,7 @@ test.describe("Login flow", () => {
     await page.goto("/");
 
     const loginButton = page.getByRole("button", { name: "Zaloguj" });
+    expect(loginButton).toBeVisible();
     await loginButton.click();
 
     const emailInput = page.getByRole("textbox", { name: "Email" });

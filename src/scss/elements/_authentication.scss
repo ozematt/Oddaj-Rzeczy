@@ -1,19 +1,19 @@
-@import "../settings/functions.scss";
-@import "../settings/colors.scss";
+@use "../settings/functions.scss";
+@use "../settings/colors.scss";
 
 .authentication {
   // width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: rem(10px);
-  font-size: rem(14px);
-  color: $secondary-font-color;
-  line-height: rem(24px);
-  margin-bottom: rem(17px);
-  margin-right: rem(30px);
+  gap: functions.rem(10px);
+  font-size: functions.rem(14px);
+  color: colors.$secondary-font-color;
+  line-height: functions.rem(24px);
+  margin-bottom: functions.rem(17px);
+  margin-right: functions.rem(30px);
   button {
-    padding: rem(9px) rem(10px);
+    padding: functions.rem(9px) functions.rem(10px);
     background-color: transparent;
     cursor: pointer;
     font: inherit;
@@ -22,7 +22,7 @@
     transition: all 0.3s ease-in-out;
   }
   button:hover {
-    border: 0.75px solid $accent-color;
+    border: 0.75px solid colors.$accent-color;
     opacity: 1;
   }
 }

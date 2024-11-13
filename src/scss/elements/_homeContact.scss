@@ -1,11 +1,11 @@
-@import "../settings/_fonts.scss";
-@import "../settings/_colors.scss";
-@import "../settings/_functions.scss";
+@use "../settings/_fonts.scss";
+@use "../settings/_colors.scss";
+@use "../settings/_functions.scss";
 
 %placeholder {
   font-size: 18px;
   line-height: 24px;
-  color: $placeholder-font-color;
+  color: colors.$placeholder-font-color;
 }
 
 .contact {
@@ -81,7 +81,7 @@
         font-size: 18px;
         font-weight: lighter;
         background: transparent;
-        border: 0.75px solid $primary-font-color;
+        border: 0.75px solid colors.$primary-font-color;
         cursor: pointer;
       }
     }

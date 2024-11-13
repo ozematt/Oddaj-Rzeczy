@@ -1,10 +1,10 @@
-@import "../settings/_fonts.scss";
-@import "../settings/_colors.scss";
-@import "../settings/_functions.scss";
+@use "../settings/_fonts.scss";
+@use "../settings/_colors.scss";
+@use "../settings/_functions.scss";
 
 .form-data {
   width: 392px;
-  color: $primary-font-color;
+  color: colors.$primary-font-color;
 
   label {
     font-size: 24px;
@@ -16,7 +16,7 @@
   }
   input[type="text"] {
     background: none;
-    border: 0.75px solid $primary-font-color;
+    border: 0.75px solid colors.$primary-font-color;
     width: 256px;
     height: 40px;
     outline: none;
@@ -31,7 +31,7 @@
 .form-data-textarea {
   height: 120px;
   background: none;
-  border: 0.75px solid $primary-font-color;
+  border: 0.75px solid colors.$primary-font-color;
   width: 256px;
   outline: none;
   cursor: pointer;

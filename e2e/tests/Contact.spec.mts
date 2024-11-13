@@ -3,7 +3,12 @@ import { test, expect } from "@playwright/test";
 test.describe("Contact submit flow", () => {
   test("should submit contact form with valid data", async ({ page }) => {
     await page.goto("/");
-    await page.getByRole("navigation").getByText("Kontakt").click();
+    const contactButton = page
+      .getByRole("navigation")
+      .locator("li")
+      .filter({ hasText: "Kontakt" });
+    await expect(contactButton).toBeVisible();
+    await contactButton.click();
 
     await page.getByPlaceholder("Krzysztof").fill("Matt");
     await page.getByPlaceholder("abc@xyz.pl").fill("mail@gamil.com");
@@ -20,7 +25,11 @@ test.describe("Contact submit flow", () => {
     page,
   }) => {
     await page.goto("/");
-    await page.getByRole("navigation").getByText("Kontakt").click();
+    const contactButton = page
+      .getByRole("navigation")
+      .locator("li")
+      .filter({ hasText: "Kontakt" });
+    await contactButton.click();
 
     await page.getByRole("button", { name: "Wyślij" }).click();
 
@@ -38,7 +47,11 @@ test.describe("Contact submit flow", () => {
     page,
   }) => {
     await page.goto("/");
-    await page.getByRole("navigation").getByText("Kontakt").click();
+    const contactButton = page
+      .getByRole("navigation")
+      .locator("li")
+      .filter({ hasText: "Kontakt" });
+    await contactButton.click();
     await page.getByPlaceholder("Krzysztof").fill("111");
     await page.getByPlaceholder("abc@xyz.pl").fill("invalid@Email");
     await page.getByPlaceholder("Lorem ipsum dolor sit amet,").fill("12345");

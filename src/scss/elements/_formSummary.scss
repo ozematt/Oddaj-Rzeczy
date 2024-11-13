@@ -1,9 +1,9 @@
-@import "../settings/_fonts.scss";
-@import "../settings/_colors.scss";
-@import "../settings/_functions.scss";
+@use "../settings/_fonts.scss";
+@use "../settings/_colors.scss";
+@use "../settings/_functions.scss";
 
 .summary-header {
-  font-size: rem(36px);
+  font-size: functions.rem(36px);
   font-weight: 600;
   margin: 0;
   padding: 70px 0 45px 30px;
