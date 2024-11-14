@@ -37,9 +37,6 @@ export default defineConfig({
       name: "chromium",
       use: {
         ...devices["Desktop Chrome"],
-        launchOptions: {
-          args: ["--font-render-hinting=none"],
-        },
       },
     },
 
@@ -75,11 +72,10 @@ export default defineConfig({
   ],
 
   /* Run your local dev server before starting the tests */
-  webServer: process.env.CI
-    ? undefined
-    : {
-        command: "npm run start",
-        url: "http://localhost:5173",
-        reuseExistingServer: false,
-      },
+  webServer: {
+    command: "npm run start",
+    url: "http://localhost:5173",
+    reuseExistingServer: false,
+    timeout: 120 * 1000,
+  },
 });

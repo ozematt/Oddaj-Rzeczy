@@ -31,6 +31,10 @@ jobs:
           node-version: lts/*
       - name: Install dependencies
         run: npm ci
+      - name: Build application
+        run: npm run build # Tworzy build aplikacji do podglądu
+      - name: Free port 5173 if in use
+        run: kill $(lsof -t -i:5173) || true
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
