@@ -4,7 +4,7 @@ import { ItemToShow } from "./ItemToShow";
 import { OrgButton } from "./OrgButton";
 import { Element } from "react-scroll";
 import { DATA } from "../data/records";
-import { AidOrganization, type Foundation } from "../lib/types";
+import { type Foundation } from "../lib/types";
 
 //button names
 const aidOrganizations = [
@@ -17,8 +17,7 @@ export const HomeWhoWeHelp = () => {
   //
   ////DATA
   const [currentPage, setCurrentPage] = useState(1);
-  const [activeButton, setActiveButton] =
-    useState<AidOrganization>("Fundacjom");
+  const [activeButton, setActiveButton] = useState<string>("Fundacjom");
 
   ////LOGIC
   //element change
@@ -53,7 +52,7 @@ export const HomeWhoWeHelp = () => {
     setCurrentPage(page);
   };
 
-  const handleButtonClick = (name: AidOrganization) => {
+  const handleButtonClick = (name: string) => {
     setActiveButton(name);
     setCurrentPage(1);
   };
