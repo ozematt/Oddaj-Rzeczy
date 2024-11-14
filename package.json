@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "start": "vite --port 5173",
-    "build": "vite build",
+    "start": "npm run build && npm run preview",
+    "build": "tsc -b && vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
+    "preview": "vite preview --port 5173",
     "compile": "tsc --watch",
     "test": "vitest run --",
     "e2e": "npx playwright test --ui"
