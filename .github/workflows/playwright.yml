@@ -5,70 +5,77 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  # unit_test:
-  #   runs-on: ubuntu-latest
-
-  #   strategy:
-  #     matrix:
-  #       node-version: [18.x, 20.x, 22.x]
-
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - name: Use Node.js ${{ matrix.node-version }}
-  #       uses: actions/setup-node@v4
-  #       with:
-  #         node-version: ${{ matrix.node-version }}
-  #         cache: "npm"
-  #     - run: npm i
-  #     - run: npm test
-  e2e:
-    timeout-minutes: 60
+  unit_test:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
-          node-version: lts/*
-      - name: Install dependencies
-        run: npm ci
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+      - run: npm i
+      - run: npm test
+  # e2e:
+  #   timeout-minutes: 60
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         node-version: lts/*
+  #     - name: Install dependencies
+  #       run: npm ci
 
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+  #     - name: Install Playwright Browsers
+  #       run: npx playwright install --with-deps
 
-      - name: Build application
-        run: npm run build # Budowanie aplikacji
+  #     # Zbudowanie aplikacji
+  #     - name: Build application
+  #       run: npm run build
 
-      - name: Free port 5173 if in use
-        run: kill $(lsof -t -i:5173) || true
+  #      # Zwolnienie portu 5173, jeśli jest używany
+  #      - name: Free port 5173 if in use
+  #        run: kill $(lsof -t -i:5173) || true
 
-      - name: Start Vite server
-        run: npm run preview &> vite.log &
+  #      # Uruchomienie serwera Vite z logami
+  #      - name: Start Vite server
+  #        run: npm run preview &> vite.log &
 
-      - name: Wait for Vite server
-        run: npx wait-on http://localhost:5173 --timeout 200000
+  #      # Sprawdzenie dostępności serwera
+  #      - name: Wait for Vite server
+  #        run: npx wait-on http://localhost:5173 --timeout 200000
 
-      - name: Confirm Vite server is running
-        run: curl -I http://localhost:5173 || exit 1
+  #     # Potwierdzenie, że serwer działa, poprzez wykonanie zapytania HTTP
+  #      - name: Confirm Vite server is running
+  #        run: curl -I http://localhost:5173 || exit 1
 
-      - name: Run Playwright tests with verbose logging
-        env:
-          DEBUG: pw:api
-        run: npx playwright test --trace on
+  #      # Uruchomienie testów Playwright z verbose loggingiem i trace
+  #      - name: Run Playwright tests with verbose logging
+  #        env:
+  #          DEBUG: pw:api
+  #        run: npx playwright test --trace on
 
-      - name: Check Vite server logs
-        run: cat vite.log || true
+  #      # Pobranie logów serwera Vite dla diagnostyki
+  #      - name: Check Vite server logs
+  #        run: cat vite.log || true
 
-      # - name: Run Playwright tests
-      #   run: npx playwright test
+  #      # Pobranie raportu Playwright
+  #      - uses: actions/upload-artifact@v4
+  #        if: always()
+  #        with:
+  #          name: playwright-report
+  #          path: playwright-report/
+  #          retention-days: 30
 
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: playwright-trace
-          path: test-results/*.zip
+  #      # Pobranie trace z Playwright dla analizy
+  #      - uses: actions/upload-artifact@v4
+  #        if: always()
+  #        with:
+  #          name: playwright-trace
+  #          path: test-results/*.zip
