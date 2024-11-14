@@ -32,9 +32,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build application
-        run: npm run build # Tworzy build aplikacji do podglądu
+        run: npm run build # Budowanie aplikacji
       - name: Free port 5173 if in use
         run: kill $(lsof -t -i:5173) || true
+      - name: Start preview server
+        run: npm run preview &
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
