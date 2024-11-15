@@ -1,4 +1,4 @@
-import { StepFourFormData } from "./types";
+import { type StepFourFormData } from "./types";
 
 export const validateEmail = (email: string) => {
   return email
